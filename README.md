@@ -1,7 +1,8 @@
-# My Portfolio Wesbite - Overview 🚀
+# Tarang Goyal - Portfolio Website 🚀
 
-This repository contains the open source version of my porfolio website.
-Do check it out!
+Data Scientist & Business Analyst portfolio showcasing my experience, projects, and hackathon wins.
+
+**🌐 Live Site:** https://tarang-portfolio-pink.vercel.app
 
 ## Instructions 🛠️
 
