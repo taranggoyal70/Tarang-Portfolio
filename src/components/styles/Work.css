@@ -213,10 +213,13 @@
   pointer-events: none;
 }
 
-.project-card-emoji {
-  font-size: 56px;
+.project-card-number {
+  font-size: 64px;
+  font-weight: 700;
   line-height: 1;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  font-family: "Geist", sans-serif;
 }
 
 .project-card-highlight {
