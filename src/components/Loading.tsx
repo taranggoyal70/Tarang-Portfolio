@@ -62,8 +62,8 @@ const Loading = ({ percent }: { percent: number }) => {
       <div className="loading-screen">
         <div className="loading-marquee">
           <Marquee>
-            <span> Data Scientist</span> <span>Business Analyst</span>
-            <span> Data Scientist</span> <span>Business Analyst</span>
+            <span> AI Product</span> <span>Engineer</span>
+            <span> AI Product</span> <span>Engineer</span>
           </Marquee>
         </div>
         <div
