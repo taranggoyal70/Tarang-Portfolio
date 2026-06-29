@@ -49,16 +49,19 @@
 
 .carousel-content {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 60px;
   width: 100%;
 }
 
-.carousel-info {
-  flex: 1;
+/* ── Left Column: Number + Stat ── */
+.carousel-left {
   display: flex;
-  gap: 30px;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  min-width: 100px;
+  flex-shrink: 0;
 }
 
 .carousel-number h3 {
@@ -66,52 +69,99 @@
   line-height: 1;
   margin: 0;
   font-weight: 600;
-  opacity: 0.3;
+  opacity: 0.2;
 }
 
-.carousel-details {
+.carousel-stat {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  align-items: center;
+  gap: 2px;
 }
 
-.carousel-details h4 {
+.carousel-stat-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--accentColor);
+  line-height: 1;
+}
+
+.carousel-stat-label {
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.5;
+}
+
+/* ── Right Column: Details ── */
+.carousel-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.carousel-badge {
+  display: inline-block;
+  width: fit-content;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--accentColor);
+  border: 1px solid rgba(94, 234, 212, 0.3);
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+
+.carousel-right h4 {
   font-size: 28px;
   font-weight: 500;
   margin: 0;
 }
 
-.carousel-category {
-  font-weight: 200;
+.carousel-description {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.6;
   color: #adacac;
   margin: 0;
-  font-size: 16px;
 }
 
-.carousel-tools {
-  margin-top: 16px;
-}
-
-.carousel-tools .tools-label {
-  font-size: 14px;
-  font-weight: 400;
-  opacity: 0.6;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.carousel-tools p {
-  font-weight: 200;
-  color: #adacac;
-  margin: 6px 0 0;
-  font-size: 15px;
-}
-
-.carousel-image-wrapper {
-  flex: 1;
+.carousel-tools-row {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.carousel-tool-tag {
+  font-size: 13px;
+  font-weight: 400;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #ccc;
+}
+
+.carousel-link {
+  display: inline-flex;
   align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--accentColor);
+  margin-top: 8px;
+  transition: opacity 0.2s ease;
+  width: fit-content;
+  border-bottom: 1px solid transparent;
+}
+
+.carousel-link:hover {
+  color: var(--accentColor);
+  border-bottom-color: var(--accentColor);
 }
 
 /* ── Navigation Arrows ── */
@@ -180,96 +230,6 @@
   box-shadow: 0 0 8px rgba(94, 234, 212, 0.4);
 }
 
-/* ── Project Gradient Cards ── */
-.project-card {
-  width: 280px;
-  height: 200px;
-  border-radius: 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-}
-
-.project-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.15) 0%,
-    transparent 50%
-  );
-  pointer-events: none;
-}
-
-.project-card-number {
-  font-size: 64px;
-  font-weight: 700;
-  line-height: 1;
-  color: rgba(255, 255, 255, 0.9);
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
-  font-family: "Geist", sans-serif;
-}
-
-.project-card-highlight {
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.25);
-  padding: 6px 16px;
-  border-radius: 20px;
-  backdrop-filter: blur(4px);
-}
-
-.project-card-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-.project-card-link:hover {
-  color: inherit;
-}
-
-.project-card-github {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(6px);
-  padding: 10px 0;
-  border-radius: 0 0 16px 16px;
-  opacity: 0;
-  transform: translateY(100%);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.project-card:hover .project-card-github {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* ── Responsive ── */
 @media only screen and (max-width: 1600px) {
   .carousel-arrow-left {
@@ -286,7 +246,7 @@
     font-size: 50px;
   }
 
-  .carousel-details h4 {
+  .carousel-right h4 {
     font-size: 22px;
   }
 
@@ -308,19 +268,6 @@
 }
 
 @media only screen and (max-width: 1025px) {
-  .carousel-content {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .carousel-info {
-    width: 100%;
-  }
-
-  .carousel-image-wrapper {
-    width: 100%;
-  }
-
   .carousel-arrow {
     width: 40px;
     height: 40px;
@@ -346,23 +293,31 @@
     margin-bottom: 30px;
   }
 
+  .carousel-content {
+    gap: 20px;
+  }
+
+  .carousel-left {
+    min-width: 60px;
+  }
+
   .carousel-number h3 {
     font-size: 35px;
   }
 
-  .carousel-details h4 {
-    font-size: 20px;
+  .carousel-stat-value {
+    font-size: 24px;
   }
 
-  .carousel-content {
-    gap: 20px;
+  .carousel-right h4 {
+    font-size: 20px;
   }
 
   .carousel-slide {
     padding: 30px 0;
   }
 
-  .work-image img {
-    max-height: 250px;
+  .carousel-description {
+    font-size: 14px;
   }
 }

@@ -5,43 +5,53 @@ import { MdArrowBack, MdArrowForward, MdArrowOutward } from "react-icons/md";
 const projects = [
   {
     title: "AWS X INRIX - Studentlytics",
-    category: "1st Place Winner - AI Video Analytics Platform",
-    tools: "AWS Lambda, Step Functions, S3, Rekognition, DynamoDB, React, TypeScript",
-    gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-    highlight: "91% Accuracy",
+    category: "1st Place Winner",
+    description: "AI video analytics platform that matches student faces, calculates attendance and engagement scores, and stores results — all built in 24 hours.",
+    tools: ["AWS Lambda", "Step Functions", "S3", "Rekognition", "DynamoDB", "React"],
+    stat: "91%",
+    statLabel: "accuracy",
     link: "https://devpost.com/software/studentlytics",
+    linkLabel: "Devpost",
   },
   {
     title: "YC Stack Auth - Crowd Symphony",
-    category: "1st Place Winner - Real-Time Audience Music",
-    tools: "Next.js, MediaPipe Hands, Socket.IO, Web Audio API, QR Codes",
-    gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
-    highlight: "Real-Time Sync",
+    category: "1st Place Winner",
+    description: "Real-time audience music platform using hand tracking to sync gesture-driven volume changes across devices via QR-code joining.",
+    tools: ["Next.js", "MediaPipe Hands", "Socket.IO", "Web Audio API"],
+    stat: "Real-Time",
+    statLabel: "sync",
     link: "https://github.com/taranggoyal70/crowd-symphony",
+    linkLabel: "GitHub",
   },
   {
     title: "A10 Networks AI Hackathon",
-    category: "1st Place Winner - AI Product Strategy",
-    tools: "AI Security, Prompt Injection Defense, GTM, ARR Modeling, OKRs",
-    gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
-    highlight: "Enterprise AI",
+    category: "1st Place Winner",
+    description: "Product strategy and technical architecture for an AI workload-protection platform covering prompt-injection defense, data-leakage prevention, and agent guardrails.",
+    tools: ["AI Security", "PRD", "GTM Strategy", "ARR Modeling", "OKRs"],
+    stat: "1st",
+    statLabel: "place",
     link: "https://github.com/taranggoyal70/a10-ai-firewall-hackathon-2025",
+    linkLabel: "GitHub",
   },
   {
     title: "SCU Analytical Showdown",
-    category: "Winner - Decision-Support Analytics Product",
-    tools: "Sales Forecasting, Customer Segmentation, Campaign ROI, Executive Dashboards",
-    gradient: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
-    highlight: "Top Recognition",
+    category: "Winner",
+    description: "Decision-support analytics product for Nazava using Shopee marketplace data — sales forecasting, customer segmentation, campaign ROI, and executive dashboards.",
+    tools: ["Python", "Forecasting", "Segmentation", "ROI Modeling"],
+    stat: "Top",
+    statLabel: "recognition",
     link: "https://github.com/taranggoyal70/SCU-Analytical-Showdown-Winner-2025",
+    linkLabel: "GitHub",
   },
   {
     title: "Chronos-2 Research Publication",
-    category: "arXiv Paper - Time-Series Forecasting",
-    tools: "Amazon Chronos-2, Multivariate Forecasting, RMSE, MAPE",
-    gradient: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
-    highlight: "Published Paper",
+    category: "arXiv Paper",
+    description: "Co-authored paper evaluating Amazon Chronos-2 for multivariate economic and financial forecasting across Magnificent 7 equities and U.S. Treasury rates.",
+    tools: ["Amazon Chronos-2", "Time-Series", "RMSE", "MAPE"],
+    stat: "arXiv",
+    statLabel: "published",
     link: "https://arxiv.org/pdf/2605.21504",
+    linkLabel: "Read Paper",
   },
 ];
 
@@ -108,39 +118,32 @@ const Work = () => {
               {projects.map((project, index) => (
                 <div className="carousel-slide" key={index}>
                   <div className="carousel-content">
-                    <div className="carousel-info">
+                    <div className="carousel-left">
                       <div className="carousel-number">
                         <h3>0{index + 1}</h3>
                       </div>
-                      <div className="carousel-details">
-                        <h4>{project.title}</h4>
-                        <p className="carousel-category">
-                          {project.category}
-                        </p>
-                        <div className="carousel-tools">
-                          <span className="tools-label">Tools & Features</span>
-                          <p>{project.tools}</p>
-                        </div>
+                      <div className="carousel-stat">
+                        <span className="carousel-stat-value">{project.stat}</span>
+                        <span className="carousel-stat-label">{project.statLabel}</span>
                       </div>
                     </div>
-                    <div className="carousel-image-wrapper">
+                    <div className="carousel-right">
+                      <span className="carousel-badge">{project.category}</span>
+                      <h4>{project.title}</h4>
+                      <p className="carousel-description">{project.description}</p>
+                      <div className="carousel-tools-row">
+                        {project.tools.map((tool, i) => (
+                          <span className="carousel-tool-tag" key={i}>{tool}</span>
+                        ))}
+                      </div>
                       <a
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="project-card-link"
+                        className="carousel-link"
                         data-cursor="disable"
                       >
-                        <div
-                          className="project-card"
-                          style={{ background: project.gradient }}
-                        >
-                          <span className="project-card-number">0{index + 1}</span>
-                          <span className="project-card-highlight">{project.highlight}</span>
-                          <span className="project-card-github">
-                            {project.link.includes("arxiv") ? "Read Paper" : project.link.includes("devpost") ? "View on Devpost" : "View on GitHub"} <MdArrowOutward />
-                          </span>
-                        </div>
+                        {project.linkLabel} <MdArrowOutward />
                       </a>
                     </div>
                   </div>
