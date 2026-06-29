@@ -87,22 +87,22 @@ const WhatIDo = () => {
             <div className="what-corner"></div>
 
             <div className="what-content-in">
-              <h3>DATA SCIENCE & ML</h3>
-              <h4>Building Predictive Models</h4>
+              <h3>AI SYSTEMS & PRODUCT</h3>
+              <h4>Building AI-Powered Products</h4>
               <p>
-                Designing machine learning pipelines and predictive models that drive business decisions.
-                From churn prediction to sentiment analysis, I transform data into actionable insights.
+                Shipping end-to-end AI products — from computer vision pipelines and AI agents to full-stack platforms with real-time analytics.
+                Building with LLMs, RAG, LangChain, OpenCV, Whisper, and deploying on AWS and Vercel.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">Python</div>
-                <div className="what-tags">SQL</div>
-                <div className="what-tags">XGBoost</div>
-                <div className="what-tags">NLP</div>
-                <div className="what-tags">Predictive Modeling</div>
                 <div className="what-tags">LLMs</div>
-                <div className="what-tags">Statistical Analysis</div>
-                <div className="what-tags">A/B Testing</div>
+                <div className="what-tags">AI Agents</div>
+                <div className="what-tags">RAG</div>
+                <div className="what-tags">LangChain</div>
+                <div className="what-tags">Computer Vision</div>
+                <div className="what-tags">OpenCV</div>
+                <div className="what-tags">FastAPI</div>
+                <div className="what-tags">React</div>
               </div>
               <div className="what-arrow"></div>
             </div>
@@ -126,22 +126,22 @@ const WhatIDo = () => {
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>DATA ENGINEERING & BI</h3>
-              <h4>Building Data Infrastructure</h4>
+              <h3>DATA & ANALYTICS</h3>
+              <h4>Pipelines, ML Models & Dashboards</h4>
               <p>
-                Creating ETL pipelines and data warehouses that power real-time analytics.
-                From Tableau dashboards to cloud infrastructure, I build scalable data solutions.
+                Building scalable data pipelines, predictive models, and BI dashboards that drive business decisions.
+                From churn prediction with XGBoost to real-time Tableau/Power BI reporting across cross-functional teams.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
+                <div className="what-tags">Python</div>
+                <div className="what-tags">SQL</div>
+                <div className="what-tags">PySpark</div>
+                <div className="what-tags">BigQuery</div>
                 <div className="what-tags">Tableau</div>
                 <div className="what-tags">Power BI</div>
+                <div className="what-tags">XGBoost</div>
                 <div className="what-tags">AWS</div>
-                <div className="what-tags">GCP</div>
-                <div className="what-tags">Data Warehousing</div>
-                <div className="what-tags">ETL Pipelines</div>
-                <div className="what-tags">Streamlit</div>
-                <div className="what-tags">PostgreSQL</div>
               </div>
               <div className="what-arrow"></div>
             </div>

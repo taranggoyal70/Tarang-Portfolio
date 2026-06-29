@@ -42,7 +42,7 @@ const Contact = () => {
               Portfolio <br /> by <span>Tarang Goyal</span>
             </h2>
             <h5>
-              <MdCopyright /> 2025
+              <MdCopyright /> 2026
             </h5>
           </div>
         </div>

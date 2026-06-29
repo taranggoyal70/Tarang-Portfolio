@@ -5,34 +5,34 @@ import { MdArrowBack, MdArrowForward } from "react-icons/md";
 
 const projects = [
   {
-    title: "A10 Networks AI Hackathon",
-    category: "1st Place Winner - AI Product Strategy",
-    tools: "AI Security, Product Management, KPIs, GTM Strategy",
-    image: "/images/a10.png",
-  },
-  {
     title: "AWS X INRIX - Studentlytics",
-    category: "1st Place Winner - Full-Stack ML Application",
-    tools: "AWS, Video Analytics, ML, React, Python",
+    category: "1st Place Winner - AI Video Analytics Platform",
+    tools: "AWS Lambda, Step Functions, S3, Rekognition, DynamoDB, React, TypeScript",
     image: "/images/studentlytics.png",
   },
   {
+    title: "YC Stack Auth - Crowd Symphony",
+    category: "1st Place Winner - Real-Time Audience Music",
+    tools: "Next.js, MediaPipe Hands, Socket.IO, Web Audio API, QR Codes",
+    image: "/images/a10.png",
+  },
+  {
+    title: "A10 Networks AI Hackathon",
+    category: "1st Place Winner - AI Product Strategy",
+    tools: "AI Security, Prompt Injection Defense, GTM, ARR Modeling, OKRs",
+    image: "/images/a10.png",
+  },
+  {
     title: "SCU Analytical Showdown",
-    category: "Winner - Business Analytics",
-    tools: "Python, ML, Forecasting, Data Visualization",
+    category: "Winner - Decision-Support Analytics Product",
+    tools: "Sales Forecasting, Customer Segmentation, Campaign ROI, Executive Dashboards",
     image: "/images/analytics.png",
   },
   {
-    title: "Churn Prediction Framework",
-    category: "Box Internship Project",
-    tools: "Cox Hazards, XGBoost, Python, SQL, Tableau",
+    title: "Chronos-2 Research Publication",
+    category: "arXiv Paper - Time-Series Forecasting",
+    tools: "Amazon Chronos-2, Multivariate Forecasting, RMSE, MAPE",
     image: "/images/churn.png",
-  },
-  {
-    title: "ETL Pipeline & Dashboards",
-    category: "Data Engineering",
-    tools: "Python, SQL, Tableau, Real-time Analytics",
-    image: "/images/etl.png",
   },
 ];
 

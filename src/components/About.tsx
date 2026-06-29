@@ -6,11 +6,11 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          Data Scientist and Business Analyst with a Master's in Business Analytics from Santa Clara University (GPA: 3.7/4).
-          Specialized in transforming complex data into actionable insights through machine learning, predictive modeling, and advanced analytics.
-          Experienced at Box and Hashroot Limited, where I've designed ETL pipelines, built predictive models, and created data-driven solutions
-          that reduced churn by 12%, increased revenue by 10%, and improved operational efficiency by 40%. Passionate about leveraging AI,
-          data analytics, and product strategy to solve real-world problems and drive business growth.
+          AI Product Engineer with an M.S. in Business Analytics from Santa Clara University (GPA: 3.7).
+          I build and ship AI-powered products end-to-end — from computer vision pipelines and AI agents to full-stack platforms and data systems.
+          Currently at Highview, where I built Studentlytics, an AI education platform with 91% face-matching attendance accuracy using OpenCV, AWS Rekognition, and FastAPI.
+          Previously at Box, where I built PySpark/SQL pipelines reducing manual processing by 40% and churn prediction models across 100K+ records.
+          3x hackathon winner (AWS x INRIX, YC Stack Auth, A10 Networks) and co-author of an arXiv research paper on time-series forecasting with Amazon Chronos-2.
         </p>
       </div>
     </div>

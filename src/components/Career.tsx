@@ -18,12 +18,12 @@ const Career = () => {
                 <h4>Business Data Analyst</h4>
                 <h5>Hashroot Limited</h5>
               </div>
-              <h3>2023</h3>
+              <h3>2023-24</h3>
             </div>
             <p>
-              Analyzed product and customer data using SQL, Python, and NLP to uncover upsell drivers, increasing revenue by 10%.
-              Automated Tableau dashboards across 3 departments, reducing manual reporting by 25% and enabling real-time decisions.
-              Conducted pricing A/B tests and consolidated disparate datasets into a unified analytics platform.
+              Used SQL and Python for data cleaning, modeling, and customer segmentation, surfacing upsell opportunities that grew revenue by 10%.
+              Automated Tableau dashboards across sales, marketing, and operations, eliminating 20+ hours of weekly reporting.
+              Analyzed pricing experiments and user behavior to improve pricing alignment and support quarter-over-quarter GMV growth.
             </p>
           </div>
           <div className="career-info-box">
@@ -35,23 +35,23 @@ const Career = () => {
               <h3>2025</h3>
             </div>
             <p>
-              Designed ETL pipelines using Python and SQL, cutting data latency by 40% and enabling near real-time dashboards.
-              Built Tableau dashboards for 4+ teams, accelerating product feedback loops and increasing feature adoption by 15%.
-              Reduced churn by 12% by analyzing 10M+ customer records using cohort analysis and retention modeling.
+              Built scalable PySpark and SQL pipelines for wrangling, modeling, and statistical analysis, reducing manual processing by 40% across four cross-functional teams.
+              Developed churn prediction workflows across 100K+ records and 10K+ accounts using BigQuery, XGBoost, and feature engineering.
+              Created Tableau and Power BI dashboards for stakeholder analysis, increasing feature adoption by 15%.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Graduate Teaching Assistant</h4>
-                <h5>Santa Clara University</h5>
+                <h4>AI Product Manager & Product Engineer</h4>
+                <h5>Highview</h5>
               </div>
               <h3>NOW</h3>
             </div>
             <p>
-              Supporting instruction across two graduate-level courses (Python-based analytics + MBA operations), assisting 100+ students
-              with analytics, coding, and quantitative problem-solving. Holding office hours and grading assignments using detailed rubrics,
-              providing constructive feedback that improved student understanding and course outcomes.
+              Built and deployed Studentlytics using React, TypeScript, Vite, and Tailwind, supporting role-based staff, student, and intern workflows.
+              Developed AI attendance and engagement workflows using FastAPI, Python, OpenCV, Whisper, and AWS Rekognition with 91% face-matching accuracy.
+              Integrated Supabase auth, Vercel deployment, and AWS Lambda/API Gateway chatbot endpoints for production analytics.
             </p>
           </div>
         </div>
