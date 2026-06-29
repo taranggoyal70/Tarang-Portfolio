@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import "./styles/Work.css";
-import { MdArrowBack, MdArrowForward } from "react-icons/md";
+import { MdArrowBack, MdArrowForward, MdArrowOutward } from "react-icons/md";
 
 const projects = [
   {
@@ -10,6 +10,7 @@ const projects = [
     emoji: "🎓",
     gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
     highlight: "91% Accuracy",
+    link: "https://github.com/taranggoyal70/HighView",
   },
   {
     title: "YC Stack Auth - Crowd Symphony",
@@ -18,6 +19,7 @@ const projects = [
     emoji: "🎵",
     gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
     highlight: "Real-Time Sync",
+    link: "https://github.com/taranggoyal70/crowd-symphony",
   },
   {
     title: "A10 Networks AI Hackathon",
@@ -26,6 +28,7 @@ const projects = [
     emoji: "🛡️",
     gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
     highlight: "Enterprise AI",
+    link: "https://github.com/taranggoyal70/a10-ai-firewall-hackathon-2025",
   },
   {
     title: "SCU Analytical Showdown",
@@ -34,6 +37,7 @@ const projects = [
     emoji: "📊",
     gradient: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
     highlight: "Top Recognition",
+    link: "https://github.com/taranggoyal70/SCU-Analytical-Showdown-Winner-2025",
   },
   {
     title: "Chronos-2 Research Publication",
@@ -42,6 +46,7 @@ const projects = [
     emoji: "📄",
     gradient: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
     highlight: "Published Paper",
+    link: "https://github.com/taranggoyal70/timeseries-fm",
   },
 ];
 
@@ -124,13 +129,24 @@ const Work = () => {
                       </div>
                     </div>
                     <div className="carousel-image-wrapper">
-                      <div
-                        className="project-card"
-                        style={{ background: project.gradient }}
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-card-link"
+                        data-cursor="disable"
                       >
-                        <span className="project-card-emoji">{project.emoji}</span>
-                        <span className="project-card-highlight">{project.highlight}</span>
-                      </div>
+                        <div
+                          className="project-card"
+                          style={{ background: project.gradient }}
+                        >
+                          <span className="project-card-emoji">{project.emoji}</span>
+                          <span className="project-card-highlight">{project.highlight}</span>
+                          <span className="project-card-github">
+                            View on GitHub <MdArrowOutward />
+                          </span>
+                        </div>
+                      </a>
                     </div>
                   </div>
                 </div>
