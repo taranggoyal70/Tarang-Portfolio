@@ -90,7 +90,7 @@ const WhatIDo = () => {
               <h3>AI SYSTEMS & PRODUCT</h3>
               <h4>Building AI-Powered Products</h4>
               <p>
-                Shipping end-to-end AI products — from computer vision pipelines and AI agents to full-stack platforms with real-time analytics.
+                Shipping end-to-end AI products, from computer vision pipelines and AI agents to full-stack platforms with real-time analytics.
                 Building with LLMs, RAG, LangChain, OpenCV, Whisper, and deploying on AWS and Vercel.
               </p>
               <h5>Skillset & tools</h5>
@@ -168,7 +168,7 @@ const WhatIDo = () => {
               <h3>PRODUCT & STRATEGY</h3>
               <h4>From Discovery to Launch</h4>
               <p>
-                Owning the full product lifecycle — customer discovery, PRDs, user stories, roadmapping,
+                Owning the full product lifecycle: customer discovery, PRDs, user stories, roadmapping,
                 and launch execution. Driving cross-functional teams from ideation through GTM.
               </p>
               <h5>Skillset & tools</h5>

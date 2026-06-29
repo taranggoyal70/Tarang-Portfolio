@@ -6,7 +6,7 @@ const projects = [
   {
     title: "AWS X INRIX - Studentlytics",
     category: "1st Place Winner",
-    description: "AI video analytics platform that matches student faces, calculates attendance and engagement scores, and stores results — all built in 24 hours.",
+    description: "AI video analytics platform that matches student faces, calculates attendance and engagement scores, and stores results. Built in 24 hours.",
     tools: ["AWS Lambda", "Step Functions", "S3", "Rekognition", "DynamoDB", "React"],
     stat: "91%",
     statLabel: "accuracy",
@@ -36,7 +36,7 @@ const projects = [
   {
     title: "SCU Analytical Showdown",
     category: "Winner",
-    description: "Decision-support analytics product for Nazava using Shopee marketplace data — sales forecasting, customer segmentation, campaign ROI, and executive dashboards.",
+    description: "Decision-support analytics product for Nazava using Shopee marketplace data: sales forecasting, customer segmentation, campaign ROI, and executive dashboards.",
     tools: ["Python", "Forecasting", "Segmentation", "ROI Modeling"],
     stat: "Top",
     statLabel: "recognition",

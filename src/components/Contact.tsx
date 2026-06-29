@@ -1,7 +1,26 @@
+import { useEffect, useState } from "react";
 import { MdArrowOutward, MdCopyright } from "react-icons/md";
+import { supabase } from "../lib/supabase";
 import "./styles/Contact.css";
 
 const Contact = () => {
+  const [views, setViews] = useState<number | null>(null);
+
+  useEffect(() => {
+    const trackVisit = async () => {
+      try {
+        const { data } = await supabase.rpc("increment_site_views");
+        if (typeof data === "number") {
+          setViews(data);
+        }
+      } catch {
+        // silently fail — counter is non-critical
+      }
+    };
+
+    trackVisit();
+  }, []);
+
   return (
     <div className="contact-section section-container" id="contact">
       <div className="contact-container">
@@ -49,6 +68,12 @@ const Contact = () => {
             <h2>
               Portfolio <br /> by <span>Tarang Goyal</span>
             </h2>
+            {views !== null && (
+              <div className="visitor-counter">
+                <span className="visitor-count">{views.toLocaleString()}</span>
+                <span className="visitor-label">visitors</span>
+              </div>
+            )}
             <h5>
               <MdCopyright /> 2026
             </h5>

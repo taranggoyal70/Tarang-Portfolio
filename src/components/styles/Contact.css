@@ -50,6 +50,28 @@ a.contact-social {
   color: var(--accentColor);
 }
 
+.visitor-counter {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.visitor-count {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--accentColor);
+  font-family: "Geist", sans-serif;
+}
+
+.visitor-label {
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.5;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 .contact-box h5 {
   font-size: 20px;
   font-weight: 500;

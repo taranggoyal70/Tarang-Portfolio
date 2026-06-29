@@ -7,7 +7,7 @@ const About = () => {
         <h3 className="title">About Me</h3>
         <p className="para">
           AI Product Engineer with an M.S. in Business Analytics from Santa Clara University.
-          I build and ship AI-powered products end-to-end — from computer vision pipelines and AI agents
+          I build and ship AI-powered products end-to-end, from computer vision pipelines and AI agents
           to full-stack platforms deployed on AWS and Vercel. Co-author of an arXiv research paper
           on time-series forecasting with Amazon Chronos-2.
         </p>
