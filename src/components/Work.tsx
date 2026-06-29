@@ -46,7 +46,7 @@ const projects = [
     emoji: "📄",
     gradient: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
     highlight: "Published Paper",
-    link: "https://github.com/taranggoyal70/timeseries-fm",
+    link: "https://arxiv.org/pdf/2605.21504",
   },
 ];
 
@@ -143,7 +143,7 @@ const Work = () => {
                           <span className="project-card-emoji">{project.emoji}</span>
                           <span className="project-card-highlight">{project.highlight}</span>
                           <span className="project-card-github">
-                            View on GitHub <MdArrowOutward />
+                            {project.link.includes("arxiv") ? "Read Paper" : "View on GitHub"} <MdArrowOutward />
                           </span>
                         </div>
                       </a>
