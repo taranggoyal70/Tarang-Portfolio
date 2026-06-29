@@ -6,12 +6,29 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          AI Product Engineer with an M.S. in Business Analytics from Santa Clara University (GPA: 3.7).
-          I build and ship AI-powered products end-to-end — from computer vision pipelines and AI agents to full-stack platforms and data systems.
-          Currently at Highview, where I built Studentlytics, an AI education platform with 91% face-matching attendance accuracy using OpenCV, AWS Rekognition, and FastAPI.
-          Previously at Box, where I built PySpark/SQL pipelines reducing manual processing by 40% and churn prediction models across 100K+ records.
-          4x hackathon winner (AWS x INRIX, YC Stack Auth, A10 Networks, SCU Analytical Showdown) and co-author of an arXiv research paper on time-series forecasting with Amazon Chronos-2.
+          AI Product Engineer with an M.S. in Business Analytics from Santa Clara University.
+          I build and ship AI-powered products end-to-end — from computer vision pipelines and AI agents
+          to full-stack platforms deployed on AWS and Vercel. Co-author of an arXiv research paper
+          on time-series forecasting with Amazon Chronos-2.
         </p>
+        <div className="about-stats">
+          <div className="about-stat">
+            <span className="about-stat-number">91%</span>
+            <span className="about-stat-label">Face-Match Accuracy</span>
+          </div>
+          <div className="about-stat">
+            <span className="about-stat-number">4x</span>
+            <span className="about-stat-label">Hackathon Winner</span>
+          </div>
+          <div className="about-stat">
+            <span className="about-stat-number">100K+</span>
+            <span className="about-stat-label">Records Analyzed</span>
+          </div>
+          <div className="about-stat">
+            <span className="about-stat-number">40%</span>
+            <span className="about-stat-label">Processing Reduced</span>
+          </div>
+        </div>
       </div>
     </div>
   );

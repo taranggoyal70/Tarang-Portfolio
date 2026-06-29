@@ -146,6 +146,45 @@ const WhatIDo = () => {
               <div className="what-arrow"></div>
             </div>
           </div>
+          <div
+            className="what-content what-noTouch"
+            ref={(el) => setRef(el, 2)}
+          >
+            <div className="what-border1">
+              <svg height="100%">
+                <line
+                  x1="0"
+                  y1="100%"
+                  x2="100%"
+                  y2="100%"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeDasharray="6,6"
+                />
+              </svg>
+            </div>
+            <div className="what-corner"></div>
+            <div className="what-content-in">
+              <h3>PRODUCT & STRATEGY</h3>
+              <h4>From Discovery to Launch</h4>
+              <p>
+                Owning the full product lifecycle — customer discovery, PRDs, user stories, roadmapping,
+                and launch execution. Driving cross-functional teams from ideation through GTM.
+              </p>
+              <h5>Skillset & tools</h5>
+              <div className="what-content-flex">
+                <div className="what-tags">PRDs</div>
+                <div className="what-tags">Roadmapping</div>
+                <div className="what-tags">GTM</div>
+                <div className="what-tags">OKRs</div>
+                <div className="what-tags">User Stories</div>
+                <div className="what-tags">A/B Testing</div>
+                <div className="what-tags">Scrum</div>
+                <div className="what-tags">Stakeholders</div>
+              </div>
+              <div className="what-arrow"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

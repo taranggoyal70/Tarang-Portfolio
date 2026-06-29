@@ -1,6 +1,5 @@
 import { useState, useCallback } from "react";
 import "./styles/Work.css";
-import WorkImage from "./WorkImage";
 import { MdArrowBack, MdArrowForward } from "react-icons/md";
 
 const projects = [
@@ -8,31 +7,41 @@ const projects = [
     title: "AWS X INRIX - Studentlytics",
     category: "1st Place Winner - AI Video Analytics Platform",
     tools: "AWS Lambda, Step Functions, S3, Rekognition, DynamoDB, React, TypeScript",
-    image: "/images/studentlytics.png",
+    emoji: "🎓",
+    gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+    highlight: "91% Accuracy",
   },
   {
     title: "YC Stack Auth - Crowd Symphony",
     category: "1st Place Winner - Real-Time Audience Music",
     tools: "Next.js, MediaPipe Hands, Socket.IO, Web Audio API, QR Codes",
-    image: "/images/a10.png",
+    emoji: "🎵",
+    gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+    highlight: "Real-Time Sync",
   },
   {
     title: "A10 Networks AI Hackathon",
     category: "1st Place Winner - AI Product Strategy",
     tools: "AI Security, Prompt Injection Defense, GTM, ARR Modeling, OKRs",
-    image: "/images/a10.png",
+    emoji: "🛡️",
+    gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
+    highlight: "Enterprise AI",
   },
   {
     title: "SCU Analytical Showdown",
     category: "Winner - Decision-Support Analytics Product",
     tools: "Sales Forecasting, Customer Segmentation, Campaign ROI, Executive Dashboards",
-    image: "/images/analytics.png",
+    emoji: "📊",
+    gradient: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
+    highlight: "Top Recognition",
   },
   {
     title: "Chronos-2 Research Publication",
     category: "arXiv Paper - Time-Series Forecasting",
     tools: "Amazon Chronos-2, Multivariate Forecasting, RMSE, MAPE",
-    image: "/images/churn.png",
+    emoji: "📄",
+    gradient: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
+    highlight: "Published Paper",
   },
 ];
 
@@ -115,7 +124,13 @@ const Work = () => {
                       </div>
                     </div>
                     <div className="carousel-image-wrapper">
-                      <WorkImage image={project.image} alt={project.title} />
+                      <div
+                        className="project-card"
+                        style={{ background: project.gradient }}
+                      >
+                        <span className="project-card-emoji">{project.emoji}</span>
+                        <span className="project-card-highlight">{project.highlight}</span>
+                      </div>
                     </div>
                   </div>
                 </div>

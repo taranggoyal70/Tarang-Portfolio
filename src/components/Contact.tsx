@@ -28,6 +28,14 @@ const Contact = () => {
               LinkedIn <MdArrowOutward />
             </a>
             <a
+              href="https://github.com/taranggoyal70"
+              target="_blank"
+              data-cursor="disable"
+              className="contact-social"
+            >
+              GitHub <MdArrowOutward />
+            </a>
+            <a
               href="tel:+16404448525"
               data-cursor="disable"
               className="contact-social"
