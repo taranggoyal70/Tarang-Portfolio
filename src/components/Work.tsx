@@ -10,7 +10,7 @@ const projects = [
     emoji: "🎓",
     gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
     highlight: "91% Accuracy",
-    link: "https://github.com/taranggoyal70/HighView",
+    link: "https://devpost.com/software/studentlytics",
   },
   {
     title: "YC Stack Auth - Crowd Symphony",
@@ -143,7 +143,7 @@ const Work = () => {
                           <span className="project-card-emoji">{project.emoji}</span>
                           <span className="project-card-highlight">{project.highlight}</span>
                           <span className="project-card-github">
-                            {project.link.includes("arxiv") ? "Read Paper" : "View on GitHub"} <MdArrowOutward />
+                            {project.link.includes("arxiv") ? "Read Paper" : project.link.includes("devpost") ? "View on Devpost" : "View on GitHub"} <MdArrowOutward />
                           </span>
                         </div>
                       </a>
