@@ -1,63 +1,70 @@
 import "./styles/Career.css";
 
-const Career = () => {
-  return (
-    <div className="career-section section-container">
-      <div className="career-container">
-        <h2>
-          My career <span>&</span>
-          <br /> experience
-        </h2>
-        <div className="career-info">
-          <div className="career-timeline">
-            <div className="career-dot"></div>
-          </div>
-          <div className="career-info-box">
-            <div className="career-info-in">
-              <div className="career-role">
-                <h4>Business Data Analyst</h4>
-                <h5>Hashroot Limited</h5>
-              </div>
-              <h3>2023-24</h3>
-            </div>
-            <p>
-              Used SQL and Python for data cleaning, modeling, and customer segmentation, surfacing upsell opportunities that grew revenue by 10%.
-              Automated Tableau dashboards across sales, marketing, and operations, eliminating 20+ hours of weekly reporting.
-              Analyzed pricing experiments and user behavior to improve pricing alignment and support quarter-over-quarter GMV growth.
-            </p>
-          </div>
-          <div className="career-info-box">
-            <div className="career-info-in">
-              <div className="career-role">
-                <h4>Data Science Intern</h4>
-                <h5>Box</h5>
-              </div>
-              <h3>2025</h3>
-            </div>
-            <p>
-              Built scalable PySpark and SQL pipelines for wrangling, modeling, and statistical analysis, reducing manual processing by 40% across four cross-functional teams.
-              Developed churn prediction workflows across 100K+ records and 10K+ accounts using BigQuery, XGBoost, and feature engineering.
-              Created Tableau and Power BI dashboards for stakeholder analysis, increasing feature adoption by 15%.
-            </p>
-          </div>
-          <div className="career-info-box">
-            <div className="career-info-in">
-              <div className="career-role">
-                <h4>AI Product Manager & Product Engineer</h4>
-                <h5>Highview</h5>
-              </div>
-              <h3>NOW</h3>
-            </div>
-            <p>
-              Built and deployed Studentlytics using React, TypeScript, Vite, and Tailwind, supporting role-based staff, student, and intern workflows.
-              Developed AI attendance and engagement workflows using FastAPI, Python, OpenCV, Whisper, and AWS Rekognition with 91% face-matching accuracy.
-              Integrated Supabase auth, Vercel deployment, and AWS Lambda/API Gateway chatbot endpoints for production analytics.
-            </p>
-          </div>
-        </div>
-      </div>
+const experience = [
+  {
+    role: "AI Product Manager & Product Engineer Intern",
+    company: "Highview",
+    period: "2026 - present",
+    summary:
+      "Building Studentlytics, an AI education platform spanning product planning, full-stack delivery, computer vision, speech, analytics, and deployment.",
+    highlights: [
+      "Shipped role-based staff, student, course, session, profile, and analytics workflows with React, TypeScript, Vite, and Tailwind.",
+      "Built FastAPI, OpenCV, Whisper, and AWS Rekognition workflows that process class recordings with 91% face-match accuracy.",
+      "Connected Supabase authentication, database-backed workflows, Vercel, and AWS Lambda/API Gateway analytics endpoints.",
+    ],
+  },
+  {
+    role: "Data Science Intern",
+    company: "Box",
+    period: "2025",
+    summary:
+      "Built data products for retention analysis, forecasting, stakeholder reporting, and product decision-making.",
+    highlights: [
+      "Reduced manual processing by 40% with scalable PySpark and SQL data pipelines across four cross-functional teams.",
+      "Modeled churn and forecast-versus-actual performance across 100K+ records and 10K+ accounts using BigQuery and XGBoost.",
+      "Created Tableau and Power BI reporting that contributed to a 15% increase in feature adoption.",
+    ],
+  },
+  {
+    role: "Business Data Analyst",
+    company: "Hashroot Limited",
+    period: "2023 - 2024",
+    summary:
+      "Combined analytics, internal tooling, and business modeling for customer, pricing, marketing, and operations teams.",
+    highlights: [
+      "Used SQL and Python segmentation to surface upsell opportunities that supported 10% revenue growth.",
+      "Automated Tableau reporting across sales, marketing, and operations, saving more than 20 hours each week.",
+      "Connected customer, pricing, and operations data into reusable decision workflows for cross-functional teams.",
+    ],
+  },
+];
+
+const Career = () => (
+  <section className="career-section section-container" id="experience">
+    <div className="career-heading">
+      <p className="section-label">Experience</p>
+      <h2>Built across the full product loop.</h2>
     </div>
-  );
-};
+    <div className="career-info">
+      {experience.map((item) => (
+        <article className="career-info-box" key={`${item.company}-${item.period}`}>
+          <div className="career-meta">
+            <p className="career-period">{item.period}</p>
+            <h3>{item.role}</h3>
+            <p className="career-company">{item.company}</p>
+          </div>
+          <div className="career-details">
+            <p className="career-summary">{item.summary}</p>
+            <ul>
+              {item.highlights.map((highlight) => (
+                <li key={highlight}>{highlight}</li>
+              ))}
+            </ul>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+);
 
 export default Career;

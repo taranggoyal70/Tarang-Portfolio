@@ -1,174 +1,120 @@
-import { useState, useCallback } from "react";
+import { MdArrowOutward } from "react-icons/md";
 import "./styles/Work.css";
-import { MdArrowBack, MdArrowForward, MdArrowOutward } from "react-icons/md";
 
 const projects = [
   {
-    title: "AWS X INRIX - Studentlytics",
-    category: "1st Place Winner",
-    description: "AI video analytics platform that matches student faces, calculates attendance and engagement scores, and stores results. Built in 24 hours.",
-    tools: ["AWS Lambda", "Step Functions", "S3", "Rekognition", "DynamoDB", "React"],
+    title: "Studentlytics at Highview",
+    category: "Deployed AI product",
+    description:
+      "A role-based education platform with attendance automation, engagement tracking, course analytics, at-risk signals, and natural-language insights.",
+    tools: ["React", "TypeScript", "FastAPI", "OpenCV", "Whisper", "Supabase"],
     stat: "91%",
-    statLabel: "accuracy",
-    link: "https://devpost.com/software/studentlytics",
-    linkLabel: "Devpost",
+    statLabel: "face-match accuracy",
+    link: "https://github.com/taranggoyal70/HighView",
+    linkLabel: "View repository",
   },
   {
-    title: "YC Stack Auth - Crowd Symphony",
-    category: "1st Place Winner",
-    description: "Real-time audience music platform using hand tracking to sync gesture-driven volume changes across devices via QR-code joining.",
-    tools: ["Next.js", "MediaPipe Hands", "Socket.IO", "Web Audio API"],
-    stat: "Real-Time",
-    statLabel: "sync",
-    link: "https://github.com/taranggoyal70/crowd-symphony",
-    linkLabel: "GitHub",
-  },
-  {
-    title: "A10 Networks AI Hackathon",
-    category: "1st Place Winner",
-    description: "Product strategy and technical architecture for an AI workload-protection platform covering prompt-injection defense, data-leakage prevention, and agent guardrails.",
-    tools: ["AI Security", "PRD", "GTM Strategy", "ARR Modeling", "OKRs"],
+    title: "AWS × INRIX Studentlytics",
+    category: "1st place · 24-hour build",
+    description:
+      "An event-driven video pipeline that processed classroom recordings, matched student faces, calculated attendance and engagement, and stored analytics results.",
+    tools: ["AWS Lambda", "Step Functions", "S3", "Rekognition", "DynamoDB"],
     stat: "1st",
-    statLabel: "place",
-    link: "https://github.com/taranggoyal70/a10-ai-firewall-hackathon-2025",
-    linkLabel: "GitHub",
+    statLabel: "hackathon winner",
+    link: "https://devpost.com/software/studentlytics",
+    linkLabel: "View on Devpost",
   },
   {
-    title: "SCU Analytical Showdown",
-    category: "Winner",
-    description: "Decision-support analytics product for Nazava using Shopee marketplace data: sales forecasting, customer segmentation, campaign ROI, and executive dashboards.",
-    tools: ["Python", "Forecasting", "Segmentation", "ROI Modeling"],
+    title: "Crowd Symphony",
+    category: "YC Stack Auth winner",
+    description:
+      "A real-time audience music experience using hand tracking, QR-code onboarding, Socket.IO sessions, and Web Audio controls synchronized across devices.",
+    tools: ["Next.js", "TypeScript", "MediaPipe", "Socket.IO", "Web Audio API"],
+    stat: "Live",
+    statLabel: "multi-device sync",
+    link: "https://github.com/taranggoyal70/crowd-symphony",
+    linkLabel: "View repository",
+  },
+  {
+    title: "A10 AI Firewall",
+    category: "1st place · AI product strategy",
+    description:
+      "Product strategy and technical architecture for an AI workload-protection platform covering prompt injection, data leakage, agent guardrails, GTM, and ARR modeling.",
+    tools: ["AI security", "PRD", "Architecture", "GTM", "ARR modeling"],
+    stat: "1st",
+    statLabel: "product award",
+    link: "https://github.com/taranggoyal70/a10-ai-firewall-hackathon-2025",
+    linkLabel: "View repository",
+  },
+  {
+    title: "Nazava Analytics Platform",
+    category: "SCU Analytical Showdown winner",
+    description:
+      "A full-stack decision product built from Shopee marketplace data, covering forecasting, customer segmentation, campaign ROI, recommendations, and executive dashboards.",
+    tools: ["Python", "FastAPI", "Streamlit", "Forecasting", "Segmentation"],
     stat: "Top",
     statLabel: "recognition",
     link: "https://github.com/taranggoyal70/SCU-Analytical-Showdown-Winner-2025",
-    linkLabel: "GitHub",
+    linkLabel: "View repository",
   },
   {
-    title: "Chronos-2 Research Publication",
-    category: "arXiv Paper",
-    description: "Co-authored paper evaluating Amazon Chronos-2 for multivariate economic and financial forecasting across Magnificent 7 equities and U.S. Treasury rates.",
-    tools: ["Amazon Chronos-2", "Time-Series", "RMSE", "MAPE"],
+    title: "Chronos-2 Forecasting Research",
+    category: "arXiv publication",
+    description:
+      "Co-authored research evaluating Amazon Chronos-2 for multivariate economic and financial forecasting across major equities and U.S. Treasury rates.",
+    tools: ["Amazon Chronos-2", "Time series", "RMSE", "MAPE"],
     stat: "arXiv",
     statLabel: "published",
     link: "https://arxiv.org/pdf/2605.21504",
-    linkLabel: "Read Paper",
+    linkLabel: "Read the paper",
   },
 ];
 
-const Work = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  const goToSlide = useCallback(
-    (index: number) => {
-      if (isAnimating) return;
-      setIsAnimating(true);
-      setCurrentIndex(index);
-      setTimeout(() => setIsAnimating(false), 500);
-    },
-    [isAnimating]
-  );
-
-  const goToPrev = useCallback(() => {
-    const newIndex =
-      currentIndex === 0 ? projects.length - 1 : currentIndex - 1;
-    goToSlide(newIndex);
-  }, [currentIndex, goToSlide]);
-
-  const goToNext = useCallback(() => {
-    const newIndex =
-      currentIndex === projects.length - 1 ? 0 : currentIndex + 1;
-    goToSlide(newIndex);
-  }, [currentIndex, goToSlide]);
-
-  return (
-    <div className="work-section" id="work">
-      <div className="work-container section-container">
-        <h2>
-          Hackathon <span>Wins & Projects</span>
-        </h2>
-
-        <div className="carousel-wrapper">
-          {/* Navigation Arrows */}
-          <button
-            className="carousel-arrow carousel-arrow-left"
-            onClick={goToPrev}
-            aria-label="Previous project"
-            data-cursor="disable"
-          >
-            <MdArrowBack />
-          </button>
-          <button
-            className="carousel-arrow carousel-arrow-right"
-            onClick={goToNext}
-            aria-label="Next project"
-            data-cursor="disable"
-          >
-            <MdArrowForward />
-          </button>
-
-          {/* Slides */}
-          <div className="carousel-track-container">
-            <div
-              className="carousel-track"
-              style={{
-                transform: `translateX(-${currentIndex * 100}%)`,
-              }}
-            >
-              {projects.map((project, index) => (
-                <div className="carousel-slide" key={index}>
-                  <div className="carousel-content">
-                    <div className="carousel-left">
-                      <div className="carousel-number">
-                        <h3>0{index + 1}</h3>
-                      </div>
-                      <div className="carousel-stat">
-                        <span className="carousel-stat-value">{project.stat}</span>
-                        <span className="carousel-stat-label">{project.statLabel}</span>
-                      </div>
-                    </div>
-                    <div className="carousel-right">
-                      <span className="carousel-badge">{project.category}</span>
-                      <h4>{project.title}</h4>
-                      <p className="carousel-description">{project.description}</p>
-                      <div className="carousel-tools-row">
-                        {project.tools.map((tool, i) => (
-                          <span className="carousel-tool-tag" key={i}>{tool}</span>
-                        ))}
-                      </div>
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="carousel-link"
-                        data-cursor="disable"
-                      >
-                        {project.linkLabel} <MdArrowOutward />
-                      </a>
-                    </div>
-                  </div>
-                </div>
+const Work = () => (
+  <section className="work-section" id="work">
+    <div className="work-container section-container">
+      <div className="work-heading">
+        <div>
+          <p className="section-label">Selected work</p>
+          <h2>Products with proof behind them.</h2>
+        </div>
+        <p>
+          Production work, award-winning builds, and research across AI,
+          real-time systems, product strategy, and analytics.
+        </p>
+      </div>
+      <div className="project-grid">
+        {projects.map((project, index) => (
+          <article className="project-card" key={project.title}>
+            <div className="project-card-topline">
+              <span className="project-number">0{index + 1}</span>
+              <span className="project-category">{project.category}</span>
+            </div>
+            <div className="project-stat">
+              <strong>{project.stat}</strong>
+              <span>{project.statLabel}</span>
+            </div>
+            <h3>{project.title}</h3>
+            <p className="project-description">{project.description}</p>
+            <div className="project-tools">
+              {project.tools.map((tool) => (
+                <span key={tool}>{tool}</span>
               ))}
             </div>
-          </div>
-
-          {/* Dot Indicators */}
-          <div className="carousel-dots">
-            {projects.map((_, index) => (
-              <button
-                key={index}
-                className={`carousel-dot ${index === currentIndex ? "carousel-dot-active" : ""
-                  }`}
-                onClick={() => goToSlide(index)}
-                aria-label={`Go to project ${index + 1}`}
-                data-cursor="disable"
-              />
-            ))}
-          </div>
-        </div>
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-link"
+              data-cursor="disable"
+            >
+              {project.linkLabel} <MdArrowOutward aria-hidden="true" />
+            </a>
+          </article>
+        ))}
       </div>
     </div>
-  );
-};
+  </section>
+);
 
 export default Work;

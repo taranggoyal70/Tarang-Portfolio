@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { MdArrowOutward, MdCopyright } from "react-icons/md";
+import { MdArrowOutward, MdCopyright, MdMailOutline } from "react-icons/md";
 import { supabase } from "../lib/supabase";
 import "./styles/Contact.css";
 
@@ -22,65 +22,60 @@ const Contact = () => {
   }, []);
 
   return (
-    <div className="contact-section section-container" id="contact">
-      <div className="contact-container">
-        <h3>Contact</h3>
-        <div className="contact-flex">
-          <div className="contact-box">
-            <h4>Email</h4>
-            <p>
-              <a href="mailto:taranggoyal2000@gmail.com" data-cursor="disable">
-                taranggoyal2000@gmail.com
-              </a>
-            </p>
-            <h4>Education</h4>
-            <p>MS in Business Analytics - Santa Clara University</p>
-          </div>
-          <div className="contact-box">
-            <h4>Social</h4>
-            <a
-              href="https://linkedin.com/in/tarang-goyal"
-              target="_blank"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              LinkedIn <MdArrowOutward />
-            </a>
-            <a
-              href="https://github.com/taranggoyal70"
-              target="_blank"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              GitHub <MdArrowOutward />
-            </a>
-            <a
-              href="tel:+16404448525"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              Phone: +1 640 444 8525 <MdArrowOutward />
-            </a>
-            <h4 style={{ marginTop: '1rem' }}>Location</h4>
-            <p>Santa Clara, CA, United States</p>
-          </div>
-          <div className="contact-box">
-            <h2>
-              Portfolio <br /> by <span>Tarang Goyal</span>
-            </h2>
-            {views !== null && (
-              <div className="visitor-counter">
-                <span className="visitor-count">{views.toLocaleString()}</span>
-                <span className="visitor-label">visitors</span>
-              </div>
-            )}
-            <h5>
-              <MdCopyright /> 2026
-            </h5>
+    <footer className="contact-section" id="contact">
+      <div className="contact-container section-container">
+        <div className="contact-cta">
+          <p className="section-label">Contact</p>
+          <h2>Have a hard problem that needs a builder?</h2>
+          <p>
+            I am open to AI product engineering, forward deployed engineering,
+            full-stack, and technical product opportunities.
+          </p>
+          <a
+            href="mailto:taranggoyal2000@gmail.com"
+            className="contact-email"
+            data-cursor="disable"
+          >
+            <MdMailOutline aria-hidden="true" /> taranggoyal2000@gmail.com
+          </a>
+        </div>
+        <div className="contact-links">
+          <a
+            href="https://linkedin.com/in/tarang-goyal"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cursor="disable"
+          >
+            LinkedIn <MdArrowOutward aria-hidden="true" />
+          </a>
+          <a
+            href="https://github.com/taranggoyal70"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cursor="disable"
+          >
+            GitHub <MdArrowOutward aria-hidden="true" />
+          </a>
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cursor="disable"
+          >
+            Resume <MdArrowOutward aria-hidden="true" />
+          </a>
+        </div>
+        <div className="contact-footer">
+          <p>Santa Clara, CA · Open to Bay Area, New York, and U.S. opportunities</p>
+          <div>
+            {views !== null && <span>{views.toLocaleString()} visits</span>}
+            <span>
+              <MdCopyright aria-hidden="true" /> 2026 Tarang Goyal
+            </span>
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

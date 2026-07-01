@@ -1,209 +1,52 @@
-import { useEffect, useRef } from "react";
 import "./styles/WhatIDo.css";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const WhatIDo = () => {
-  const containerRef = useRef<(HTMLDivElement | null)[]>([]);
-  const setRef = (el: HTMLDivElement | null, index: number) => {
-    containerRef.current[index] = el;
-  };
-  useEffect(() => {
-    if (ScrollTrigger.isTouch) {
-      containerRef.current.forEach((container) => {
-        if (container) {
-          container.classList.remove("what-noTouch");
-          container.addEventListener("click", () => handleClick(container));
-        }
-      });
-    }
-    return () => {
-      containerRef.current.forEach((container) => {
-        if (container) {
-          container.removeEventListener("click", () => handleClick(container));
-        }
-      });
-    };
-  }, []);
-  return (
-    <div className="whatIDO">
-      <div className="what-box">
-        <h2 className="title">
-          W<span className="hat-h2">HAT</span>
-          <div>
-            I<span className="do-h2"> DO</span>
-          </div>
-        </h2>
-      </div>
-      <div className="what-box">
-        <div className="what-box-in">
-          <div className="what-border2">
-            <svg width="100%">
-              <line
-                x1="0"
-                y1="0"
-                x2="0"
-                y2="100%"
-                stroke="white"
-                strokeWidth="2"
-                strokeDasharray="7,7"
-              />
-              <line
-                x1="100%"
-                y1="0"
-                x2="100%"
-                y2="100%"
-                stroke="white"
-                strokeWidth="2"
-                strokeDasharray="7,7"
-              />
-            </svg>
-          </div>
-          <div
-            className="what-content what-noTouch"
-            ref={(el) => setRef(el, 0)}
-          >
-            <div className="what-border1">
-              <svg height="100%">
-                <line
-                  x1="0"
-                  y1="0"
-                  x2="100%"
-                  y2="0"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
-                <line
-                  x1="0"
-                  y1="100%"
-                  x2="100%"
-                  y2="100%"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
-              </svg>
-            </div>
-            <div className="what-corner"></div>
+const capabilities = [
+  {
+    number: "01",
+    title: "AI product engineering",
+    description:
+      "Build applied AI workflows with LLMs, agents, computer vision, speech, APIs, and measurable quality.",
+    tools: ["LLMs", "AI agents", "RAG", "OpenCV", "Whisper", "FastAPI"],
+  },
+  {
+    number: "02",
+    title: "Full-stack delivery",
+    description:
+      "Own responsive interfaces, backend services, authentication, data models, integrations, and deployment.",
+    tools: ["React", "TypeScript", "Next.js", "Python", "Supabase", "AWS"],
+  },
+  {
+    number: "03",
+    title: "Product and analytics",
+    description:
+      "Turn user workflows into product requirements, decision tools, experiments, and clear success metrics.",
+    tools: ["PRDs", "Roadmaps", "SQL", "PySpark", "Tableau", "A/B testing"],
+  },
+];
 
-            <div className="what-content-in">
-              <h3>AI SYSTEMS & PRODUCT</h3>
-              <h4>Building AI-Powered Products</h4>
-              <p>
-                Shipping end-to-end AI products, from computer vision pipelines and AI agents to full-stack platforms with real-time analytics.
-                Building with LLMs, RAG, LangChain, OpenCV, Whisper, and deploying on AWS and Vercel.
-              </p>
-              <h5>Skillset & tools</h5>
-              <div className="what-content-flex">
-                <div className="what-tags">LLMs</div>
-                <div className="what-tags">AI Agents</div>
-                <div className="what-tags">RAG</div>
-                <div className="what-tags">LangChain</div>
-                <div className="what-tags">Computer Vision</div>
-                <div className="what-tags">OpenCV</div>
-                <div className="what-tags">FastAPI</div>
-                <div className="what-tags">React</div>
-              </div>
-              <div className="what-arrow"></div>
-            </div>
-          </div>
-          <div
-            className="what-content what-noTouch"
-            ref={(el) => setRef(el, 1)}
-          >
-            <div className="what-border1">
-              <svg height="100%">
-                <line
-                  x1="0"
-                  y1="100%"
-                  x2="100%"
-                  y2="100%"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
-              </svg>
-            </div>
-            <div className="what-corner"></div>
-            <div className="what-content-in">
-              <h3>DATA & ANALYTICS</h3>
-              <h4>Pipelines, ML Models & Dashboards</h4>
-              <p>
-                Building scalable data pipelines, predictive models, and BI dashboards that drive business decisions.
-                From churn prediction with XGBoost to real-time Tableau/Power BI reporting across cross-functional teams.
-              </p>
-              <h5>Skillset & tools</h5>
-              <div className="what-content-flex">
-                <div className="what-tags">Python</div>
-                <div className="what-tags">SQL</div>
-                <div className="what-tags">PySpark</div>
-                <div className="what-tags">BigQuery</div>
-                <div className="what-tags">Tableau</div>
-                <div className="what-tags">Power BI</div>
-                <div className="what-tags">XGBoost</div>
-                <div className="what-tags">AWS</div>
-              </div>
-              <div className="what-arrow"></div>
-            </div>
-          </div>
-          <div
-            className="what-content what-noTouch"
-            ref={(el) => setRef(el, 2)}
-          >
-            <div className="what-border1">
-              <svg height="100%">
-                <line
-                  x1="0"
-                  y1="100%"
-                  x2="100%"
-                  y2="100%"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
-              </svg>
-            </div>
-            <div className="what-corner"></div>
-            <div className="what-content-in">
-              <h3>PRODUCT & STRATEGY</h3>
-              <h4>From Discovery to Launch</h4>
-              <p>
-                Owning the full product lifecycle: customer discovery, PRDs, user stories, roadmapping,
-                and launch execution. Driving cross-functional teams from ideation through GTM.
-              </p>
-              <h5>Skillset & tools</h5>
-              <div className="what-content-flex">
-                <div className="what-tags">PRDs</div>
-                <div className="what-tags">Roadmapping</div>
-                <div className="what-tags">GTM</div>
-                <div className="what-tags">OKRs</div>
-                <div className="what-tags">User Stories</div>
-                <div className="what-tags">A/B Testing</div>
-                <div className="what-tags">Scrum</div>
-                <div className="what-tags">Stakeholders</div>
-              </div>
-              <div className="what-arrow"></div>
-            </div>
-          </div>
-        </div>
-      </div>
+const WhatIDo = () => (
+  <section className="whatIDO section-container">
+    <div className="what-heading">
+      <p className="section-label">How I work</p>
+      <h2>Technical enough to build. Product-minded enough to choose well.</h2>
     </div>
-  );
-};
+    <div className="what-box-in">
+      {capabilities.map((capability) => (
+        <article className="what-content" key={capability.number}>
+          <span className="what-number">{capability.number}</span>
+          <h3>{capability.title}</h3>
+          <p>{capability.description}</p>
+          <div className="what-content-flex">
+            {capability.tools.map((tool) => (
+              <span className="what-tags" key={tool}>
+                {tool}
+              </span>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+);
 
 export default WhatIDo;
-
-function handleClick(container: HTMLDivElement) {
-  container.classList.toggle("what-content-active");
-  container.classList.remove("what-sibling");
-  if (container.parentElement) {
-    const siblings = Array.from(container.parentElement.children);
-
-    siblings.forEach((sibling) => {
-      if (sibling !== container) {
-        sibling.classList.remove("what-content-active");
-        sibling.classList.toggle("what-sibling");
-      }
-    });
-  }
-}

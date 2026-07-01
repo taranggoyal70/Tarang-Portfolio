@@ -2,35 +2,44 @@ import "./styles/About.css";
 
 const About = () => {
   return (
-    <div className="about-section" id="about">
+    <section className="about-section section-container" id="about">
+      <div className="about-heading">
+        <p className="section-label">Profile</p>
+        <h2>One builder, three useful modes.</h2>
+      </div>
       <div className="about-me">
-        <h3 className="title">About Me</h3>
-        <p className="para">
-          AI Product Engineer with an M.S. in Business Analytics from Santa Clara University.
-          I build and ship AI-powered products end-to-end, from computer vision pipelines and AI agents
-          to full-stack platforms deployed on AWS and Vercel. Co-author of an arXiv research paper
-          on time-series forecasting with Amazon Chronos-2.
+        <p className="about-lead">
+          I am most useful when a problem crosses boundaries. I can discover the
+          workflow, shape the product, build the interface and APIs, connect the
+          data, and measure whether the result works.
         </p>
-        <div className="about-stats">
-          <div className="about-stat">
-            <span className="about-stat-number">91%</span>
-            <span className="about-stat-label">Face-Match Accuracy</span>
-          </div>
-          <div className="about-stat">
-            <span className="about-stat-number">4x</span>
-            <span className="about-stat-label">Hackathon Winner</span>
-          </div>
-          <div className="about-stat">
-            <span className="about-stat-number">100K+</span>
-            <span className="about-stat-label">Records Analyzed</span>
-          </div>
-          <div className="about-stat">
-            <span className="about-stat-number">40%</span>
-            <span className="about-stat-label">Processing Reduced</span>
-          </div>
+        <p className="about-detail">
+          My recent work spans an AI education platform, computer-vision and
+          speech workflows, real-time web experiences, predictive analytics,
+          and executive decision tools. I hold an M.S. in Business Analytics
+          from Santa Clara University and co-authored research on Amazon
+          Chronos-2.
+        </p>
+      </div>
+      <div className="about-stats" aria-label="Career highlights">
+        <div className="about-stat">
+          <span className="about-stat-number">91%</span>
+          <span className="about-stat-label">AI vision accuracy</span>
+        </div>
+        <div className="about-stat">
+          <span className="about-stat-number">15%</span>
+          <span className="about-stat-label">feature adoption lift</span>
+        </div>
+        <div className="about-stat">
+          <span className="about-stat-number">20+</span>
+          <span className="about-stat-label">hours saved weekly</span>
+        </div>
+        <div className="about-stat">
+          <span className="about-stat-number">10%</span>
+          <span className="about-stat-label">revenue growth supported</span>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
