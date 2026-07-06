@@ -22,17 +22,6 @@ const projects = [
     linkLabel: "Open live app",
   },
   {
-    title: "Studentlytics at Highview",
-    category: "Deployed AI product",
-    description:
-      "A role-based education platform with attendance automation, engagement tracking, course analytics, at-risk signals, and natural-language insights.",
-    tools: ["React", "TypeScript", "FastAPI", "OpenCV", "Whisper", "Supabase"],
-    stat: "91%",
-    statLabel: "face-match accuracy",
-    link: "https://github.com/taranggoyal70/HighView",
-    linkLabel: "View repository",
-  },
-  {
     title: "AWS × INRIX Studentlytics",
     category: "1st place · 24-hour build",
     description:
