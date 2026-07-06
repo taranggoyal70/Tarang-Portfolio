@@ -3,6 +3,25 @@ import "./styles/Work.css";
 
 const projects = [
   {
+    title: "Morphic",
+    category: "Live AI product",
+    description:
+      "An adaptive software workspace that turns a builder's objective into a GitHub-grounded interface, then lets users supervise approved Codex runs through pull request creation.",
+    tools: [
+      "Next.js",
+      "React",
+      "OpenAI",
+      "Clerk",
+      "Neon",
+      "Vercel Workflow",
+      "Vercel Sandbox",
+    ],
+    stat: "Live",
+    statLabel: "Vercel app",
+    link: "https://morphic-murex.vercel.app/",
+    linkLabel: "Open live app",
+  },
+  {
     title: "Studentlytics at Highview",
     category: "Deployed AI product",
     description:
