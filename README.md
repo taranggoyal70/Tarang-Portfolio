@@ -1,6 +1,6 @@
 # Tarang Goyal - Portfolio Website 🚀
 
-Data Scientist & Business Analyst portfolio showcasing my experience, projects, and hackathon wins.
+Product Manager & AI Product Engineer portfolio showcasing my experience, projects, and hackathon wins.
 
 **🌐 Live Site:** https://tarang-portfolio-pink.vercel.app
 
