@@ -139,7 +139,9 @@ const Work = () => (
         {projects.map((project, index) => (
           <article className="project-card" key={project.title}>
             <div className="project-card-topline">
-              <span className="project-number">0{index + 1}</span>
+              <span className="project-number">
+                {String(index + 1).padStart(2, "0")}
+              </span>
               <span className="project-category">{project.category}</span>
             </div>
             <div className="project-stat">
