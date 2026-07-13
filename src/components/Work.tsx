@@ -44,17 +44,6 @@ const projects = [
     linkLabel: "Open live app",
   },
   {
-    title: "A10 AI Firewall",
-    category: "1st place · AI product strategy",
-    description:
-      "Product strategy and technical architecture for an AI workload-protection platform covering prompt injection, data leakage, agent guardrails, GTM, and ARR modeling.",
-    tools: ["AI security", "PRD", "Architecture", "GTM", "ARR modeling"],
-    stat: "1st",
-    statLabel: "product award",
-    link: "https://a10-taupe.vercel.app",
-    linkLabel: "View case study",
-  },
-  {
     title: "Nazava Analytics Platform",
     category: "SCU Analytical Showdown winner",
     description:
@@ -119,6 +108,17 @@ const projects = [
     statLabel: "Vercel app",
     link: "https://agent-access.vercel.app",
     linkLabel: "Open live app",
+  },
+  {
+    title: "A10 AI Firewall",
+    category: "1st place · AI product strategy",
+    description:
+      "Product strategy and technical architecture for an AI workload-protection platform covering prompt injection, data leakage, agent guardrails, GTM, and ARR modeling.",
+    tools: ["AI security", "PRD", "Architecture", "GTM", "ARR modeling"],
+    stat: "1st",
+    statLabel: "product award",
+    link: "https://a10-taupe.vercel.app",
+    linkLabel: "View case study",
   },
 ];
 
