@@ -76,6 +76,50 @@ const projects = [
     link: "https://arxiv.org/pdf/2605.21504",
     linkLabel: "Read the paper",
   },
+  {
+    title: "Locus",
+    category: "Live dev tool",
+    description:
+      "Task-scoped dependency localization that shows an AI coding agent only the code it needs, cutting input tokens by widening never narrowing so quality never drops. Ships as a CLI and MCP server.",
+    tools: ["Next.js", "TypeScript", "Tailwind CSS v4", "MCP", "Vercel"],
+    stat: "67%",
+    statLabel: "fewer tokens",
+    link: "https://locus-five-iota.vercel.app",
+    linkLabel: "Open live app",
+  },
+  {
+    title: "Cortex",
+    category: "Live AI product",
+    description:
+      "The company brain: extracts scattered operational knowledge into a living, cited, versioned skills file that AI agents can execute, with a verbatim-citation gate that guards against hallucination.",
+    tools: ["Next.js", "TypeScript", "Neon", "Drizzle", "Clerk", "Vercel"],
+    stat: "Live",
+    statLabel: "Vercel app",
+    link: "https://cortex-lyart-rho.vercel.app",
+    linkLabel: "Open live app",
+  },
+  {
+    title: "Ghost Hand",
+    category: "Live learning agent",
+    description:
+      "An AI apprenticeship agent that teaches by letting go, shifting from demonstration to hints to silent observation as the learner's autonomy grows. The metric is how much the learner can do without AI.",
+    tools: ["Next.js 16", "React 19", "Learning agents", "Vercel"],
+    stat: "Live",
+    statLabel: "Vercel app",
+    link: "https://ghost-hand-virid.vercel.app",
+    linkLabel: "Open live app",
+  },
+  {
+    title: "Agent Access",
+    category: "Live infra product",
+    description:
+      "The account and access layer for AI-agent customers: discoverable machine contracts, scoped delegated credentials, idempotent invocation via REST or MCP, and signed receipts for every action.",
+    tools: ["Next.js 16", "TypeScript", "Clerk", "Neon", "Vitest", "Vercel"],
+    stat: "Live",
+    statLabel: "Vercel app",
+    link: "https://agent-access.vercel.app",
+    linkLabel: "Open live app",
+  },
 ];
 
 const Work = () => (
