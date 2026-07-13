@@ -51,8 +51,8 @@ const projects = [
     tools: ["AI security", "PRD", "Architecture", "GTM", "ARR modeling"],
     stat: "1st",
     statLabel: "product award",
-    link: "https://github.com/taranggoyal70/a10-ai-firewall-hackathon-2025",
-    linkLabel: "View repository",
+    link: "https://a10-taupe.vercel.app",
+    linkLabel: "View case study",
   },
   {
     title: "Nazava Analytics Platform",
