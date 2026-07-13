@@ -40,8 +40,8 @@ const projects = [
     tools: ["Next.js", "TypeScript", "MediaPipe", "Socket.IO", "Web Audio API"],
     stat: "Live",
     statLabel: "multi-device sync",
-    link: "https://github.com/taranggoyal70/crowd-symphony",
-    linkLabel: "View repository",
+    link: "https://crowd-symphony.vercel.app",
+    linkLabel: "Open live app",
   },
   {
     title: "A10 AI Firewall",
@@ -62,8 +62,8 @@ const projects = [
     tools: ["Python", "FastAPI", "Streamlit", "Forecasting", "Segmentation"],
     stat: "Top",
     statLabel: "recognition",
-    link: "https://github.com/taranggoyal70/SCU-Analytical-Showdown-Winner-2025",
-    linkLabel: "View repository",
+    link: "https://scu-analytical-showdown.vercel.app",
+    linkLabel: "Open live app",
   },
   {
     title: "Chronos-2 Forecasting Research",
