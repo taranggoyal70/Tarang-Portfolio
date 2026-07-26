@@ -4,6 +4,7 @@ import {
   MdArrowOutward,
   MdDescription,
   MdMailOutline,
+  MdMenu,
 } from "react-icons/md";
 import "./styles/Portfolio.css";
 
@@ -14,9 +15,11 @@ const featuredProjects = [
     problem:
       "Builders lose context when objectives, repositories, and agent execution live in separate tools.",
     contribution:
-      "Product strategy, adaptive workspace UX, full-stack delivery, and a governed Codex-to-PR workflow.",
+      "I shaped the product strategy, designed the adaptive workspace, and built a governed Codex workflow that carries an objective through pull-request creation.",
     proof: "Production app",
     image: "/project-media/morphic.png",
+    imageAlt: "Morphic adaptive AI software workspace",
+    tools: ["Product strategy", "Next.js", "OpenAI", "Vercel"],
     link: "https://morphic-murex.vercel.app/",
     linkLabel: "Open live app",
   },
@@ -24,11 +27,13 @@ const featuredProjects = [
     title: "Studentlytics",
     category: "AWS × INRIX · 1st place",
     problem:
-      "Faculty need reliable attendance and engagement signals from classroom recordings—not manual roll calls.",
+      "Faculty need reliable attendance and engagement signals from classroom recordings—not another manual roll call.",
     contribution:
-      "Product planning, event-driven AI pipeline, analytics workflows, and full-stack delivery in 24 hours.",
-    proof: "91% face match",
+      "I planned the product and delivered an event-driven video pipeline spanning face matching, engagement analysis, and instructor-facing results in 24 hours.",
+    proof: "91% face-match accuracy",
     image: "/project-media/studentlytics.png",
+    imageAlt: "Studentlytics award-winning classroom analytics project",
+    tools: ["AWS", "Computer vision", "Analytics", "Product delivery"],
     link: "https://devpost.com/software/studentlytics",
     linkLabel: "View on Devpost",
   },
@@ -36,11 +41,13 @@ const featuredProjects = [
     title: "Crowd Symphony",
     category: "YC Stack Auth winner",
     problem:
-      "Make a crowd part of the music without apps, instruments, or complicated onboarding.",
+      "Turn a room full of phones into one instrument without requiring an app, account, or musical training.",
     contribution:
-      "Real-time product UX, hand tracking, synchronized sessions, and Web Audio controls across devices.",
-    proof: "Live multi-device",
+      "I designed the real-time audience journey and shipped hand tracking, QR onboarding, synchronized sessions, and Web Audio controls across devices.",
+    proof: "Live multi-device product",
     image: "/project-media/crowd-symphony.png",
+    imageAlt: "Crowd Symphony real-time audience music interface",
+    tools: ["Real-time UX", "MediaPipe", "Socket.IO", "Web Audio"],
     link: "https://crowd-symphony.vercel.app",
     linkLabel: "Open live app",
   },
@@ -48,11 +55,13 @@ const featuredProjects = [
     title: "Chronos-2",
     category: "Forecasting research · arXiv",
     problem:
-      "Test whether multivariate context improves financial forecasting across equities and U.S. Treasury rates.",
+      "Understand when multivariate context improves financial forecasts across equities and U.S. Treasury rates.",
     contribution:
-      "Research design, experiments, evaluation, and paper co-authorship with Amazon Chronos-2.",
-    proof: "Published paper",
+      "I co-designed the research, ran experiments and evaluation, and co-authored the paper testing Amazon Chronos-2 across economic and financial series.",
+    proof: "Published research",
     image: "/project-media/chronos-2.png",
+    imageAlt: "Chronos-2 financial forecasting research paper",
+    tools: ["Research design", "Time series", "Evaluation", "Amazon Chronos-2"],
     link: "https://arxiv.org/pdf/2605.21504",
     linkLabel: "Read the paper",
   },
@@ -60,11 +69,13 @@ const featuredProjects = [
     title: "Locus",
     category: "Live developer tool",
     problem:
-      "Coding agents waste context on unrelated files, increasing token cost and reasoning noise.",
+      "Coding agents waste context on unrelated files, increasing token cost and distracting their reasoning.",
     contribution:
-      "Product strategy, task-scoped dependency localization, and CLI + MCP delivery.",
-    proof: "67% fewer tokens",
+      "I turned task-scoped dependency localization into a usable developer product, shipping both a CLI and an MCP server.",
+    proof: "67% fewer input tokens",
     image: "/project-media/locus.png",
+    imageAlt: "Locus developer tool showing task-scoped code context",
+    tools: ["Product strategy", "MCP", "CLI", "Next.js"],
     link: "https://locus-five-iota.vercel.app",
     linkLabel: "Open live app",
   },
@@ -132,18 +143,15 @@ const experience = [
 
 const operatingModes = [
   {
-    number: "01",
-    title: "Find the real problem",
-    body: "Customer discovery, workflow mapping, product strategy, PRDs, and success metrics.",
+    title: "Product judgment",
+    body: "Customer discovery, workflow mapping, product strategy, PRDs, roadmaps, and success metrics.",
   },
   {
-    number: "02",
-    title: "Build the useful thing",
+    title: "Engineering execution",
     body: "React, TypeScript, Next.js, FastAPI, Python, APIs, agents, and real-time systems.",
   },
   {
-    number: "03",
-    title: "Prove that it worked",
+    title: "Analytical rigor",
     body: "SQL, experimentation, forecasting, product analytics, BigQuery, XGBoost, and dashboards.",
   },
 ];
@@ -166,172 +174,230 @@ const tools = [
 ];
 
 const MainContainer = ({ children }: PropsWithChildren) => (
-  <main className="ledger-site">
-    <header className="ledger-nav">
-      <a className="ledger-mark" href="#top" aria-label="Tarang Goyal, home">
+  <main className="portfolio-site">
+    <header className="site-nav">
+      <a className="site-mark" href="#top" aria-label="Tarang Goyal, home">
         TG
       </a>
-      <div className="ledger-title">
-        <strong>Proof Ledger</strong>
-        <span>Product + Engineering</span>
+      <div className="site-name">
+        <strong>Tarang Goyal</strong>
+        <span>AI product engineer</span>
       </div>
-      <nav aria-label="Primary navigation">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
+      <nav className="desktop-nav" aria-label="Primary navigation">
         <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a className="ledger-id" href="/resume.pdf" target="_blank">
-        TG_01 <MdArrowOutward aria-hidden="true" />
+      <a className="resume-nav" href="/resume.pdf" target="_blank">
+        Résumé <MdArrowOutward aria-hidden="true" />
       </a>
+      <details className="mobile-nav">
+        <summary>
+          <MdMenu aria-hidden="true" /> Menu
+        </summary>
+        <nav aria-label="Mobile navigation">
+          <a
+            href="#work"
+            onClick={(event) =>
+              event.currentTarget.closest("details")?.removeAttribute("open")
+            }
+          >
+            Work
+          </a>
+          <a
+            href="#experience"
+            onClick={(event) =>
+              event.currentTarget.closest("details")?.removeAttribute("open")
+            }
+          >
+            Experience
+          </a>
+          <a
+            href="#about"
+            onClick={(event) =>
+              event.currentTarget.closest("details")?.removeAttribute("open")
+            }
+          >
+            About
+          </a>
+          <a
+            href="#contact"
+            onClick={(event) =>
+              event.currentTarget.closest("details")?.removeAttribute("open")
+            }
+          >
+            Contact
+          </a>
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            onClick={(event) =>
+              event.currentTarget.closest("details")?.removeAttribute("open")
+            }
+          >
+            Résumé <MdArrowOutward aria-hidden="true" />
+          </a>
+        </nav>
+      </details>
     </header>
 
-    <section className="ledger-hero" id="top">
+    <section className="hero" id="top">
       <div className="hero-copy">
-        <p className="ledger-kicker">AI product engineer · Forward-deployed builder</p>
+        <p className="eyebrow">Product judgment × engineering execution</p>
         <h1>
-          Tarang
-          <br />
-          Goyal<span>.</span>
+          I build AI products that make
+          <span> hard decisions easier.</span>
         </h1>
-        <p className="hero-thesis">
-          I turn ambiguous problems into deployed AI products—across discovery,
-          interface, systems, data, and measurable outcomes.
+        <p className="hero-intro">
+          I take ambiguous problems from customer conversation to production—
+          shaping the product, building the system, and proving the outcome.
+        </p>
+        <p className="hero-now">
+          Currently building AI education products at Highview · M.S. Business
+          Analytics, Santa Clara University
         </p>
         <div className="hero-actions">
           <a className="primary-action" href="#work">
-            See the proof <MdArrowDownward aria-hidden="true" />
+            Explore selected work <MdArrowDownward aria-hidden="true" />
           </a>
           <a href="/resume.pdf" target="_blank" className="text-action">
-            Résumé <MdDescription aria-hidden="true" />
+            View résumé <MdDescription aria-hidden="true" />
           </a>
         </div>
       </div>
 
-      <div className="hero-evidence" aria-label="Selected career metrics">
-        <div className="evidence-status">
+      <div className="hero-portrait" aria-label="Interactive portrait of Tarang">
+        <div className="portrait-meta">
+          <span>Tarang Goyal / TG_01</span>
+          <span>Santa Clara, CA</span>
+        </div>
+        <div className="portrait-grid" />
+        <div className="character-shell">{children}</div>
+        <div className="portrait-status">
           <span className="status-dot" />
-          <span>Open to opportunities</span>
+          <div>
+            <small>Available for</small>
+            <strong>AI product + engineering roles</strong>
+          </div>
         </div>
-        <div className="evidence-metric">
-          <strong>91%</strong>
-          <span>AI vision accuracy</span>
-        </div>
-        <div className="evidence-metric">
-          <strong>4</strong>
-          <span>award-winning builds</span>
-        </div>
-        <div className="evidence-metric">
-          <strong>100K+</strong>
-          <span>records modeled</span>
-        </div>
-        <p>Bay Area · New York · U.S.</p>
       </div>
 
-      <div className="identity-frame" aria-label="Interactive portrait of Tarang">
-        <span className="frame-label frame-label-top">Builder / Analyst / PM</span>
-        <span className="frame-label frame-label-side">Santa Clara, CA</span>
-        <div className="character-shell">{children}</div>
-        <div className="identity-caption">
-          <span>Current mode</span>
-          <strong>Shipping</strong>
+      <div className="proof-strip" aria-label="Selected career outcomes">
+        <div>
+          <strong>91%</strong>
+          <span>Face-match accuracy in classroom video</span>
+        </div>
+        <div>
+          <strong>4</strong>
+          <span>Award-winning product builds</span>
+        </div>
+        <div>
+          <strong>100K+</strong>
+          <span>Records modeled for product decisions</span>
         </div>
       </div>
     </section>
 
-    <section className="ledger-section work-ledger" id="work">
+    <section className="section work-section" id="work">
       <div className="section-heading">
         <div>
-          <p className="ledger-kicker">Selected entries · 2025—26</p>
-          <h2>Proof, not promises.</h2>
+          <p className="eyebrow">Selected work · 2025—26</p>
+          <h2>Products with decisions behind them.</h2>
         </div>
         <p>
-          Production products, award-winning builds, and published research.
-          Each entry starts with the problem and ends with what I shipped.
+          Five examples across AI, real-time systems, developer tooling, and
+          research—focused on what changed because I was there.
         </p>
       </div>
 
-      <div className="ledger-column-labels" aria-hidden="true">
-        <span>Project</span>
-        <span>Problem / decision</span>
-        <span>My contribution</span>
-        <span>Evidence</span>
-      </div>
-
-      <div className="project-ledger">
+      <div className="case-study-list">
         {featuredProjects.map((project, index) => (
-          <article className="project-entry" key={project.title}>
-            <div className="project-identity">
-              <span className="entry-number">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <div>
-                <h3>{project.title}</h3>
-                <p>{project.category}</p>
-              </div>
-            </div>
-            <div className="entry-copy">
-              <span>Problem / decision</span>
-              <p>{project.problem}</p>
-            </div>
-            <div className="entry-copy">
-              <span>My contribution</span>
-              <p>{project.contribution}</p>
-            </div>
+          <article
+            className={`case-study ${index % 2 === 1 ? "case-study-reverse" : ""}`}
+            key={project.title}
+          >
             <a
-              className="project-proof"
+              className="case-visual"
               href={project.link}
               target="_blank"
               rel="noreferrer"
               aria-label={`${project.linkLabel}: ${project.title}`}
             >
-              <img src={project.image} alt="" />
-              <span className="proof-badge">{project.proof}</span>
-              <span className="proof-link">
+              <img src={project.image} alt={project.imageAlt} />
+              <span className="case-proof">{project.proof}</span>
+              <span className="case-open">
                 {project.linkLabel} <MdArrowOutward aria-hidden="true" />
               </span>
             </a>
+            <div className="case-copy">
+              <div className="case-topline">
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <p>{project.category}</p>
+              </div>
+              <h3>{project.title}</h3>
+              <div className="case-detail">
+                <span>The problem</span>
+                <p>{project.problem}</p>
+              </div>
+              <div className="case-detail">
+                <span>What I owned</span>
+                <p>{project.contribution}</p>
+              </div>
+              <div className="case-tools">
+                {project.tools.map((tool) => (
+                  <span key={tool}>{tool}</span>
+                ))}
+              </div>
+              <a href={project.link} target="_blank" rel="noreferrer" className="case-link">
+                {project.linkLabel} <MdArrowOutward aria-hidden="true" />
+              </a>
+            </div>
           </article>
         ))}
       </div>
     </section>
 
-    <section className="ledger-section more-work" aria-labelledby="more-work-title">
+    <section className="section more-work" aria-labelledby="more-work-title">
       <div className="section-heading compact-heading">
         <div>
-          <p className="ledger-kicker">More shipped work</p>
-          <h2 id="more-work-title">The wider build log.</h2>
+          <p className="eyebrow">More shipped work</p>
+          <h2 id="more-work-title">A wider build range.</h2>
         </div>
-        <p>Five more products spanning analytics, learning agents, infrastructure, and AI security.</p>
+        <p>
+          Additional products spanning analytics, learning agents,
+          infrastructure, and AI security.
+        </p>
       </div>
-      <div className="more-work-list">
-        {additionalProjects.map((project, index) => (
+      <div className="more-work-grid">
+        {additionalProjects.map((project) => (
           <a
             href={project.link}
             target="_blank"
             rel="noreferrer"
-            className="more-work-row"
+            className="more-work-card"
             key={project.title}
           >
-            <span>{String(index + 6).padStart(2, "0")}</span>
-            <strong>{project.title}</strong>
             <span>{project.category}</span>
+            <h3>{project.title}</h3>
             <p>{project.detail}</p>
-            <MdArrowOutward aria-hidden="true" />
+            <div>
+              View project <MdArrowOutward aria-hidden="true" />
+            </div>
           </a>
         ))}
       </div>
     </section>
 
-    <section className="ledger-section experience-ledger" id="experience">
+    <section className="section experience-section" id="experience">
       <div className="section-heading">
         <div>
-          <p className="ledger-kicker">Experience</p>
-          <h2>Built across the whole loop.</h2>
+          <p className="eyebrow">Experience</p>
+          <h2>Built across the whole product loop.</h2>
         </div>
         <p>
           Product judgment, engineering execution, and analytical rigor—used
-          together, not handed off between silos.
+          together instead of handed off between silos.
         </p>
       </div>
       <div className="experience-list">
@@ -349,21 +415,21 @@ const MainContainer = ({ children }: PropsWithChildren) => (
       </div>
     </section>
 
-    <section className="ledger-section operating-range" id="about">
+    <section className="section operating-section" id="about">
       <div className="section-heading">
         <div>
-          <p className="ledger-kicker">Operating range</p>
-          <h2>One builder. Three modes.</h2>
+          <p className="eyebrow">How I work</p>
+          <h2>Useful where disciplines overlap.</h2>
         </div>
         <p>
-          Most useful where the problem crosses boundaries: I can find the
-          workflow, shape the product, build it, and measure whether it works.
+          My best work happens where a problem crosses boundaries: understand
+          the workflow, shape the product, build the system, measure the result.
         </p>
       </div>
       <div className="mode-grid">
         {operatingModes.map((mode) => (
-          <article key={mode.number}>
-            <span>{mode.number}</span>
+          <article key={mode.title}>
+            <span>My range</span>
             <h3>{mode.title}</h3>
             <p>{mode.body}</p>
           </article>
@@ -376,15 +442,15 @@ const MainContainer = ({ children }: PropsWithChildren) => (
       </div>
     </section>
 
-    <footer className="ledger-footer" id="contact">
+    <footer className="site-footer" id="contact">
       <div>
-        <p className="ledger-kicker">Next entry</p>
-        <h2>Have a hard problem that needs a builder?</h2>
+        <p className="eyebrow">Let’s build something useful</p>
+        <h2>Have a hard product problem?</h2>
       </div>
       <div className="footer-contact">
         <p>
           Open to AI product engineering, forward-deployed engineering,
-          full-stack, and technical product roles.
+          full-stack, and technical product opportunities.
         </p>
         <a href="mailto:taranggoyal2000@gmail.com">
           <MdMailOutline aria-hidden="true" />
