@@ -1,10 +1,17 @@
+import { useEffect } from "react";
 import {
   MdArrowDownward,
   MdArrowForward,
   MdArrowOutward,
+  MdCheckCircleOutline,
+  MdCode,
   MdDescription,
+  MdEmojiEvents,
   MdMailOutline,
   MdMenu,
+  MdOutlineAccessTime,
+  MdPersonOutline,
+  MdTrendingUp,
 } from "react-icons/md";
 import {
   archiveProjects,
@@ -14,8 +21,52 @@ import {
 } from "../data/portfolioData";
 import "./styles/Portfolio.css";
 
-const MainContainer = () => (
-  <main className="portfolio-site">
+const projectHighlights = {
+  studentlytics: [
+    { icon: MdPersonOutline, text: "Product lead & full-stack builder" },
+    { icon: MdOutlineAccessTime, text: "Built in 24 hours" },
+    { icon: MdEmojiEvents, text: "AWS × INRIX first place" },
+    { icon: MdTrendingUp, text: "Continued at Highview" },
+  ],
+  morphic: [
+    { icon: MdPersonOutline, text: "Product strategy, design & engineering" },
+    { icon: MdCheckCircleOutline, text: "Live product prototype" },
+    { icon: MdCode, text: "GitHub-grounded adaptive workspace" },
+    { icon: MdArrowForward, text: "Approval → branch → pull request" },
+  ],
+  locus: [
+    { icon: MdPersonOutline, text: "Product strategy & engineering" },
+    { icon: MdTrendingUp, text: "53% median context reduction" },
+    { icon: MdCheckCircleOutline, text: "100% fix-file recall" },
+    { icon: MdCode, text: "9 historical fixes benchmarked" },
+  ],
+};
+
+const MainContainer = () => {
+  useEffect(() => {
+    const scrollToHash = () => {
+      const targetId = window.location.hash.slice(1);
+      if (!targetId) return;
+      document.getElementById(targetId)?.scrollIntoView({ block: "start" });
+    };
+
+    const frame = window.requestAnimationFrame(scrollToHash);
+    const settledFrame = window.setTimeout(scrollToHash, 350);
+    const mediaFrame = window.setTimeout(scrollToHash, 900);
+    window.addEventListener("load", scrollToHash);
+    window.addEventListener("hashchange", scrollToHash);
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.clearTimeout(settledFrame);
+      window.clearTimeout(mediaFrame);
+      window.removeEventListener("load", scrollToHash);
+      window.removeEventListener("hashchange", scrollToHash);
+    };
+  }, []);
+
+  return (
+    <main className="portfolio-site">
     <header className="site-nav">
       <a className="site-mark" href="#top" aria-label="Tarang Goyal, home">
         TG
@@ -82,82 +133,66 @@ const MainContainer = () => (
           I work from user problem and product decision through implementation,
           deployment, and validation.
         </p>
-        <p className="hero-now">
-          AI Product Manager & Product Engineer at Highview · M.S. Business
-          Analytics, Santa Clara University · Graduated Dec 2025
-        </p>
-        <div className="hero-actions">
-          <a className="primary-action" href="#work">
-            View flagship work <MdArrowDownward aria-hidden="true" />
-          </a>
-          <a href="/resume.pdf" target="_blank" className="text-action">
-            Résumé <MdDescription aria-hidden="true" />
-          </a>
+        <div className="hero-lower">
+          <p className="hero-now">
+            Currently AI Product Manager & Product Engineer at Highview · San
+            Francisco Bay Area · M.S. Business Analytics, Santa Clara
+            University, Dec 2025
+          </p>
+          <div className="hero-actions">
+            <a className="primary-action" href="#work">
+              View flagship work <MdArrowDownward aria-hidden="true" />
+            </a>
+            <a href="/resume.pdf" target="_blank" className="text-action">
+              Résumé <MdDescription aria-hidden="true" />
+            </a>
+            <a
+              href="mailto:taranggoyal2000@gmail.com"
+              className="text-action"
+            >
+              Email Tarang <MdArrowOutward aria-hidden="true" />
+            </a>
+          </div>
         </div>
       </div>
-
-      <aside className="hero-trace" aria-label="How Tarang builds products">
-        <div className="hero-trace-heading">
-          <span>TG / Product loop</span>
-          <strong>From ambiguity to evidence</strong>
-        </div>
-        <ol>
-          {processSteps.map((step) => (
-            <li key={step.number}>
-              <span>{step.number}</span>
-              <div>
-                <h2>{step.title}</h2>
-                <p>{step.body}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
-      </aside>
     </section>
 
-    <section className="credibility-rail" aria-label="Selected credentials">
-      <div>
-        <strong>Highview</strong>
-        <span>AI product engineering · Present</span>
-      </div>
-      <div>
-        <strong>Box</strong>
-        <span>Data science · 2025</span>
-      </div>
-      <div>
-        <strong>Santa Clara University</strong>
-        <span>M.S. Business Analytics · Dec 2025</span>
-      </div>
+    <section className="evidence-ledger" aria-label="Selected evidence">
       <a
         href="https://devpost.com/software/studentlytics"
         target="_blank"
         rel="noreferrer"
       >
+        <span>Evidence</span>
         <strong>AWS × INRIX</strong>
-        <span>Hackathon · First place</span>
+        <p>First place</p>
       </a>
+      <div>
+        <span>Evidence</span>
+        <strong>Box</strong>
+        <p>40% less manual processing</p>
+      </div>
       <a
-        href="https://arxiv.org/pdf/2605.21504"
+        href="https://github.com/taranggoyal70/locus/tree/main/benchmarks"
         target="_blank"
         rel="noreferrer"
       >
-        <strong>arXiv</strong>
-        <span>Chronos-2 · Research co-author</span>
+        <span>Evidence</span>
+        <strong>Locus</strong>
+        <p>53% median context reduction</p>
+      </a>
+      <a
+        href="https://github.com/taranggoyal70/locus/tree/main/benchmarks"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <span>Evidence</span>
+        <strong>Locus</strong>
+        <p>100% fix-file recall across 9 historical fixes</p>
       </a>
     </section>
 
     <section className="section work-section" id="work">
-      <div className="section-heading">
-        <div>
-          <p className="eyebrow">Flagship work</p>
-          <h2>Three products. Decisions included.</h2>
-        </div>
-        <p>
-          Each story separates the observed problem, the pivotal decision, what
-          I shipped, and the evidence that exists today.
-        </p>
-      </div>
-
       <div className="flagship-list">
         {flagshipProjects.map((project, index) => (
           <article className="flagship-project" key={project.slug}>
@@ -178,32 +213,17 @@ const MainContainer = () => (
               <h3>{project.title}</h3>
               <p className="flagship-descriptor">{project.descriptor}</p>
 
-              <dl className="flagship-meta">
-                <div>
-                  <dt>Role</dt>
-                  <dd>{project.role}</dd>
-                </div>
-                <div>
-                  <dt>Team</dt>
-                  <dd>{project.team}</dd>
-                </div>
-                <div>
-                  <dt>Timeline</dt>
-                  <dd>{project.timeline}</dd>
-                </div>
-              </dl>
-
-              <div className="flagship-trace">
-                {project.trace.map((step, stepIndex) => (
-                  <div key={step.label}>
-                    <span>{String(stepIndex + 1).padStart(2, "0")}</span>
-                    <div>
-                      <strong>{step.label}</strong>
-                      <p>{step.body}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <ul className="flagship-highlights">
+                {projectHighlights[project.slug].map((highlight) => {
+                  const Icon = highlight.icon;
+                  return (
+                    <li key={highlight.text}>
+                      <Icon aria-hidden="true" />
+                      <span>{highlight.text}</span>
+                    </li>
+                  );
+                })}
+              </ul>
 
               <div className="flagship-actions">
                 <a className="case-study-action" href={`/work/${project.slug}`}>
@@ -368,7 +388,8 @@ const MainContainer = () => (
         <span>© 2026 Tarang Goyal</span>
       </div>
     </footer>
-  </main>
-);
+    </main>
+  );
+};
 
 export default MainContainer;

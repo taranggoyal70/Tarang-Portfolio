@@ -2,101 +2,98 @@
 
 ## Comparison target
 
-- Source visual truth: `/Users/tarang/.codex/generated_images/019f5d82-a372-7ce2-8e09-c502ba5dbc1d/call_4EwGwHQz8xY7d2SBHH5RyMUG.png`
+- Source visual truth: `/Users/tarang/.codex/generated_images/019f5d82-a372-7ce2-8e09-c502ba5dbc1d/call_3Zsznoq1dMhzKw7XWnpu2He4.png`
 - Rendered implementation: `http://127.0.0.1:4173/`
-- Desktop implementation capture: `/tmp/tarang-portfolio-redesign/implementation-home-viewport-v2.jpg`
-- Mobile case-study capture: `/tmp/tarang-portfolio-redesign/implementation-mobile-case-v2b.jpg`
-- Mobile flagship capture: `/tmp/tarang-portfolio-redesign/implementation-mobile-visual-v2.jpg`
-- Combined comparison: `/tmp/tarang-portfolio-redesign/home-comparison-v2.jpg`
-- State: homepage at initial load; Studentlytics case-study hero; first flagship card
+- Desktop implementation capture: `/tmp/tarang-recruiter-build/home-v3.png`
+- Mobile homepage capture: `/tmp/tarang-recruiter-build/mobile-home.png`
+- Mobile recruiter-journey capture: `/tmp/tarang-recruiter-build/mobile-work.png`
+- Combined comparison: `/tmp/tarang-recruiter-build/comparison-v3.jpg`
+- State: homepage at initial load and the first flagship project after the
+  primary CTA
 
 ## Normalization
 
 - Source pixels: 1487 × 1058
 - Implementation pixels: 1440 × 1024
-- CSS viewport: 1440 × 1024
+- Desktop CSS viewport: 1440 × 1024
+- Mobile CSS viewport: 390 × 844
 - Device scale factor: 1
-- The source was normalized to 1440 × 1024 for the combined comparison. Its
-  original aspect ratio differs by less than 0.1%, so no meaningful crop or
-  compositional distortion was introduced.
-- Mobile validation used a 390 × 844 CSS viewport at device scale factor 1.
+- The source was normalized to 1440 × 1024 for side-by-side comparison. The
+  aspect-ratio difference is negligible and did not introduce a meaningful crop.
 
 ## Full-view comparison evidence
 
-The combined comparison shows that the implementation preserves the selected
-Evidence Editorial direction: warm paper background, near-black typography,
-cobalt emphasis, a compact utility header, oversized outcome-led headline,
-evidence rail, hard grid lines, and a deliberately restrained visual system.
-The product loop on the right replaces decorative imagery with the agreed
-decision structure.
+The combined comparison confirms the selected recruiter evidence-ledger
+direction: warm paper background, compact utility navigation, oversized
+outcome-led headline, cobalt emphasis, four proof columns, thin structural
+rules, and a tangible product artifact immediately after the evidence strip.
 
-The source mock placed a flagship teaser slightly higher. The implementation
-keeps the flagship label visible at the fold while giving the four-step product
-loop enough room to remain readable. This is an intentional product-content
-tradeoff rather than accidental drift.
+The implementation intentionally uses the existing real Studentlytics product
+screenshot instead of the generated mock's approximate artifact. This preserves
+the source hierarchy while keeping every visible product claim grounded in
+actual work.
 
 ## Focused-region evidence
 
-- Desktop hero: hierarchy, navigation density, two-column split, credibility
-  rail, buttons, and copy wrapping were inspected at 1440 × 1024.
-- Mobile case-study hero: `Studentlytics` fits without clipping or horizontal
-  overflow at 390 × 844.
-- Mobile flagship imagery: the source product screenshot is fully contained,
-  sharp, and legible instead of being cropped to a decorative fragment.
-- Focused evidence is sufficient because the design uses one typography system,
-  a single border treatment, and no decorative image assets outside the real
-  product screenshots.
+- Desktop hero: navigation density, headline wrapping, context line, CTA group,
+  evidence ledger, and first flagship entry were compared at 1440 × 1024.
+- Mobile homepage: headline, current context, primary action, résumé, and email
+  remain readable without clipping or horizontal overflow at 390 × 844.
+- Mobile recruiter journey: the primary CTA scrolls directly to a sharp,
+  fully-contained Studentlytics artifact and a concise four-line proof summary.
+- Direct hash navigation: a fresh load at `/#experience` settles with the
+  Experience section 66px below the sticky navigation.
 
 ## Required fidelity surfaces
 
-- Fonts and typography: Manrope is used consistently. Display and utility text
-  have distinct optical weights, clear line-height, controlled tracking, and no
-  truncation at the tested desktop and mobile breakpoints.
-- Spacing and layout rhythm: the desktop 2/3–1/3 hero grid, evidence rail, and
-  section spacing match the editorial reference. Mobile collapses to one column
-  without hidden controls or horizontal overflow.
+- Fonts and typography: Manrope remains consistent. The display scale matches
+  the editorial source while utility labels and recruiter-facing microcopy were
+  increased for readability.
+- Spacing and layout rhythm: the compact hero, four-column proof ledger, and
+  immediate flagship entry reproduce the selected direction. Mobile collapses
+  cleanly to one column and a two-column evidence ledger.
 - Colors and visual tokens: warm paper, near-black, cobalt, muted gray, and thin
-  rules map directly to the source direction. No gradients, glass effects, or
-  decorative AI-style glows were introduced.
-- Image quality and asset fidelity: all flagship imagery uses real product
-  screenshots. Images preserve their aspect ratios and use `object-fit: contain`.
-  No visible asset was replaced with CSS art, an emoji, or a placeholder.
-- Copy and content: the primary lane is explicit. Every flagship story separates
-  the observed problem, product decision, shipped system, and current evidence.
-  Claims are bounded by the claim registry.
+  rules match the source. No gradients, glass effects, or decorative AI-style
+  treatments were introduced.
+- Image quality and asset fidelity: flagship imagery uses real project
+  screenshots with preserved aspect ratios and `object-fit: contain`.
+- Copy and content: the homepage now prioritizes award, business outcome,
+  benchmark, ownership, speed, and shipping proof before process detail. Full
+  reasoning remains available inside each case study.
 
 ## Interaction and runtime checks
 
 - Routes tested: `/`, `/work/studentlytics`, `/work/morphic`, `/work/locus`
-- All route headings and titles rendered.
-- No broken images or horizontal overflow were found on any tested route.
-- Primary external evidence links returned HTTP 200.
-- Homepage navigation, résumé links, email CTA, internal case-study links, and
-  mobile disclosure navigation are present with valid destinations.
-- Browser console was checked after all route visits. It contained only Vite,
-  React DevTools, and Vercel Analytics development messages; no warnings or
-  errors were present.
+- All routes rendered at 390px without broken images or horizontal overflow.
+- Homepage navigation, résumé, email, primary CTA, project evidence, and
+  case-study links have valid destinations.
+- The primary CTA and fresh-load hash links were exercised.
+- Browser console was checked after route visits; no warnings or errors were
+  present.
+- Production build, TypeScript compilation, ESLint, and whitespace validation
+  passed.
 
 ## Comparison history
 
 ### Iteration 1
 
-- [P1] Mobile case-study title overflowed and clipped.
-- [P2] Flagship product screenshots were cropped by `object-fit: cover`.
-- [P2] The desktop hero consumed too much of the first viewport, leaving no
-  flagship signal at the fold.
+- [P2] The first implementation's desktop hero and evidence ledger were taller
+  than the selected visual, pushing most flagship proof below the fold.
+- [P2] A fresh `/#experience` load stopped above the target after page media
+  settled.
+- [P3] Several visible mobile utility labels were only 8–10px.
 
 Fixes:
 
-- Added mobile title wrapping and a viewport-aware case-study title scale.
-- Changed flagship product imagery to `object-fit: contain`.
-- Reduced desktop hero height, display scale, and internal vertical padding.
+- Reduced desktop headline scale, hero padding, and evidence-ledger height.
+- Re-applied hash scrolling after page load and layout settlement.
+- Increased the primary utility, evidence, project, and mobile-menu labels.
 
 Post-fix evidence:
 
-- `/tmp/tarang-portfolio-redesign/implementation-mobile-case-v2b.jpg`
-- `/tmp/tarang-portfolio-redesign/implementation-mobile-visual-v2.jpg`
-- `/tmp/tarang-portfolio-redesign/home-comparison-v2.jpg`
+- `/tmp/tarang-recruiter-build/comparison-v3.jpg`
+- `/tmp/tarang-recruiter-build/mobile-home.png`
+- `/tmp/tarang-recruiter-build/mobile-work.png`
 
 ### Iteration 2
 
@@ -112,15 +109,11 @@ None.
 
 ## Implementation checklist
 
-- [x] Preserve the Evidence Editorial visual hierarchy.
-- [x] Keep real product evidence in the critical path.
+- [x] Lead with recruiter-scannable evidence.
+- [x] Keep real product artifacts in the critical path.
+- [x] Preserve deep case studies without overloading the homepage.
 - [x] Validate desktop and mobile layout behavior.
-- [x] Verify direct case-study routes.
-- [x] Check external evidence links and browser console.
-
-## Follow-up polish
-
-- [P3] Replace the résumé PDF's large third-party verification banner when the
-  source résumé is next revised; this is outside the website implementation.
+- [x] Verify direct case-study and section routes.
+- [x] Check browser console and runtime output.
 
 final result: passed
