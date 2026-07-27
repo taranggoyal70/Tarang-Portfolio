@@ -1,16 +1,39 @@
-# Tarang Goyal - Portfolio Website 🚀
+# Tarang Goyal — Portfolio
 
-Product Manager & AI Product Engineer portfolio showcasing my experience, projects, and hackathon wins.
+Evidence-first portfolio for an AI Product Engineer / Forward-Deployed Engineer.
 
-**🌐 Live Site:** https://tarang-portfolio-pink.vercel.app
+**Live site:** https://tarang-portfolio-pink.vercel.app
 
-## Instructions 🛠️
+## What is included
 
-I have modified the gsap club plugins with the trial plugins, but with the trial plugin you cannot host it🔴. So for Club plugins, Check out here: https://gsap.com/docs/v3/Installation/
+- A focused homepage organized around product decisions and evidence
+- Dedicated case studies for Studentlytics, Morphic, and Locus
+- A compact archive of additional products, research, and hackathon work
+- Responsive layouts, reduced-motion support, and keyboard focus states
+- Vercel rewrites for direct case-study URLs
 
-**Techstack** - React, TypeScript, GSAP, ThreeJS, WebGL, HTML, Css, JavaScript
+## Local development
 
-![Portfolio-Preview](public/images/preview.png)
+```bash
+npm install
+npm run dev
+```
+
+## Validation
+
+```bash
+npm run build
+npx eslint src/App.tsx src/components/MainContainer.tsx src/components/CaseStudyPage.tsx src/data/portfolioData.ts
+```
+
+## Content governance
+
+The portfolio brief, claim registry, decision log, résumé-to-portfolio matrix,
+glossary, maintenance guide, and visual QA record live in the project root.
+
+## Stack
+
+React, TypeScript, Vite, GSAP, and Vercel.
 
 ## License
 

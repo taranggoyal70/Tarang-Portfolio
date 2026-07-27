@@ -1,23 +1,23 @@
 import { lazy, Suspense } from "react";
 import "./App.css";
+import {
+  projectBySlug,
+  type ProjectSlug,
+} from "./data/portfolioData";
 
-const CharacterModel = lazy(() => import("./components/Character"));
 const MainContainer = lazy(() => import("./components/MainContainer"));
-import { LoadingProvider } from "./context/LoadingProvider";
+const CaseStudyPage = lazy(() => import("./components/CaseStudyPage"));
 
 const App = () => {
+  const route = window.location.pathname.replace(/\/+$/, "");
+  const match = route.match(/^\/work\/([^/]+)$/);
+  const slug = match?.[1] as ProjectSlug | undefined;
+  const project = slug ? projectBySlug[slug] : undefined;
+
   return (
-    <>
-      <LoadingProvider>
-        <Suspense>
-          <MainContainer>
-            <Suspense>
-              <CharacterModel />
-            </Suspense>
-          </MainContainer>
-        </Suspense>
-      </LoadingProvider>
-    </>
+    <Suspense fallback={<div className="route-loading">Loading portfolio…</div>}>
+      {project ? <CaseStudyPage project={project} /> : <MainContainer />}
+    </Suspense>
   );
 };
 

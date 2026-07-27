@@ -1,179 +1,20 @@
-import { PropsWithChildren } from "react";
 import {
   MdArrowDownward,
+  MdArrowForward,
   MdArrowOutward,
   MdDescription,
   MdMailOutline,
   MdMenu,
 } from "react-icons/md";
+import {
+  archiveProjects,
+  experience,
+  flagshipProjects,
+  processSteps,
+} from "../data/portfolioData";
 import "./styles/Portfolio.css";
 
-const featuredProjects = [
-  {
-    title: "Morphic",
-    category: "Live AI product",
-    problem:
-      "Builders lose context when objectives, repositories, and agent execution live in separate tools.",
-    contribution:
-      "I shaped the product strategy, designed the adaptive workspace, and built a governed Codex workflow that carries an objective through pull-request creation.",
-    proof: "Production app",
-    image: "/project-media/morphic.png",
-    imageAlt: "Morphic adaptive AI software workspace",
-    tools: ["Product strategy", "Next.js", "OpenAI", "Vercel"],
-    link: "https://morphic-murex.vercel.app/",
-    linkLabel: "Open live app",
-  },
-  {
-    title: "Studentlytics",
-    category: "AWS × INRIX · 1st place",
-    problem:
-      "Faculty need reliable attendance and engagement signals from classroom recordings—not another manual roll call.",
-    contribution:
-      "I planned the product and delivered an event-driven video pipeline spanning face matching, engagement analysis, and instructor-facing results in 24 hours.",
-    proof: "91% face-match accuracy",
-    image: "/project-media/studentlytics.png",
-    imageAlt: "Studentlytics award-winning classroom analytics project",
-    tools: ["AWS", "Computer vision", "Analytics", "Product delivery"],
-    link: "https://devpost.com/software/studentlytics",
-    linkLabel: "View on Devpost",
-  },
-  {
-    title: "Crowd Symphony",
-    category: "YC Stack Auth winner",
-    problem:
-      "Turn a room full of phones into one instrument without requiring an app, account, or musical training.",
-    contribution:
-      "I designed the real-time audience journey and shipped hand tracking, QR onboarding, synchronized sessions, and Web Audio controls across devices.",
-    proof: "Live multi-device product",
-    image: "/project-media/crowd-symphony.png",
-    imageAlt: "Crowd Symphony real-time audience music interface",
-    tools: ["Real-time UX", "MediaPipe", "Socket.IO", "Web Audio"],
-    link: "https://crowd-symphony.vercel.app",
-    linkLabel: "Open live app",
-  },
-  {
-    title: "Chronos-2",
-    category: "Forecasting research · arXiv",
-    problem:
-      "Understand when multivariate context improves financial forecasts across equities and U.S. Treasury rates.",
-    contribution:
-      "I co-designed the research, ran experiments and evaluation, and co-authored the paper testing Amazon Chronos-2 across economic and financial series.",
-    proof: "Published research",
-    image: "/project-media/chronos-2.png",
-    imageAlt: "Chronos-2 financial forecasting research paper",
-    tools: ["Research design", "Time series", "Evaluation", "Amazon Chronos-2"],
-    link: "https://arxiv.org/pdf/2605.21504",
-    linkLabel: "Read the paper",
-  },
-  {
-    title: "Locus",
-    category: "Live developer tool",
-    problem:
-      "Coding agents waste context on unrelated files, increasing token cost and distracting their reasoning.",
-    contribution:
-      "I turned task-scoped dependency localization into a usable developer product, shipping both a CLI and an MCP server.",
-    proof: "67% fewer input tokens",
-    image: "/project-media/locus.png",
-    imageAlt: "Locus developer tool showing task-scoped code context",
-    tools: ["Product strategy", "MCP", "CLI", "Next.js"],
-    link: "https://locus-five-iota.vercel.app",
-    linkLabel: "Open live app",
-  },
-];
-
-const additionalProjects = [
-  {
-    title: "Nazava Analytics",
-    category: "SCU Analytical Showdown winner",
-    detail: "Forecasting, segmentation, campaign ROI, and executive decisions.",
-    link: "https://scu-analytical-showdown.vercel.app",
-  },
-  {
-    title: "Cortex",
-    category: "Live AI product",
-    detail: "A cited, versioned company brain with an anti-hallucination gate.",
-    link: "https://cortex-lyart-rho.vercel.app",
-  },
-  {
-    title: "Ghost Hand",
-    category: "Live learning agent",
-    detail: "An apprenticeship agent that deliberately teaches itself out of a job.",
-    link: "https://ghost-hand-virid.vercel.app",
-  },
-  {
-    title: "Agent Access",
-    category: "Live infrastructure product",
-    detail: "Scoped credentials, idempotent invocation, and signed agent receipts.",
-    link: "https://agent-access.vercel.app",
-  },
-  {
-    title: "A10 AI Firewall",
-    category: "1st place · product strategy",
-    detail: "AI workload protection, GTM, architecture, and ARR modeling.",
-    link: "https://a10-taupe.vercel.app",
-  },
-];
-
-const experience = [
-  {
-    period: "2026—Now",
-    company: "Highview",
-    role: "AI Product Manager & Product Engineer Intern",
-    result:
-      "Shipping an AI education platform across discovery, role-based workflows, computer vision, speech, analytics, and deployment.",
-    proof: "91% face-match accuracy",
-  },
-  {
-    period: "2025",
-    company: "Box",
-    role: "Data Science Intern",
-    result:
-      "Built scalable retention, forecasting, and decision workflows across four cross-functional teams.",
-    proof: "40% less manual processing",
-  },
-  {
-    period: "2023—24",
-    company: "Hashroot",
-    role: "Business Data Analyst",
-    result:
-      "Connected customer, pricing, marketing, and operations data into reusable decision systems.",
-    proof: "20+ hours saved weekly",
-  },
-];
-
-const operatingModes = [
-  {
-    title: "Product judgment",
-    body: "Customer discovery, workflow mapping, product strategy, PRDs, roadmaps, and success metrics.",
-  },
-  {
-    title: "Engineering execution",
-    body: "React, TypeScript, Next.js, FastAPI, Python, APIs, agents, and real-time systems.",
-  },
-  {
-    title: "Analytical rigor",
-    body: "SQL, experimentation, forecasting, product analytics, BigQuery, XGBoost, and dashboards.",
-  },
-];
-
-const tools = [
-  "React",
-  "TypeScript",
-  "Next.js",
-  "Python",
-  "FastAPI",
-  "OpenAI",
-  "AI agents",
-  "Computer vision",
-  "SQL",
-  "BigQuery",
-  "AWS",
-  "GCP",
-  "Supabase",
-  "Vercel",
-];
-
-const MainContainer = ({ children }: PropsWithChildren) => (
+const MainContainer = () => (
   <main className="portfolio-site">
     <header className="site-nav">
       <a className="site-mark" href="#top" aria-label="Tarang Goyal, home">
@@ -181,54 +22,40 @@ const MainContainer = ({ children }: PropsWithChildren) => (
       </a>
       <div className="site-name">
         <strong>Tarang Goyal</strong>
-        <span>AI product engineer</span>
+        <span>AI Product Engineer / FDE</span>
       </div>
       <nav className="desktop-nav" aria-label="Primary navigation">
         <a href="#work">Work</a>
         <a href="#experience">Experience</a>
         <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a href="/resume.pdf" target="_blank">
+          Résumé
+        </a>
       </nav>
-      <a className="resume-nav" href="/resume.pdf" target="_blank">
-        Résumé <MdArrowOutward aria-hidden="true" />
+      <a className="contact-nav" href="mailto:taranggoyal2000@gmail.com">
+        Email Tarang <MdArrowOutward aria-hidden="true" />
       </a>
       <details className="mobile-nav">
         <summary>
           <MdMenu aria-hidden="true" /> Menu
         </summary>
         <nav aria-label="Mobile navigation">
-          <a
-            href="#work"
-            onClick={(event) =>
-              event.currentTarget.closest("details")?.removeAttribute("open")
-            }
-          >
-            Work
-          </a>
-          <a
-            href="#experience"
-            onClick={(event) =>
-              event.currentTarget.closest("details")?.removeAttribute("open")
-            }
-          >
-            Experience
-          </a>
-          <a
-            href="#about"
-            onClick={(event) =>
-              event.currentTarget.closest("details")?.removeAttribute("open")
-            }
-          >
-            About
-          </a>
-          <a
-            href="#contact"
-            onClick={(event) =>
-              event.currentTarget.closest("details")?.removeAttribute("open")
-            }
-          >
-            Contact
-          </a>
+          {[
+            ["Work", "#work"],
+            ["Experience", "#experience"],
+            ["About", "#about"],
+            ["Contact", "#contact"],
+          ].map(([label, href]) => (
+            <a
+              key={label}
+              href={href}
+              onClick={(event) =>
+                event.currentTarget.closest("details")?.removeAttribute("open")
+              }
+            >
+              {label}
+            </a>
+          ))}
           <a
             href="/resume.pdf"
             target="_blank"
@@ -244,147 +71,155 @@ const MainContainer = ({ children }: PropsWithChildren) => (
 
     <section className="hero" id="top">
       <div className="hero-copy">
-        <p className="eyebrow">Product judgment × engineering execution</p>
+        <p className="eyebrow">
+          AI Product Engineer · Forward-Deployed Builder
+        </p>
         <h1>
-          I build AI products that make
-          <span> hard decisions easier.</span>
+          I turn ambiguous workflows into
+          <span> useful</span> AI products.
         </h1>
         <p className="hero-intro">
-          I take ambiguous problems from customer conversation to production—
-          shaping the product, building the system, and proving the outcome.
+          I work from user problem and product decision through implementation,
+          deployment, and validation.
         </p>
         <p className="hero-now">
-          Currently building AI education products at Highview · M.S. Business
-          Analytics, Santa Clara University
+          AI Product Manager & Product Engineer at Highview · M.S. Business
+          Analytics, Santa Clara University · Graduated Dec 2025
         </p>
         <div className="hero-actions">
           <a className="primary-action" href="#work">
-            Explore selected work <MdArrowDownward aria-hidden="true" />
+            View flagship work <MdArrowDownward aria-hidden="true" />
           </a>
           <a href="/resume.pdf" target="_blank" className="text-action">
-            View résumé <MdDescription aria-hidden="true" />
+            Résumé <MdDescription aria-hidden="true" />
           </a>
         </div>
       </div>
 
-      <div className="hero-portrait" aria-label="Interactive portrait of Tarang">
-        <div className="portrait-meta">
-          <span>Tarang Goyal / TG_01</span>
-          <span>Santa Clara, CA</span>
+      <aside className="hero-trace" aria-label="How Tarang builds products">
+        <div className="hero-trace-heading">
+          <span>TG / Product loop</span>
+          <strong>From ambiguity to evidence</strong>
         </div>
-        <div className="portrait-grid" />
-        <div className="character-shell">{children}</div>
-        <div className="portrait-status">
-          <span className="status-dot" />
-          <div>
-            <small>Available for</small>
-            <strong>AI product + engineering roles</strong>
-          </div>
-        </div>
-      </div>
+        <ol>
+          {processSteps.map((step) => (
+            <li key={step.number}>
+              <span>{step.number}</span>
+              <div>
+                <h2>{step.title}</h2>
+                <p>{step.body}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </aside>
+    </section>
 
-      <div className="proof-strip" aria-label="Selected career outcomes">
-        <div>
-          <strong>91%</strong>
-          <span>Face-match accuracy in classroom video</span>
-        </div>
-        <div>
-          <strong>4</strong>
-          <span>Award-winning product builds</span>
-        </div>
-        <div>
-          <strong>100K+</strong>
-          <span>Records modeled for product decisions</span>
-        </div>
+    <section className="credibility-rail" aria-label="Selected credentials">
+      <div>
+        <strong>Highview</strong>
+        <span>AI product engineering · Present</span>
       </div>
+      <div>
+        <strong>Box</strong>
+        <span>Data science · 2025</span>
+      </div>
+      <div>
+        <strong>Santa Clara University</strong>
+        <span>M.S. Business Analytics · Dec 2025</span>
+      </div>
+      <a
+        href="https://devpost.com/software/studentlytics"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <strong>AWS × INRIX</strong>
+        <span>Hackathon · First place</span>
+      </a>
+      <a
+        href="https://arxiv.org/pdf/2605.21504"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <strong>arXiv</strong>
+        <span>Chronos-2 · Research co-author</span>
+      </a>
     </section>
 
     <section className="section work-section" id="work">
       <div className="section-heading">
         <div>
-          <p className="eyebrow">Selected work · 2025—26</p>
-          <h2>Products with decisions behind them.</h2>
+          <p className="eyebrow">Flagship work</p>
+          <h2>Three products. Decisions included.</h2>
         </div>
         <p>
-          Five examples across AI, real-time systems, developer tooling, and
-          research—focused on what changed because I was there.
+          Each story separates the observed problem, the pivotal decision, what
+          I shipped, and the evidence that exists today.
         </p>
       </div>
 
-      <div className="case-study-list">
-        {featuredProjects.map((project, index) => (
-          <article
-            className={`case-study ${index % 2 === 1 ? "case-study-reverse" : ""}`}
-            key={project.title}
-          >
+      <div className="flagship-list">
+        {flagshipProjects.map((project, index) => (
+          <article className="flagship-project" key={project.slug}>
             <a
-              className="case-visual"
-              href={project.link}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`${project.linkLabel}: ${project.title}`}
+              className="flagship-visual"
+              href={`/work/${project.slug}`}
+              aria-label={`Read ${project.title} case study`}
             >
               <img src={project.image} alt={project.imageAlt} />
-              <span className="case-proof">{project.proof}</span>
-              <span className="case-open">
-                {project.linkLabel} <MdArrowOutward aria-hidden="true" />
-              </span>
+              <span>{project.status}</span>
             </a>
-            <div className="case-copy">
-              <div className="case-topline">
+
+            <div className="flagship-copy">
+              <div className="flagship-kicker">
                 <span>{String(index + 1).padStart(2, "0")}</span>
                 <p>{project.category}</p>
               </div>
               <h3>{project.title}</h3>
-              <div className="case-detail">
-                <span>The problem</span>
-                <p>{project.problem}</p>
-              </div>
-              <div className="case-detail">
-                <span>What I owned</span>
-                <p>{project.contribution}</p>
-              </div>
-              <div className="case-tools">
-                {project.tools.map((tool) => (
-                  <span key={tool}>{tool}</span>
+              <p className="flagship-descriptor">{project.descriptor}</p>
+
+              <dl className="flagship-meta">
+                <div>
+                  <dt>Role</dt>
+                  <dd>{project.role}</dd>
+                </div>
+                <div>
+                  <dt>Team</dt>
+                  <dd>{project.team}</dd>
+                </div>
+                <div>
+                  <dt>Timeline</dt>
+                  <dd>{project.timeline}</dd>
+                </div>
+              </dl>
+
+              <div className="flagship-trace">
+                {project.trace.map((step, stepIndex) => (
+                  <div key={step.label}>
+                    <span>{String(stepIndex + 1).padStart(2, "0")}</span>
+                    <div>
+                      <strong>{step.label}</strong>
+                      <p>{step.body}</p>
+                    </div>
+                  </div>
                 ))}
               </div>
-              <a href={project.link} target="_blank" rel="noreferrer" className="case-link">
-                {project.linkLabel} <MdArrowOutward aria-hidden="true" />
-              </a>
+
+              <div className="flagship-actions">
+                <a className="case-study-action" href={`/work/${project.slug}`}>
+                  Read case study <MdArrowForward aria-hidden="true" />
+                </a>
+                <a
+                  className="artifact-action"
+                  href={project.proofUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {project.proofLabel} <MdArrowOutward aria-hidden="true" />
+                </a>
+              </div>
             </div>
           </article>
-        ))}
-      </div>
-    </section>
-
-    <section className="section more-work" aria-labelledby="more-work-title">
-      <div className="section-heading compact-heading">
-        <div>
-          <p className="eyebrow">More shipped work</p>
-          <h2 id="more-work-title">A wider build range.</h2>
-        </div>
-        <p>
-          Additional products spanning analytics, learning agents,
-          infrastructure, and AI security.
-        </p>
-      </div>
-      <div className="more-work-grid">
-        {additionalProjects.map((project) => (
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noreferrer"
-            className="more-work-card"
-            key={project.title}
-          >
-            <span>{project.category}</span>
-            <h3>{project.title}</h3>
-            <p>{project.detail}</p>
-            <div>
-              View project <MdArrowOutward aria-hidden="true" />
-            </div>
-          </a>
         ))}
       </div>
     </section>
@@ -392,12 +227,12 @@ const MainContainer = ({ children }: PropsWithChildren) => (
     <section className="section experience-section" id="experience">
       <div className="section-heading">
         <div>
-          <p className="eyebrow">Experience</p>
-          <h2>Built across the whole product loop.</h2>
+          <p className="eyebrow">Selected experience</p>
+          <h2>Product judgment backed by real operating context.</h2>
         </div>
         <p>
-          Product judgment, engineering execution, and analytical rigor—used
-          together instead of handed off between silos.
+          Roles across AI product delivery, data science, and business
+          analytics—the disciplines I now bring together.
         </p>
       </div>
       <div className="experience-list">
@@ -418,50 +253,110 @@ const MainContainer = ({ children }: PropsWithChildren) => (
     <section className="section operating-section" id="about">
       <div className="section-heading">
         <div>
-          <p className="eyebrow">How I work</p>
-          <h2>Useful where disciplines overlap.</h2>
+          <p className="eyebrow">How I operate</p>
+          <h2>One loop, end to end.</h2>
         </div>
         <p>
-          My best work happens where a problem crosses boundaries: understand
-          the workflow, shape the product, build the system, measure the result.
+          I am most useful where a team needs someone to understand the
+          workflow, make the product call, and stay through implementation and
+          evidence.
         </p>
       </div>
-      <div className="mode-grid">
-        {operatingModes.map((mode) => (
-          <article key={mode.title}>
-            <span>My range</span>
-            <h3>{mode.title}</h3>
-            <p>{mode.body}</p>
+      <div className="process-grid">
+        {processSteps.map((step) => (
+          <article key={step.number}>
+            <span>{step.number}</span>
+            <h3>{step.title}</h3>
+            <p>{step.body}</p>
           </article>
         ))}
       </div>
-      <div className="tool-line" aria-label="Technical toolkit">
-        {tools.map((tool) => (
-          <span key={tool}>{tool}</span>
+      <div className="about-note">
+        <p>
+          Product management is the differentiator—not a competing identity. I
+          use discovery, engineering, and analytics together to make AI systems
+          useful, observable, and honest about their limits.
+        </p>
+        <a href="mailto:taranggoyal2000@gmail.com">
+          Discuss a role <MdArrowOutward aria-hidden="true" />
+        </a>
+      </div>
+    </section>
+
+    <section className="section archive-section" aria-labelledby="archive-title">
+      <div className="section-heading compact-heading">
+        <div>
+          <p className="eyebrow">Supporting work</p>
+          <h2 id="archive-title">Range after depth.</h2>
+        </div>
+        <p>
+          Research, award-winning product strategy, real-time systems, and AI
+          infrastructure.
+        </p>
+      </div>
+      <div className="archive-table">
+        <div className="archive-header" aria-hidden="true">
+          <span>Project</span>
+          <span>Role / status</span>
+          <span>Contribution</span>
+          <span>Year</span>
+        </div>
+        {archiveProjects.map((project) => (
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noreferrer"
+            key={project.title}
+          >
+            <div>
+              <strong>{project.title}</strong>
+              <span>{project.category}</span>
+            </div>
+            <div>
+              <strong>{project.role}</strong>
+              <span>{project.status}</span>
+            </div>
+            <p>{project.contribution}</p>
+            <div className="archive-year">
+              <span>{project.year}</span>
+              <MdArrowOutward aria-hidden="true" />
+            </div>
+          </a>
         ))}
       </div>
     </section>
 
     <footer className="site-footer" id="contact">
       <div>
-        <p className="eyebrow">Let’s build something useful</p>
-        <h2>Have a hard product problem?</h2>
+        <p className="eyebrow">AI Product Engineer / FDE</p>
+        <h2>
+          Hiring someone to turn an unclear AI workflow into a working product?
+        </h2>
       </div>
       <div className="footer-contact">
         <p>
-          Open to AI product engineering, forward-deployed engineering,
-          full-stack, and technical product opportunities.
+          I’m open to AI product engineering and forward-deployed roles where I
+          can work from customer problem through deployed software and
+          validation.
         </p>
         <a href="mailto:taranggoyal2000@gmail.com">
           <MdMailOutline aria-hidden="true" />
-          taranggoyal2000@gmail.com
+          Email Tarang
         </a>
       </div>
       <div className="footer-links">
-        <a href="https://linkedin.com/in/tarang-goyal" target="_blank" rel="noreferrer">
+        <a
+          href="https://linkedin.com/in/tarang-goyal"
+          target="_blank"
+          rel="noreferrer"
+        >
           LinkedIn <MdArrowOutward aria-hidden="true" />
         </a>
-        <a href="https://github.com/taranggoyal70" target="_blank" rel="noreferrer">
+        <a
+          href="https://github.com/taranggoyal70"
+          target="_blank"
+          rel="noreferrer"
+        >
           GitHub <MdArrowOutward aria-hidden="true" />
         </a>
         <a href="/resume.pdf" target="_blank">
@@ -469,7 +364,7 @@ const MainContainer = ({ children }: PropsWithChildren) => (
         </a>
       </div>
       <div className="footer-base">
-        <span>Santa Clara, California</span>
+        <span>San Francisco Bay Area</span>
         <span>© 2026 Tarang Goyal</span>
       </div>
     </footer>
