@@ -202,11 +202,11 @@ export const flagshipProjects: CaseStudyProject[] = [
       },
       {
         label: "Evidence",
-        body: "Working product, public source, architecture documentation, and verification checks.",
+        body: "Approved runs produced real branches, commits, and GitHub pull requests; 26 automated tests now cover the approval and PR boundaries.",
       },
     ],
     proof:
-      "Working prototype with authenticated GitHub sync, durable workspace state, approval gates, isolated Codex execution, and PR creation.",
+      "Verified approval → durable workflow → isolated Codex run → branch → GitHub pull request, backed by a 26-test quality gate.",
     proofUrl: "https://github.com/taranggoyal70/Morphic",
     proofLabel: "Product and architecture evidence",
     overview:
@@ -215,7 +215,7 @@ export const flagshipProjects: CaseStudyProject[] = [
       "The experience had to stay grounded in changing GitHub evidence rather than a one-time prompt.",
       "Agent execution needed explicit approval, isolation, and an auditable handoff.",
       "Large repositories required bounded evidence so workspace compilation stayed within context limits.",
-      "The current deployment is a live prototype; go-live provider and operational checks are still documented separately.",
+      "The live deployment still uses Clerk development credentials; its health endpoint reports productionReady: false until production keys are installed.",
     ],
     decisions: [
       {
@@ -262,21 +262,21 @@ export const flagshipProjects: CaseStudyProject[] = [
       {
         phase: "04",
         title: "Verify the system",
-        body: "Added validation commands and an architecture guard that prevents browser storage from becoming product state.",
+        body: "Built 26 automated tests around approval, rejection, startup and tracking failures, and pull-request payloads; CI, production build, and dependency audit pass.",
       },
     ],
     evidence: [
       {
-        title: "Working surfaces",
-        body: "Authenticated GitHub synchronization, workspace creation and adaptation, decision resolution, approved Codex runs, and pull-request creation.",
+        title: "Real handoff",
+        body: "Approved Morphic runs created reviewable branches, commits, and GitHub pull requests—not simulated artifacts.",
       },
       {
-        title: "Durable foundation",
-        body: "Neon-backed workspace state, Upstash rate limiting, Vercel Workflow, and sandboxed execution.",
+        title: "Quality gate",
+        body: "26 automated tests, a passing production build, and no known production-dependency vulnerabilities.",
       },
       {
-        title: "Known boundary",
-        body: "The repository documents remaining production-provider, quota, backup, and end-to-end go-live checks.",
+        title: "Known blocker",
+        body: "Database connectivity is healthy, but production authentication remains blocked on installing live Clerk credentials.",
       },
     ],
     reflection:
@@ -325,11 +325,11 @@ export const flagshipProjects: CaseStudyProject[] = [
       },
       {
         label: "Proof",
-        body: "Nine historical fixes: 100% fix-file recall, 53% median estimated context reduction, and two conservative fallbacks.",
+        body: "Fifteen historical fixes across three repositories: 100% fix-file recall, 54% median estimated context reduction, and two conservative fallbacks.",
       },
     ],
     proof:
-      "Reproducible benchmark across nine historical fixes: 100% fix-file recall and 53% median estimated context reduction.",
+      "Reproducible benchmark across 15 historical fixes in three repositories: 100% fix-file recall and 54% median estimated context reduction.",
     proofUrl: "https://github.com/taranggoyal70/locus/tree/main/benchmarks",
     proofLabel: "Read benchmark method",
     overview:
@@ -385,25 +385,25 @@ export const flagshipProjects: CaseStudyProject[] = [
       {
         phase: "04",
         title: "Benchmark historical fixes",
-        body: "Replayed nine real fixes from parent snapshots and published the method and cases.",
+        body: "Replayed 15 real fixes from parent snapshots across three repositories and published the method and cases.",
       },
     ],
     evidence: [
       {
         title: "Fix-file recall",
-        body: "100% across nine declared historical-fix cases.",
+        body: "15 of 15 historical fixes localized across three repositories.",
       },
       {
         title: "Context reduction",
-        body: "53% median estimated reduction across the same benchmark.",
+        body: "54% median estimated reduction across the same benchmark.",
       },
       {
-        title: "Safety behavior",
-        body: "Two cases correctly widened to the whole repository when evidence was insufficient.",
+        title: "Runtime and safety",
+        body: "41 automated tests cover the core locator plus real CLI and MCP processes; two weak-signal cases widened to the whole repository.",
       },
     ],
     reflection:
-      "The benchmark is intentionally small and JavaScript/TypeScript-focused. The next evidence step is a larger, multi-repository suite with latency, token accounting against named agent baselines, and failure analysis across more languages.",
+      "The benchmark proves localization recall and estimated context reduction, not autonomous task completion or code quality. The next evidence step is a larger multi-language suite with latency, measured token use, and agent-level completion baselines.",
     tools: [
       "Next.js",
       "TypeScript",

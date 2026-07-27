@@ -31,14 +31,14 @@ const projectHighlights = {
   morphic: [
     { icon: MdPersonOutline, text: "Product strategy, design & engineering" },
     { icon: MdCheckCircleOutline, text: "Live product prototype" },
-    { icon: MdCode, text: "GitHub-grounded adaptive workspace" },
+    { icon: MdCode, text: "26-test approval & PR boundary" },
     { icon: MdArrowForward, text: "Approval → branch → pull request" },
   ],
   locus: [
     { icon: MdPersonOutline, text: "Product strategy & engineering" },
-    { icon: MdTrendingUp, text: "53% median context reduction" },
+    { icon: MdTrendingUp, text: "54% median context reduction" },
     { icon: MdCheckCircleOutline, text: "100% fix-file recall" },
-    { icon: MdCode, text: "9 historical fixes benchmarked" },
+    { icon: MdCode, text: "15 historical fixes benchmarked" },
   ],
 };
 
@@ -179,7 +179,7 @@ const MainContainer = () => {
       >
         <span>Evidence</span>
         <strong>Locus</strong>
-        <p>53% median context reduction</p>
+        <p>54% median context reduction</p>
       </a>
       <a
         href="https://github.com/taranggoyal70/locus/tree/main/benchmarks"
@@ -188,7 +188,7 @@ const MainContainer = () => {
       >
         <span>Evidence</span>
         <strong>Locus</strong>
-        <p>100% fix-file recall across 9 historical fixes</p>
+        <p>100% fix-file recall across 15 historical fixes</p>
       </a>
     </section>
 
