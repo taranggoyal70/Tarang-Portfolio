@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
 import "./styles/Work.css";
 
@@ -154,65 +155,90 @@ const projects = [
 const featuredProjects = projects.slice(0, 3);
 const archiveProjects = projects.slice(3);
 
-const Work = () => (
-  <section className="work-section" id="work">
-    <div className="work-container section-container">
-      <div className="work-heading">
-        <div>
-          <p className="section-label">Selected work</p>
-          <h2>Three builds. Three kinds of proof.</h2>
+const Work = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeProject = featuredProjects[activeIndex];
+  const nextProject = () => {
+    setActiveIndex((current) => (current + 1) % featuredProjects.length);
+  };
+
+  return (
+    <section className="work-section" id="work">
+      <div className="work-container section-container">
+        <div className="work-heading">
+          <div>
+            <p className="section-label">Selected work</p>
+            <h2>Pick a build. See the proof.</h2>
+          </div>
+          <p>Three products, one screen.</p>
         </div>
-        <p>
-          Start with the problem, see the product call, then inspect what
-          actually shipped.
-        </p>
-      </div>
-      <div className="project-grid project-grid-featured">
-        {featuredProjects.map((project, index) => (
-          <article className="project-card project-card-featured" key={project.title}>
-            <div className="project-card-topline">
-              <span className="project-number">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <span className="project-category">{project.category}</span>
+
+        <div className="project-stage">
+          <div className="project-switcher" role="tablist" aria-label="Featured projects">
+            {featuredProjects.map((project, index) => (
+              <button
+                type="button"
+                role="tab"
+                aria-selected={activeIndex === index}
+                className={activeIndex === index ? "is-active" : ""}
+                onClick={() => setActiveIndex(index)}
+                key={project.title}
+                data-cursor="disable"
+              >
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <strong>{project.title.replace("AWS × INRIX ", "")}</strong>
+                <small>{project.stat}</small>
+              </button>
+            ))}
+          </div>
+
+          <article className="project-focus" key={activeProject.title}>
+            <div className="project-focus-copy">
+              <p className="project-category">{activeProject.category}</p>
+              <h3>{activeProject.title}</h3>
+              <p className="project-description">{activeProject.description}</p>
+              <div className="project-tools">
+                {activeProject.tools.map((tool) => (
+                  <span key={tool}>{tool}</span>
+                ))}
+              </div>
+              <a
+                href={activeProject.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-link"
+                data-cursor="disable"
+              >
+                {activeProject.linkLabel} <MdArrowOutward aria-hidden="true" />
+              </a>
             </div>
-            <div className="project-stat">
-              <strong>{project.stat}</strong>
-              <span>{project.statLabel}</span>
-            </div>
-            <h3>{project.title}</h3>
-            <p className="project-description">{project.description}</p>
+
             <dl className="project-receipt">
               <div>
                 <dt>Problem</dt>
-                <dd>{project.problem}</dd>
+                <dd>{activeProject.problem}</dd>
               </div>
               <div>
                 <dt>Product call</dt>
-                <dd>{project.decision}</dd>
+                <dd>{activeProject.decision}</dd>
               </div>
-              <div>
+              <div className="project-proof-row">
                 <dt>Proof</dt>
-                <dd>{project.proof}</dd>
+                <dd>{activeProject.proof}</dd>
               </div>
             </dl>
-            <div className="project-tools">
-              {project.tools.map((tool) => (
-                <span key={tool}>{tool}</span>
-              ))}
-            </div>
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="project-link"
+
+            <button
+              type="button"
+              className="project-next"
+              onClick={nextProject}
               data-cursor="disable"
             >
-              {project.linkLabel} <MdArrowOutward aria-hidden="true" />
-            </a>
+              Next project <span aria-hidden="true">→</span>
+            </button>
           </article>
-        ))}
-      </div>
+        </div>
+
       <details className="project-archive">
         <summary data-cursor="disable">
           Explore {archiveProjects.length} more products, awards, and research
@@ -232,7 +258,6 @@ const Work = () => (
                 <span>{project.statLabel}</span>
               </div>
               <h3>{project.title}</h3>
-              <p className="project-description">{project.description}</p>
               <div className="project-tools">
                 {project.tools.map((tool) => (
                   <span key={tool}>{tool}</span>
@@ -251,8 +276,9 @@ const Work = () => (
           ))}
         </div>
       </details>
-    </div>
-  </section>
-);
+      </div>
+    </section>
+  );
+};
 
 export default Work;

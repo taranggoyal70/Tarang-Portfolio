@@ -1,5 +1,5 @@
 .work-section {
-  padding: 130px 0;
+  padding: 112px 0;
   background: #0e121b;
   border-top: 1px solid var(--lineColor);
   border-bottom: 1px solid var(--lineColor);
@@ -14,7 +14,7 @@
   grid-template-columns: minmax(400px, 1.25fr) minmax(280px, 0.75fr);
   gap: 70px;
   align-items: end;
-  margin-bottom: 68px;
+  margin-bottom: 46px;
 }
 
 .work-heading > p {
@@ -30,21 +30,106 @@
   gap: 14px;
 }
 
-.project-grid-featured {
-  grid-template-columns: repeat(12, minmax(0, 1fr));
+.project-stage {
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  overflow: hidden;
+  border: 1px solid var(--lineColorStrong);
+  border-radius: 10px;
+  background: #0a0e16;
 }
 
-.project-card-featured {
-  grid-column: span 6;
-  min-height: 620px;
-  background:
-    linear-gradient(145deg, rgba(94, 234, 212, 0.055), transparent 38%),
-    var(--surfaceColor);
+.project-switcher {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  border-right: 1px solid var(--lineColorStrong);
 }
 
-.project-card-featured:nth-child(3) {
-  grid-column: 3 / span 8;
-  min-height: 570px;
+.project-switcher button {
+  padding: 24px 22px;
+  display: grid;
+  grid-template-columns: 30px 1fr auto;
+  gap: 10px;
+  align-items: center;
+  border: 0;
+  border-bottom: 1px solid var(--lineColor);
+  color: var(--textMuted);
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  transition: color 180ms ease, background 180ms ease;
+}
+
+.project-switcher button:last-child {
+  border-bottom: 0;
+}
+
+.project-switcher button:hover,
+.project-switcher button.is-active {
+  color: var(--textStrong);
+  background: rgba(94, 234, 212, 0.08);
+}
+
+.project-switcher button.is-active {
+  box-shadow: inset 3px 0 0 var(--accentColor);
+}
+
+.project-switcher button span,
+.project-switcher button small {
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-size: 10px;
+}
+
+.project-switcher button strong {
+  font-size: 14px;
+  font-weight: 620;
+}
+
+.project-switcher button small {
+  color: var(--accentSecondary);
+}
+
+.project-focus {
+  min-height: 520px;
+  padding: 44px 44px 82px;
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(360px, 1.18fr);
+  gap: 56px;
+  animation: project-enter 280ms ease both;
+}
+
+@keyframes project-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+.project-focus-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.project-focus .project-category {
+  max-width: none;
+  margin: 0;
+  text-align: left;
+}
+
+.project-focus h3 {
+  margin: 28px 0 0;
+  color: var(--textStrong);
+  font-size: clamp(44px, 5vw, 70px);
+  line-height: 0.96;
+  font-weight: 640;
+}
+
+.project-focus .project-description {
+  max-width: 430px;
+  margin-top: 20px;
+  font-size: 16px;
 }
 
 .project-card {
@@ -118,15 +203,15 @@
 }
 
 .project-receipt {
-  margin: 4px 0 28px;
+  margin: 0;
   border-top: 1px solid var(--lineColor);
 }
 
 .project-receipt div {
   display: grid;
-  grid-template-columns: 92px 1fr;
-  gap: 16px;
-  padding: 13px 0;
+  grid-template-columns: 100px 1fr;
+  gap: 20px;
+  padding: 20px 0;
   border-bottom: 1px solid var(--lineColor);
 }
 
@@ -142,8 +227,40 @@
 .project-receipt dd {
   margin: 0;
   color: #c5cdd8;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.project-receipt .project-proof-row {
+  margin: 12px -18px 0;
+  padding: 20px 18px;
+  border: 1px solid rgba(255, 184, 107, 0.24);
+  border-radius: 7px;
+  background: rgba(255, 184, 107, 0.07);
+}
+
+.project-next {
+  position: absolute;
+  right: 30px;
+  bottom: 26px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border: 0;
+  color: var(--textMuted);
+  background: transparent;
+  cursor: pointer;
   font-size: 13px;
-  line-height: 1.5;
+}
+
+.project-next span {
+  color: var(--accentColor);
+  font-size: 18px;
+  transition: transform 180ms ease;
+}
+
+.project-next:hover span {
+  transform: translateX(4px);
 }
 
 .project-tools {
@@ -208,7 +325,7 @@
 }
 
 .project-card-archive {
-  min-height: 390px;
+  min-height: 310px;
   padding: 24px;
 }
 
@@ -235,10 +352,36 @@
     grid-template-columns: 1fr;
   }
 
-  .project-card-featured,
-  .project-card-featured:nth-child(3) {
-    grid-column: auto;
+  .project-stage {
+    grid-template-columns: 1fr;
+  }
+
+  .project-switcher {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: none;
+    border-right: 0;
+    border-bottom: 1px solid var(--lineColorStrong);
+  }
+
+  .project-switcher button {
+    grid-template-columns: 1fr;
+    gap: 5px;
+    border-right: 1px solid var(--lineColor);
+    border-bottom: 0;
+  }
+
+  .project-switcher button.is-active {
+    box-shadow: inset 0 -3px 0 var(--accentColor);
+  }
+
+  .project-focus {
     min-height: 0;
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .project-focus h3 {
+    font-size: 48px;
   }
 
   .project-grid-archive {
@@ -263,5 +406,26 @@
   .project-receipt div {
     grid-template-columns: 1fr;
     gap: 6px;
+  }
+
+  .project-focus {
+    padding: 30px 22px 74px;
+  }
+
+  .project-switcher button {
+    min-width: 0;
+    padding: 16px 10px;
+  }
+
+  .project-switcher button strong {
+    overflow: hidden;
+    font-size: 12px;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-focus {
+    animation: none;
   }
 }

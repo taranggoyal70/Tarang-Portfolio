@@ -1,8 +1,8 @@
 .landing-section {
   width: 100%;
-  min-height: 680px;
+  min-height: 650px;
   height: calc(var(--vh) - 28px);
-  max-height: 920px;
+  max-height: 860px;
   margin: auto;
   position: relative;
   overflow: hidden;
@@ -21,7 +21,7 @@
 }
 
 .landing-copy {
-  width: min(650px, 50%);
+  width: min(700px, 58%);
   padding-top: 32px;
   position: relative;
   z-index: 14;
@@ -38,7 +38,7 @@
 
 .landing-copy h1 {
   margin: 0;
-  font-size: 76px;
+  font-size: 70px;
   line-height: 0.98;
   font-weight: 680;
   color: var(--textStrong);
@@ -47,7 +47,7 @@
 .landing-copy h2 {
   max-width: 620px;
   margin: 26px 0 0;
-  font-size: 34px;
+  font-size: 40px;
   line-height: 1.12;
   font-weight: 520;
   color: var(--textStrong);
@@ -118,7 +118,7 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
-  margin-top: 42px;
+  margin-top: 34px;
   padding-top: 22px;
   border-top: 1px solid var(--lineColor);
 }
@@ -182,12 +182,12 @@
 }
 
 .character-model {
-  width: 58%;
-  height: 100vh;
-  max-height: 1080px;
+  width: 47%;
+  height: 88vh;
+  max-height: 860px;
   position: absolute;
-  right: 0;
-  bottom: 0;
+  right: 2%;
+  bottom: -4%;
   z-index: 11;
   pointer-events: inherit;
 }
@@ -199,7 +199,14 @@
 }
 
 .character-rim {
-  display: none;
+  display: block;
+  position: absolute;
+  inset: 14% 7% 7%;
+  z-index: 0;
+  border: 1px solid rgba(94, 234, 212, 0.22);
+  border-radius: 48% 48% 22% 22%;
+  transform: rotate(-3deg);
+  box-shadow: 0 0 80px rgba(94, 234, 212, 0.08);
 }
 
 .character-hover {
@@ -227,7 +234,7 @@
   }
 
   .character-model {
-    width: 52%;
+    width: 46%;
   }
 }
 
@@ -235,7 +242,7 @@
   .landing-section {
     height: calc(var(--vh) - 24px);
     max-height: none;
-    min-height: 760px;
+    min-height: 720px;
   }
 
   .landing-container {
@@ -252,11 +259,11 @@
   .character-model {
     position: absolute;
     width: 100%;
-    height: 58%;
+    height: 48%;
     right: auto;
     left: 0;
     bottom: 0;
-    opacity: 0.68;
+    opacity: 0.42;
   }
 
   .landing-status {
@@ -266,9 +273,9 @@
 
 @media screen and (max-width: 700px) {
   .landing-section {
-    min-height: 860px;
-    height: 860px;
-    max-height: 860px;
+    min-height: 780px;
+    height: 780px;
+    max-height: 780px;
   }
 
   .landing-copy {
@@ -325,8 +332,8 @@
   }
 
   .character-model {
-    height: 32%;
-    opacity: 0.28;
+    height: 25%;
+    opacity: 0.22;
   }
 }
 

@@ -5,6 +5,7 @@ const experience = [
     role: "AI Product Manager & Product Engineer Intern",
     company: "Highview",
     period: "2026 - present",
+    proof: "Hackathon win → continued product",
     summary:
       "Building Studentlytics, an AI education platform spanning product planning, full-stack delivery, computer vision, speech, analytics, and deployment.",
     highlights: [
@@ -17,6 +18,7 @@ const experience = [
     role: "Data Science Intern",
     company: "Box",
     period: "2025",
+    proof: "40% less manual processing",
     summary:
       "Built data products for retention analysis, forecasting, stakeholder reporting, and product decision-making.",
     highlights: [
@@ -29,6 +31,7 @@ const experience = [
     role: "Business Data Analyst",
     company: "Hashroot Limited",
     period: "2023 - 2024",
+    proof: "20+ hours saved weekly",
     summary:
       "Combined analytics, internal tooling, and business modeling for customer, pricing, marketing, and operations teams.",
     highlights: [
@@ -46,13 +49,21 @@ const Career = () => (
       <h2>Built across the full product loop.</h2>
     </div>
     <div className="career-info">
-      {experience.map((item) => (
-        <article className="career-info-box" key={`${item.company}-${item.period}`}>
-          <div className="career-meta">
+      {experience.map((item, index) => (
+        <details
+          className="career-info-box"
+          key={`${item.company}-${item.period}`}
+          open={index === 0}
+        >
+          <summary data-cursor="disable">
             <p className="career-period">{item.period}</p>
-            <h3>{item.role}</h3>
-            <p className="career-company">{item.company}</p>
-          </div>
+            <div className="career-meta">
+              <p className="career-company">{item.company}</p>
+              <h3>{item.role}</h3>
+            </div>
+            <strong>{item.proof}</strong>
+            <span aria-hidden="true">+</span>
+          </summary>
           <div className="career-details">
             <p className="career-summary">{item.summary}</p>
             <ul>
@@ -61,7 +72,7 @@ const Career = () => (
               ))}
             </ul>
           </div>
-        </article>
+        </details>
       ))}
     </div>
   </section>

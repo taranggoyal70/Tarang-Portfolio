@@ -25,7 +25,7 @@ const capabilities = [
 ];
 
 const WhatIDo = () => (
-  <section className="whatIDO section-container">
+  <section className="whatIDO section-container" id="how">
     <div className="what-heading">
       <p className="section-label">How I work</p>
       <h2>Technical enough to build. Product-minded enough to choose well.</h2>

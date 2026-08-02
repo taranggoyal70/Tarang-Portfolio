@@ -1,5 +1,4 @@
-import { lazy, PropsWithChildren, Suspense, useEffect } from "react";
-import About from "./About";
+import { PropsWithChildren, useEffect } from "react";
 import Career from "./Career";
 import Contact from "./Contact";
 import Cursor from "./Cursor";
@@ -8,8 +7,6 @@ import Navbar from "./Navbar";
 import WhatIDo from "./WhatIDo";
 import Work from "./Work";
 import setSplitText from "./utils/splitText";
-
-const TechStack = lazy(() => import("./TechStack"));
 
 const MainContainer = ({ children }: PropsWithChildren) => {
   useEffect(() => {
@@ -31,13 +28,9 @@ const MainContainer = ({ children }: PropsWithChildren) => {
         <div id="smooth-content">
           <div className="container-main">
             <Landing>{children}</Landing>
-            <About />
-            <Career />
             <Work />
+            <Career />
             <WhatIDo />
-            <Suspense fallback={null}>
-              <TechStack />
-            </Suspense>
             <Contact />
           </div>
         </div>

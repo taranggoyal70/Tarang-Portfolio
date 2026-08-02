@@ -13,15 +13,42 @@
 }
 
 .career-info-box {
-  display: grid;
-  grid-template-columns: minmax(270px, 0.8fr) minmax(480px, 1.2fr);
-  gap: 70px;
-  padding: 46px 0;
   border-bottom: 1px solid var(--lineColor);
 }
 
+.career-info-box summary {
+  min-height: 118px;
+  display: grid;
+  grid-template-columns: 150px minmax(300px, 1fr) minmax(180px, 0.55fr) 24px;
+  gap: 30px;
+  align-items: center;
+  cursor: pointer;
+  list-style: none;
+}
+
+.career-info-box summary::-webkit-details-marker {
+  display: none;
+}
+
+.career-info-box summary > strong {
+  color: var(--accentSecondary);
+  font-size: 14px;
+  font-weight: 560;
+}
+
+.career-info-box summary > span {
+  color: var(--accentColor);
+  font-size: 26px;
+  font-weight: 320;
+  transition: transform 180ms ease;
+}
+
+.career-info-box[open] summary > span {
+  transform: rotate(45deg);
+}
+
 .career-period {
-  margin: 0 0 20px;
+  margin: 0;
   color: var(--accentSecondary);
   font-size: 13px;
   font-weight: 650;
@@ -32,13 +59,13 @@
   margin: 0;
   max-width: 430px;
   color: var(--textStrong);
-  font-size: 28px;
+  font-size: 20px;
   line-height: 1.2;
   font-weight: 580;
 }
 
 .career-company {
-  margin: 10px 0 0;
+  margin: 0 0 6px;
   color: var(--accentColor);
   font-size: 17px;
   font-weight: 550;
@@ -47,8 +74,14 @@
 .career-summary {
   margin: 0;
   color: var(--textStrong);
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.55;
+}
+
+.career-details {
+  max-width: 780px;
+  margin-left: 180px;
+  padding: 0 0 38px;
 }
 
 .career-details ul {
@@ -78,8 +111,28 @@
   }
 
   .career-info-box {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    padding: 38px 0;
+    display: block;
+  }
+
+  .career-info-box summary {
+    min-height: 0;
+    grid-template-columns: 1fr 24px;
+    gap: 10px 20px;
+    padding: 28px 0;
+  }
+
+  .career-period,
+  .career-meta,
+  .career-info-box summary > strong {
+    grid-column: 1;
+  }
+
+  .career-info-box summary > span {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+  }
+
+  .career-details {
+    margin-left: 0;
   }
 }

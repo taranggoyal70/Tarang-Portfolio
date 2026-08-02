@@ -9,18 +9,13 @@ const Landing = ({ children }: PropsWithChildren) => {
         <div className="landing-copy">
           <p className="landing-eyebrow">AI Product Engineer · Forward Deployed Builder</p>
           <h1>Tarang Goyal</h1>
-          <h2>I turn unclear workflows into AI products people can use.</h2>
-          <p className="landing-summary">
-            From customer problem and product decision through implementation,
-            deployment, and evidence.
-          </p>
+          <h2>I build AI products from messy workflows.</h2>
           <p className="landing-now">
-            Currently at Highview · San Francisco Bay Area · M.S. Business
-            Analytics, Santa Clara University
+            Highview · San Francisco Bay Area · Santa Clara University
           </p>
           <div className="landing-actions">
             <a href="#work" className="landing-primary-action" data-cursor="disable">
-              View selected work <MdArrowDownward aria-hidden="true" />
+              Explore the work <MdArrowDownward aria-hidden="true" />
             </a>
             <a
               href="/resume.pdf"
@@ -51,7 +46,7 @@ const Landing = ({ children }: PropsWithChildren) => {
         <div className="landing-status">
           <span className="landing-status-dot" aria-hidden="true"></span>
           <p>
-            Open to AI product engineering and FDE opportunities across the U.S.
+            Open to AI product engineering and FDE roles
           </p>
           <a href="mailto:taranggoyal2000@gmail.com" aria-label="Email Tarang">
             <MdArrowOutward aria-hidden="true" />
