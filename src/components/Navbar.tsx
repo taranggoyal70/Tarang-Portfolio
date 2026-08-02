@@ -24,20 +24,27 @@ const Navbar = () => {
     smoother.paused(true);
 
     const links = document.querySelectorAll(".header ul a");
-    links.forEach((elem) => {
-      const element = elem as HTMLAnchorElement;
-      element.addEventListener("click", (e) => {
-        if (window.innerWidth > 1024) {
-          e.preventDefault();
-          const elem = e.currentTarget as HTMLAnchorElement;
-          const section = elem.getAttribute("data-href");
-          smoother.scrollTo(section, true, "top top");
-        }
-      });
-    });
-    window.addEventListener("resize", () => {
+    const handleLinkClick = (event: Event) => {
+      const element = event.currentTarget as HTMLAnchorElement;
+      const section = element.getAttribute("data-href");
+      if (window.innerWidth > 1024 && section) {
+        event.preventDefault();
+        smoother.scrollTo(section, true, "top top");
+      }
+    };
+    links.forEach((element) => element.addEventListener("click", handleLinkClick));
+
+    const handleResize = () => {
       ScrollSmoother.refresh(true);
-    });
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      links.forEach((element) =>
+        element.removeEventListener("click", handleLinkClick)
+      );
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
   return (
     <>
@@ -71,6 +78,16 @@ const Navbar = () => {
           <li>
             <a data-href="#contact" href="#contact">
               <HoverLinks text="CONTACT" />
+            </a>
+          </li>
+          <li className="navbar-resume-item">
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cursor="disable"
+            >
+              RÉSUMÉ
             </a>
           </li>
         </ul>

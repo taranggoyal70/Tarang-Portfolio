@@ -30,6 +30,23 @@
   gap: 14px;
 }
 
+.project-grid-featured {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.project-card-featured {
+  grid-column: span 6;
+  min-height: 620px;
+  background:
+    linear-gradient(145deg, rgba(94, 234, 212, 0.055), transparent 38%),
+    var(--surfaceColor);
+}
+
+.project-card-featured:nth-child(3) {
+  grid-column: 3 / span 8;
+  min-height: 570px;
+}
+
 .project-card {
   min-height: 430px;
   padding: 28px;
@@ -100,6 +117,35 @@
   line-height: 1.65;
 }
 
+.project-receipt {
+  margin: 4px 0 28px;
+  border-top: 1px solid var(--lineColor);
+}
+
+.project-receipt div {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 16px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--lineColor);
+}
+
+.project-receipt dt {
+  color: var(--accentSecondary);
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase;
+}
+
+.project-receipt dd {
+  margin: 0;
+  color: #c5cdd8;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
 .project-tools {
   display: flex;
   flex-wrap: wrap;
@@ -122,6 +168,58 @@
   color: var(--accentColor);
 }
 
+.project-archive {
+  margin-top: 54px;
+  border-top: 1px solid var(--lineColorStrong);
+  border-bottom: 1px solid var(--lineColorStrong);
+}
+
+.project-archive summary {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  color: var(--textStrong);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 650;
+  list-style: none;
+}
+
+.project-archive summary::-webkit-details-marker {
+  display: none;
+}
+
+.project-archive summary span {
+  color: var(--accentColor);
+  font-size: 26px;
+  font-weight: 350;
+  transition: transform 180ms ease;
+}
+
+.project-archive[open] summary span {
+  transform: rotate(45deg);
+}
+
+.project-grid-archive {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: 0 0 28px;
+}
+
+.project-card-archive {
+  min-height: 390px;
+  padding: 24px;
+}
+
+.project-card-archive .project-stat {
+  margin-top: 38px;
+}
+
+.project-card-archive h3 {
+  font-size: 23px;
+}
+
 @media only screen and (max-width: 900px) {
   .work-section {
     padding: 90px 0;
@@ -137,6 +235,16 @@
     grid-template-columns: 1fr;
   }
 
+  .project-card-featured,
+  .project-card-featured:nth-child(3) {
+    grid-column: auto;
+    min-height: 0;
+  }
+
+  .project-grid-archive {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .project-card {
     min-height: 390px;
   }
@@ -146,5 +254,14 @@
   .project-card {
     min-height: 0;
     padding: 22px;
+  }
+
+  .project-grid-archive {
+    grid-template-columns: 1fr;
+  }
+
+  .project-receipt div {
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
 }

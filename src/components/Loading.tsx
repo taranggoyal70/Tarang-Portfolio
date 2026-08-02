@@ -10,28 +10,55 @@ const Loading = ({ percent }: { percent: number }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [clicked, setClicked] = useState(false);
 
-  if (percent >= 100) {
-    setTimeout(() => {
+  useEffect(() => {
+    if (percent < 100) return;
+
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    const completeTimer = window.setTimeout(() => {
       setLoaded(true);
-      setTimeout(() => {
-        setIsLoaded(true);
-      }, 1000);
-    }, 600);
-  }
+    }, reducedMotion ? 0 : 80);
+    const welcomeTimer = window.setTimeout(() => {
+      setIsLoaded(true);
+    }, reducedMotion ? 50 : 350);
+
+    return () => {
+      window.clearTimeout(completeTimer);
+      window.clearTimeout(welcomeTimer);
+    };
+  }, [percent]);
 
   useEffect(() => {
+    const fallbackTimer = window.setTimeout(() => {
+      setLoaded(true);
+      setIsLoaded(true);
+    }, 4000);
+
+    return () => window.clearTimeout(fallbackTimer);
+  }, []);
+
+  useEffect(() => {
+    if (!isLoaded) return;
+
+    let cancelled = false;
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
     import("./utils/initialFX").then((module) => {
-      if (isLoaded) {
-        setClicked(true);
-        setTimeout(() => {
-          if (module.initialFX) {
-            module.initialFX();
-          }
-          setIsLoading(false);
-        }, 900);
-      }
+      if (cancelled) return;
+      setClicked(true);
+      window.setTimeout(() => {
+        if (cancelled) return;
+        module.initialFX?.();
+        setIsLoading(false);
+      }, reducedMotion ? 50 : 450);
     });
-  }, [isLoaded]);
+
+    return () => {
+      cancelled = true;
+    };
+  }, [isLoaded, setIsLoading]);
 
   function handleMouseMove(e: React.MouseEvent<HTMLElement>) {
     const { currentTarget: target } = e;
@@ -97,7 +124,7 @@ export const setProgress = (setLoading: (value: number) => void) => {
 
   let interval = setInterval(() => {
     if (percent <= 50) {
-      let rand = Math.round(Math.random() * 5);
+      const rand = Math.round(Math.random() * 5);
       percent = percent + rand;
       setLoading(percent);
     } else {

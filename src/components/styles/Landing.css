@@ -61,6 +61,16 @@
   color: var(--textMuted);
 }
 
+.landing-now {
+  max-width: 590px;
+  margin: 16px 0 0;
+  padding-left: 14px;
+  border-left: 2px solid var(--accentSecondary);
+  color: #cbd2dc;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
 .landing-actions {
   display: flex;
   align-items: center;
@@ -128,6 +138,7 @@
 .landing-proof span {
   font-size: 12px;
   color: var(--textMuted);
+  line-height: 1.35;
 }
 
 .landing-status {
@@ -255,9 +266,9 @@
 
 @media screen and (max-width: 700px) {
   .landing-section {
-    min-height: 720px;
-    height: 720px;
-    max-height: 720px;
+    min-height: 860px;
+    height: 860px;
+    max-height: 860px;
   }
 
   .landing-copy {
@@ -270,12 +281,12 @@
   }
 
   .landing-copy h1 {
-    font-size: 48px;
+    font-size: 44px;
   }
 
   .landing-copy h2 {
     margin-top: 18px;
-    font-size: 27px;
+    font-size: 25px;
   }
 
   .landing-summary {
@@ -283,13 +294,20 @@
     line-height: 1.55;
   }
 
+  .landing-now {
+    max-width: 440px;
+    font-size: 12px;
+  }
+
   .landing-actions {
     flex-wrap: wrap;
+    margin-top: 24px;
   }
 
   .landing-proof {
     gap: 10px;
-    margin-top: 28px;
+    margin-top: 24px;
+    padding-top: 18px;
   }
 
   .landing-proof strong {
@@ -303,11 +321,12 @@
   .landing-status {
     max-width: 88%;
     align-items: flex-start;
+    bottom: 18px;
   }
 
   .character-model {
-    height: 38%;
-    opacity: 0.5;
+    height: 32%;
+    opacity: 0.28;
   }
 }
 

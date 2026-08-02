@@ -3,10 +3,33 @@ import "./styles/Work.css";
 
 const projects = [
   {
+    title: "Locus",
+    category: "Live developer tool",
+    description:
+      "Task-sized context for coding agents, delivered through a web app, REST API, CLI, and MCP server.",
+    problem:
+      "Whole-repository context is noisy, but aggressive filtering can hide the file that matters.",
+    decision:
+      "Use deterministic dependency closure and return the whole repository whenever evidence is weak.",
+    proof:
+      "15 historical fixes · 87% task localization · 100% focused fix-file recall · 65% median context reduction.",
+    tools: ["Next.js", "TypeScript", "MCP", "CLI", "Vercel"],
+    stat: "65%",
+    statLabel: "median context reduction",
+    link: "https://locus-five-iota.vercel.app",
+    linkLabel: "Open live product",
+  },
+  {
     title: "Morphic",
     category: "Live AI product",
     description:
-      "An adaptive software workspace that turns a builder's objective into a GitHub-grounded interface, then lets users supervise approved Codex runs through pull request creation.",
+      "An objective-centered software workspace grounded in GitHub evidence, with governed Codex runs and pull-request handoff.",
+    problem:
+      "Plans drift from repository reality while agent work happens in a separate, low-context interface.",
+    decision:
+      "Make the objective—not chat—the persistent interface and keep execution behind explicit approval.",
+    proof:
+      "Real branches, commits, and GitHub pull requests · 26 automated tests across approval and PR boundaries.",
     tools: [
       "Next.js",
       "React",
@@ -25,7 +48,13 @@ const projects = [
     title: "AWS × INRIX Studentlytics",
     category: "1st place · 24-hour build",
     description:
-      "An event-driven video pipeline that processed classroom recordings, matched student faces, calculated attendance and engagement, and stored analytics results.",
+      "A deployed classroom analytics prototype that turns recordings into attendance and engagement evidence for educators.",
+    problem:
+      "Manual roll calls record presence but miss participation, check-in, check-out, and engagement context.",
+    decision:
+      "Organize the product around the educator workflow instead of exposing raw computer-vision output.",
+    proof:
+      "First place at AWS × INRIX · deployed in 24 hours · continued as product work at Highview.",
     tools: ["AWS Lambda", "Step Functions", "S3", "Rekognition", "DynamoDB"],
     stat: "1st",
     statLabel: "hackathon winner",
@@ -66,15 +95,15 @@ const projects = [
     linkLabel: "Read the paper",
   },
   {
-    title: "Locus",
-    category: "Live dev tool",
+    title: "Box Retention Intelligence",
+    category: "Data science internship",
     description:
-      "Task-scoped dependency localization that shows an AI coding agent only the code it needs, cutting input tokens by widening never narrowing so quality never drops. Ships as a CLI and MCP server.",
-    tools: ["Next.js", "TypeScript", "Tailwind CSS v4", "MCP", "Vercel"],
-    stat: "67%",
-    statLabel: "fewer tokens",
-    link: "https://locus-five-iota.vercel.app",
-    linkLabel: "Open live app",
+      "Retention analysis and forecasting workflows across 100K+ records and 10K+ accounts, translated into decision-ready reporting.",
+    tools: ["PySpark", "SQL", "BigQuery", "XGBoost", "Tableau"],
+    stat: "40%",
+    statLabel: "less manual processing",
+    link: "https://tarang-box-retention.vercel.app",
+    linkLabel: "Open project",
   },
   {
     title: "Cortex",
@@ -122,22 +151,25 @@ const projects = [
   },
 ];
 
+const featuredProjects = projects.slice(0, 3);
+const archiveProjects = projects.slice(3);
+
 const Work = () => (
   <section className="work-section" id="work">
     <div className="work-container section-container">
       <div className="work-heading">
         <div>
           <p className="section-label">Selected work</p>
-          <h2>Products with proof behind them.</h2>
+          <h2>Three builds. Three kinds of proof.</h2>
         </div>
         <p>
-          Production work, award-winning builds, and research across AI,
-          real-time systems, product strategy, and analytics.
+          Start with the problem, see the product call, then inspect what
+          actually shipped.
         </p>
       </div>
-      <div className="project-grid">
-        {projects.map((project, index) => (
-          <article className="project-card" key={project.title}>
+      <div className="project-grid project-grid-featured">
+        {featuredProjects.map((project, index) => (
+          <article className="project-card project-card-featured" key={project.title}>
             <div className="project-card-topline">
               <span className="project-number">
                 {String(index + 1).padStart(2, "0")}
@@ -150,6 +182,20 @@ const Work = () => (
             </div>
             <h3>{project.title}</h3>
             <p className="project-description">{project.description}</p>
+            <dl className="project-receipt">
+              <div>
+                <dt>Problem</dt>
+                <dd>{project.problem}</dd>
+              </div>
+              <div>
+                <dt>Product call</dt>
+                <dd>{project.decision}</dd>
+              </div>
+              <div>
+                <dt>Proof</dt>
+                <dd>{project.proof}</dd>
+              </div>
+            </dl>
             <div className="project-tools">
               {project.tools.map((tool) => (
                 <span key={tool}>{tool}</span>
@@ -167,6 +213,44 @@ const Work = () => (
           </article>
         ))}
       </div>
+      <details className="project-archive">
+        <summary data-cursor="disable">
+          Explore {archiveProjects.length} more products, awards, and research
+          <span aria-hidden="true">+</span>
+        </summary>
+        <div className="project-grid project-grid-archive">
+          {archiveProjects.map((project, index) => (
+            <article className="project-card project-card-archive" key={project.title}>
+              <div className="project-card-topline">
+                <span className="project-number">
+                  {String(index + 4).padStart(2, "0")}
+                </span>
+                <span className="project-category">{project.category}</span>
+              </div>
+              <div className="project-stat">
+                <strong>{project.stat}</strong>
+                <span>{project.statLabel}</span>
+              </div>
+              <h3>{project.title}</h3>
+              <p className="project-description">{project.description}</p>
+              <div className="project-tools">
+                {project.tools.map((tool) => (
+                  <span key={tool}>{tool}</span>
+                ))}
+              </div>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-link"
+                data-cursor="disable"
+              >
+                {project.linkLabel} <MdArrowOutward aria-hidden="true" />
+              </a>
+            </article>
+          ))}
+        </div>
+      </details>
     </div>
   </section>
 );
