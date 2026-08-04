@@ -8,11 +8,7 @@ const experience = [
     proof: "Hackathon win → continued product",
     summary:
       "Building Studentlytics, an AI education platform spanning product planning, full-stack delivery, computer vision, speech, analytics, and deployment.",
-    highlights: [
-      "Shipped role-based staff, student, course, session, profile, and analytics workflows with React, TypeScript, Vite, and Tailwind.",
-      "Built FastAPI, OpenCV, Whisper, and AWS Rekognition workflows that process class recordings with 91% face-match accuracy.",
-      "Connected Supabase authentication, database-backed workflows, Vercel, and AWS Lambda/API Gateway analytics endpoints.",
-    ],
+    skills: ["Product engineering", "Computer vision", "AWS"],
   },
   {
     role: "Data Science Intern",
@@ -21,11 +17,7 @@ const experience = [
     proof: "40% less manual processing",
     summary:
       "Built data products for retention analysis, forecasting, stakeholder reporting, and product decision-making.",
-    highlights: [
-      "Reduced manual processing by 40% with scalable PySpark and SQL data pipelines across four cross-functional teams.",
-      "Modeled churn and forecast-versus-actual performance across 100K+ records and 10K+ accounts using BigQuery and XGBoost.",
-      "Created Tableau and Power BI reporting that contributed to a 15% increase in feature adoption.",
-    ],
+    skills: ["PySpark", "BigQuery", "XGBoost"],
   },
   {
     role: "Business Data Analyst",
@@ -34,11 +26,7 @@ const experience = [
     proof: "20+ hours saved weekly",
     summary:
       "Combined analytics, internal tooling, and business modeling for customer, pricing, marketing, and operations teams.",
-    highlights: [
-      "Used SQL and Python segmentation to surface upsell opportunities that supported 10% revenue growth.",
-      "Automated Tableau reporting across sales, marketing, and operations, saving more than 20 hours each week.",
-      "Connected customer, pricing, and operations data into reusable decision workflows for cross-functional teams.",
-    ],
+    skills: ["SQL", "Python", "Tableau"],
   },
 ];
 
@@ -50,29 +38,20 @@ const Career = () => (
     </div>
     <div className="career-info">
       {experience.map((item, index) => (
-        <details
-          className="career-info-box"
-          key={`${item.company}-${item.period}`}
-          open={index === 0}
-        >
-          <summary data-cursor="disable">
-            <p className="career-period">{item.period}</p>
-            <div className="career-meta">
-              <p className="career-company">{item.company}</p>
-              <h3>{item.role}</h3>
-            </div>
-            <strong>{item.proof}</strong>
-            <span aria-hidden="true">+</span>
-          </summary>
-          <div className="career-details">
-            <p className="career-summary">{item.summary}</p>
-            <ul>
-              {item.highlights.map((highlight) => (
-                <li key={highlight}>{highlight}</li>
-              ))}
-            </ul>
+        <article className="career-info-box" key={`${item.company}-${item.period}`}>
+          <p className="career-period">{item.period}</p>
+          <div className="career-meta">
+            <p className="career-company">{item.company}</p>
+            <h3>{item.role}</h3>
           </div>
-        </details>
+          <div className="career-impact">
+            <strong><span>{String(index + 1).padStart(2, "0")}</span>{item.proof}</strong>
+            <p className="career-summary">{item.summary}</p>
+            <div className="career-skills">
+              {item.skills.map((skill) => <span key={skill}>{skill}</span>)}
+            </div>
+          </div>
+        </article>
       ))}
     </div>
   </section>

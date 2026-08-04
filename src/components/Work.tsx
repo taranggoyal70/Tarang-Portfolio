@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
 import "./styles/Work.css";
 
@@ -19,6 +18,10 @@ const projects = [
     statLabel: "median context reduction",
     link: "https://locus-five-iota.vercel.app",
     linkLabel: "Open live product",
+    source: "https://github.com/taranggoyal70/locus",
+    image: "https://tarang-portfolio-pink.vercel.app/project-media/locus.png",
+    imageAlt: "Locus repository context analysis interface",
+    role: "Product strategy · UX · Full-stack engineering",
   },
   {
     title: "Morphic",
@@ -44,6 +47,10 @@ const projects = [
     statLabel: "Vercel app",
     link: "https://morphic-murex.vercel.app/",
     linkLabel: "Open live app",
+    source: "https://github.com/taranggoyal70/Morphic",
+    image: "https://tarang-portfolio-pink.vercel.app/project-media/morphic.png",
+    imageAlt: "Morphic objective-centered software workspace",
+    role: "Product architecture · Agent workflow · Full-stack engineering",
   },
   {
     title: "AWS × INRIX Studentlytics",
@@ -61,6 +68,10 @@ const projects = [
     statLabel: "hackathon winner",
     link: "https://devpost.com/software/studentlytics",
     linkLabel: "View on Devpost",
+    source: "https://github.com/taranggoyal70/Studentlytics",
+    image: "https://tarang-portfolio-pink.vercel.app/project-media/studentlytics.png",
+    imageAlt: "Studentlytics educator analytics dashboard",
+    role: "Product lead · Frontend · Analytics workflow",
   },
   {
     title: "Crowd Symphony",
@@ -156,91 +167,80 @@ const featuredProjects = projects.slice(0, 3);
 const archiveProjects = projects.slice(3);
 
 const Work = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const activeProject = featuredProjects[activeIndex];
-  const nextProject = () => {
-    setActiveIndex((current) => (current + 1) % featuredProjects.length);
-  };
-
   return (
     <section className="work-section" id="work">
       <div className="work-container section-container">
         <div className="work-heading">
           <div>
             <p className="section-label">Selected work</p>
-            <h2>Pick a build. See the proof.</h2>
+            <h2>Products you can open. Decisions you can inspect.</h2>
           </div>
-          <p>Three products, one screen.</p>
+          <p>
+            Three flagship builds showing how I frame the problem, make the
+            product call, and ship the system.
+          </p>
         </div>
 
-        <div className="project-stage">
-          <div className="project-switcher" role="tablist" aria-label="Featured projects">
-            {featuredProjects.map((project, index) => (
-              <button
-                type="button"
-                role="tab"
-                aria-selected={activeIndex === index}
-                className={activeIndex === index ? "is-active" : ""}
-                onClick={() => setActiveIndex(index)}
-                key={project.title}
-                data-cursor="disable"
-              >
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <strong>{project.title.replace("AWS × INRIX ", "")}</strong>
-                <small>{project.stat}</small>
-              </button>
-            ))}
-          </div>
-
-          <article className="project-focus" key={activeProject.title}>
-            <div className="project-focus-copy">
-              <p className="project-category">{activeProject.category}</p>
-              <h3>{activeProject.title}</h3>
-              <p className="project-description">{activeProject.description}</p>
-              <div className="project-tools">
-                {activeProject.tools.map((tool) => (
-                  <span key={tool}>{tool}</span>
-                ))}
-              </div>
+        <div className="featured-projects">
+          {featuredProjects.map((project, index) => (
+            <article className="project-case" key={project.title}>
               <a
-                href={activeProject.link}
+                className="project-visual"
+                href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="project-link"
-                data-cursor="disable"
+                aria-label={`${project.linkLabel}: ${project.title}`}
               >
-                {activeProject.linkLabel} <MdArrowOutward aria-hidden="true" />
+                <div className="project-browser" aria-hidden="true">
+                  <span></span><span></span><span></span>
+                  <small>{project.title}</small>
+                </div>
+                <img src={project.image} alt={project.imageAlt} loading={index === 0 ? "eager" : "lazy"} />
+                <span className="project-visual-action">Open product ↗</span>
               </a>
-            </div>
 
-            <dl className="project-receipt">
-              <div>
-                <dt>Problem</dt>
-                <dd>{activeProject.problem}</dd>
+              <div className="project-case-copy">
+                <div className="project-kicker">
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <span>{project.category}</span>
+                </div>
+                <h3>{project.title}</h3>
+                <p className="project-role">{project.role}</p>
+                <p className="project-description">{project.description}</p>
+                <dl className="project-receipt">
+                  <div>
+                    <dt>Problem</dt>
+                    <dd>{project.problem}</dd>
+                  </div>
+                  <div>
+                    <dt>Product call</dt>
+                    <dd>{project.decision}</dd>
+                  </div>
+                  <div className="project-proof-row">
+                    <dt>Evidence</dt>
+                    <dd>{project.proof}</dd>
+                  </div>
+                </dl>
+                <div className="project-case-footer">
+                  <div className="project-tools">
+                    {project.tools.slice(0, 5).map((tool) => <span key={tool}>{tool}</span>)}
+                  </div>
+                  <div className="project-links">
+                    <a href={project.link} target="_blank" rel="noopener noreferrer">
+                      {project.linkLabel} <MdArrowOutward aria-hidden="true" />
+                    </a>
+                    <a href={project.source} target="_blank" rel="noopener noreferrer">
+                      Source <MdArrowOutward aria-hidden="true" />
+                    </a>
+                  </div>
+                </div>
               </div>
-              <div>
-                <dt>Product call</dt>
-                <dd>{activeProject.decision}</dd>
-              </div>
-              <div className="project-proof-row">
-                <dt>Proof</dt>
-                <dd>{activeProject.proof}</dd>
-              </div>
-            </dl>
-
-            <button
-              type="button"
-              className="project-next"
-              onClick={nextProject}
-              data-cursor="disable"
-            >
-              Next project <span aria-hidden="true">→</span>
-            </button>
-          </article>
+            </article>
+          ))}
         </div>
 
       <details className="project-archive">
-        <summary data-cursor="disable">
+        <summary>
           Explore {archiveProjects.length} more products, awards, and research
           <span aria-hidden="true">+</span>
         </summary>
@@ -268,7 +268,6 @@ const Work = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="project-link"
-                data-cursor="disable"
               >
                 {project.linkLabel} <MdArrowOutward aria-hidden="true" />
               </a>
