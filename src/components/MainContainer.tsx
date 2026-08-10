@@ -18,8 +18,108 @@ import {
   experience,
   flagshipProjects,
   processSteps,
+  type ProjectSlug,
 } from "../data/portfolioData";
 import "./styles/Portfolio.css";
+
+type ProductArtifactProps = {
+  project: ProjectSlug;
+  compact?: boolean;
+};
+
+const ProductArtifact = ({ project, compact = false }: ProductArtifactProps) => {
+  if (project === "studentlytics") {
+    return (
+      <div className={`product-artifact studentlytics-artifact${compact ? " is-compact" : ""}`}>
+        <div className="artifact-bar">
+          <span className="artifact-brand">Studentlytics</span>
+          <span className="artifact-live"><i /> Live session</span>
+        </div>
+        <div className="student-dashboard">
+          <section className="student-summary">
+            <span>Period 3 · Product Design</span>
+            <strong>26 of 28</strong>
+            <p>students checked in</p>
+            <div className="student-signal">
+              <span>Engagement</span><strong>82%</strong>
+            </div>
+          </section>
+          <section className="student-timeline">
+            <div className="timeline-heading">
+              <span>Session signals</span><strong>10:24 AM</strong>
+            </div>
+            <div className="engagement-bars" aria-hidden="true">
+              {[44, 62, 58, 76, 88, 72, 91, 84, 68, 79, 94, 87].map((height, index) => (
+                <i key={index} style={{ "--bar-height": `${height}%` } as React.CSSProperties} />
+              ))}
+            </div>
+            <div className="student-insight">
+              <span>AI insight</span>
+              <p>Participation rose after the live poll. Two students may need a follow-up.</p>
+            </div>
+          </section>
+        </div>
+      </div>
+    );
+  }
+
+  if (project === "morphic") {
+    return (
+      <div className={`product-artifact morphic-artifact${compact ? " is-compact" : ""}`}>
+        <div className="artifact-bar">
+          <span className="artifact-brand">Morphic / Workspace</span>
+          <span className="artifact-repo">taranggoyal70 / product</span>
+        </div>
+        <div className="morphic-workspace">
+          <div className="objective-card">
+            <span>Objective</span>
+            <strong>Ship the billing recovery flow</strong>
+            <p>Grounded in issue #42, repository state, and acceptance criteria.</p>
+          </div>
+          <ol className="delivery-rail">
+            <li className="is-done"><span>1</span><p>Repository synced</p></li>
+            <li className="is-done"><span>2</span><p>Plan compiled</p></li>
+            <li className="is-active"><span>3</span><p>Approval required</p></li>
+            <li><span>4</span><p>Branch + pull request</p></li>
+          </ol>
+          <div className="approval-card">
+            <div><span>Execution boundary</span><strong>3 files · 8 changes · 26 checks</strong></div>
+            <span className="approval-button">Approve &amp; open PR <MdArrowForward aria-hidden="true" /></span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className={`product-artifact locus-artifact${compact ? " is-compact" : ""}`}>
+      <div className="artifact-bar">
+        <span className="artifact-brand">Locus / Context trace</span>
+        <span className="artifact-repo">15 fixes benchmarked</span>
+      </div>
+      <div className="locus-workspace">
+        <div className="locus-query">
+          <span>Engineering task</span>
+          <strong>Fix the dashboard chart loading state</strong>
+        </div>
+        <div className="context-map" aria-label="Focused code dependency map">
+          <div className="context-file context-source"><span>Task match</span><strong>DashboardChart.tsx</strong></div>
+          <div className="context-connector" aria-hidden="true"><i /><i /><i /></div>
+          <div className="context-files">
+            <div><span>Dependency</span><strong>useMetrics.ts</strong></div>
+            <div><span>Test</span><strong>DashboardChart.test.tsx</strong></div>
+            <div><span>Integration</span><strong>AnalyticsPanel.tsx</strong></div>
+          </div>
+        </div>
+        <div className="context-result">
+          <div><span>Context sent</span><strong>35%</strong></div>
+          <div><span>Fix-file recall</span><strong>100%</strong></div>
+          <div className="context-saving"><span>Estimated reduction</span><strong>65%</strong></div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const projectHighlights = {
   studentlytics: [
@@ -36,8 +136,8 @@ const projectHighlights = {
   ],
   locus: [
     { icon: MdPersonOutline, text: "Product strategy & engineering" },
-    { icon: MdTrendingUp, text: "54% median context reduction" },
-    { icon: MdCheckCircleOutline, text: "100% fix-file recall" },
+    { icon: MdTrendingUp, text: "65% median context reduction" },
+    { icon: MdCheckCircleOutline, text: "100% focused fix-file recall" },
     { icon: MdCode, text: "15 historical fixes benchmarked" },
   ],
 };
@@ -82,9 +182,10 @@ const MainContainer = () => {
         <a href="/resume.pdf" target="_blank">
           Résumé
         </a>
+        <a href="mailto:taranggoyal2000@gmail.com">Email Tarang</a>
       </nav>
-      <a className="contact-nav" href="mailto:taranggoyal2000@gmail.com">
-        Email Tarang <MdArrowOutward aria-hidden="true" />
+      <a className="contact-nav" href="#work">
+        View flagship work <MdArrowDownward aria-hidden="true" />
       </a>
       <details className="mobile-nav">
         <summary>
@@ -122,16 +223,24 @@ const MainContainer = () => {
 
     <section className="hero" id="top">
       <div className="hero-copy">
+        <div className="hero-status">
+          <i aria-hidden="true" />
+          Available for AI product and FDE roles
+        </div>
         <p className="eyebrow">
           AI Product Engineer · Forward-Deployed Builder
         </p>
         <h1>
-          I turn ambiguous workflows into
-          <span> useful</span> AI products.
+          I turn ambiguous workflows into <span>useful AI products.</span>
         </h1>
+        <p className="hero-role">
+          AI Product Engineer &amp;
+          <br />
+          Forward-Deployed Builder.
+        </p>
         <p className="hero-intro">
-          I work from user problem and product decision through implementation,
-          deployment, and validation.
+          From user problem and product decision through implementation,
+          deployment, and evidence.
         </p>
         <div className="hero-lower">
           <p className="hero-now">
@@ -154,6 +263,74 @@ const MainContainer = () => {
             </a>
           </div>
         </div>
+      </div>
+
+      <aside className="hero-proof" aria-label="Selected product proof">
+        <article className="proof-frame">
+          <div className="proof-frame-label">
+            <span>Observed problem</span>
+            <strong>Studentlytics</strong>
+          </div>
+          <a href="/work/studentlytics" aria-label="Read the Studentlytics case study">
+            <ProductArtifact project="studentlytics" compact />
+          </a>
+        </article>
+
+        <article className="proof-frame">
+          <div className="proof-frame-label">
+            <span>Product call</span>
+            <strong>Morphic</strong>
+          </div>
+          <a href="/work/morphic" aria-label="Read the Morphic case study">
+            <ProductArtifact project="morphic" compact />
+          </a>
+        </article>
+
+        <article className="proof-frame">
+          <div className="proof-frame-label">
+            <span>Shipped system</span>
+            <strong>Locus</strong>
+          </div>
+          <a href="/work/locus" aria-label="Read the Locus case study">
+            <ProductArtifact project="locus" compact />
+          </a>
+        </article>
+
+        <article className="proof-frame proof-frame-evidence">
+          <div className="proof-frame-label">
+            <span>Evidence</span>
+            <strong>Verified outcomes</strong>
+          </div>
+          <dl>
+            <div>
+              <dt>AWS × INRIX</dt>
+              <dd>First place</dd>
+            </div>
+            <div>
+              <dt>Box</dt>
+              <dd>40% less manual processing</dd>
+            </div>
+            <div>
+              <dt>Locus</dt>
+              <dd>100% focused fix-file recall</dd>
+            </div>
+          </dl>
+        </article>
+        <hr className="proof-scanner" aria-hidden="true" />
+      </aside>
+    </section>
+
+    <section className="capability-ribbon" aria-label="Core capabilities">
+      <div className="capability-track">
+        {[0, 1].map((copy) => (
+          <div aria-hidden={copy === 1} key={copy}>
+            <span>Product judgment</span><i />
+            <span>AI systems</span><i />
+            <span>Forward-deployed execution</span><i />
+            <span>User evidence</span><i />
+            <span>Shipped software</span><i />
+          </div>
+        ))}
       </div>
     </section>
 
@@ -179,7 +356,7 @@ const MainContainer = () => {
       >
         <span>Evidence</span>
         <strong>Locus</strong>
-        <p>54% median context reduction</p>
+        <p>65% median context reduction</p>
       </a>
       <a
         href="https://github.com/taranggoyal70/locus/tree/main/benchmarks"
@@ -188,20 +365,24 @@ const MainContainer = () => {
       >
         <span>Evidence</span>
         <strong>Locus</strong>
-        <p>100% fix-file recall across 15 historical fixes</p>
+        <p>100% focused recall across 13 localized cases</p>
       </a>
     </section>
 
     <section className="section work-section" id="work">
       <div className="flagship-list">
         {flagshipProjects.map((project, index) => (
-          <article className="flagship-project" key={project.slug}>
+          <article
+            className="flagship-project"
+            data-project={project.slug}
+            key={project.slug}
+          >
             <a
               className="flagship-visual"
               href={`/work/${project.slug}`}
               aria-label={`Read ${project.title} case study`}
             >
-              <img src={project.image} alt={project.imageAlt} />
+              <ProductArtifact project={project.slug} />
               <span>{project.status}</span>
             </a>
 

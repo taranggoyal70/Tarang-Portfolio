@@ -325,11 +325,11 @@ export const flagshipProjects: CaseStudyProject[] = [
       },
       {
         label: "Proof",
-        body: "Fifteen historical fixes across three repositories: 100% fix-file recall, 54% median estimated context reduction, and two conservative fallbacks.",
+        body: "Fifteen historical fixes across three repositories: 87% task localization, 100% focused fix-file recall, 65% median estimated context reduction, and two conservative fallbacks.",
       },
     ],
     proof:
-      "Reproducible benchmark across 15 historical fixes in three repositories: 100% fix-file recall and 54% median estimated context reduction.",
+      "Reproducible benchmark across 15 historical fixes in three repositories: 87% task localization, 100% focused fix-file recall, and 65% median estimated context reduction.",
     proofUrl: "https://github.com/taranggoyal70/locus/tree/main/benchmarks",
     proofLabel: "Read benchmark method",
     overview:
@@ -391,15 +391,15 @@ export const flagshipProjects: CaseStudyProject[] = [
     evidence: [
       {
         title: "Fix-file recall",
-        body: "15 of 15 historical fixes localized across three repositories.",
+        body: "19 of 19 fix files found across 13 localized cases; two weak-signal tasks widened conservatively.",
       },
       {
         title: "Context reduction",
-        body: "54% median estimated reduction across the same benchmark.",
+        body: "65% median estimated reduction across the same benchmark.",
       },
       {
         title: "Runtime and safety",
-        body: "41 automated tests cover the core locator plus real CLI and MCP processes; two weak-signal cases widened to the whole repository.",
+        body: "52 automated tests cover the core locator plus real CLI and MCP processes; two weak-signal cases widened to the whole repository.",
       },
     ],
     reflection:
