@@ -48,8 +48,8 @@ export type CaseStudyProject = {
   tools: string[];
 };
 
-export const flagshipProjects: CaseStudyProject[] = [
-  {
+const flagshipProjectCatalog: Record<ProjectSlug, CaseStudyProject> = {
+  studentlytics: {
     slug: "studentlytics",
     title: "Studentlytics",
     descriptor: "AI-powered classroom engagement prototype",
@@ -170,7 +170,7 @@ export const flagshipProjects: CaseStudyProject[] = [
       "AWS",
     ],
   },
-  {
+  morphic: {
     slug: "morphic",
     title: "Morphic",
     descriptor: "Adaptive AI software workspace",
@@ -293,7 +293,7 @@ export const flagshipProjects: CaseStudyProject[] = [
       "Vercel Sandbox",
     ],
   },
-  {
+  locus: {
     slug: "locus",
     title: "Locus",
     descriptor: "Task-sized context for coding agents",
@@ -416,6 +416,12 @@ export const flagshipProjects: CaseStudyProject[] = [
       "Vitest",
     ],
   },
+};
+
+export const flagshipProjects: CaseStudyProject[] = [
+  flagshipProjectCatalog.studentlytics,
+  flagshipProjectCatalog.locus,
+  flagshipProjectCatalog.morphic,
 ];
 
 export const projectBySlug = Object.fromEntries(
