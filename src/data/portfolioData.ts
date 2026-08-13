@@ -469,6 +469,7 @@ export const awardWinningProjects = [
 export const archiveProjects = [
   {
     title: "Chronos-2",
+    motion: "forecast",
     category: "Research",
     year: "2026",
     role: "Co-author",
@@ -479,6 +480,7 @@ export const archiveProjects = [
   },
   {
     title: "Crowd Symphony",
+    motion: "sound",
     category: "Real-time product",
     year: "2025",
     role: "Product & engineering",
@@ -489,6 +491,7 @@ export const archiveProjects = [
   },
   {
     title: "A10 AI Firewall",
+    motion: "shield",
     category: "AI security",
     year: "2025",
     role: "AI Product Manager",
@@ -499,6 +502,7 @@ export const archiveProjects = [
   },
   {
     title: "Nazava Analytics",
+    motion: "analytics",
     category: "Analytics",
     year: "2025",
     role: "Analytics & product strategy",
@@ -509,6 +513,7 @@ export const archiveProjects = [
   },
   {
     title: "Gatekit",
+    motion: "policy",
     category: "Agent governance",
     year: "2026",
     role: "Product & engineering",
@@ -519,6 +524,7 @@ export const archiveProjects = [
   },
   {
     title: "Cortex",
+    motion: "knowledge",
     category: "Knowledge systems",
     year: "2026",
     role: "Product & engineering",
@@ -529,6 +535,7 @@ export const archiveProjects = [
   },
   {
     title: "Agent Access",
+    motion: "access",
     category: "Agent infrastructure",
     year: "2026",
     role: "Product & engineering",
@@ -539,6 +546,7 @@ export const archiveProjects = [
   },
   {
     title: "Ghost Hand",
+    motion: "learning",
     category: "Learning agents",
     year: "2026",
     role: "Product & engineering",
@@ -549,6 +557,7 @@ export const archiveProjects = [
   },
   {
     title: "Box Retention",
+    motion: "retention",
     category: "Data product",
     year: "2025",
     role: "Data science & product",
@@ -559,6 +568,7 @@ export const archiveProjects = [
   },
   {
     title: "SceneGuard",
+    motion: "spatial",
     category: "Spatial AI",
     year: "2026",
     role: "Product & engineering",
@@ -569,6 +579,7 @@ export const archiveProjects = [
   },
   {
     title: "Project EVOLVE",
+    motion: "evolve",
     category: "AI evaluation",
     year: "2026",
     role: "Product & engineering",
@@ -579,6 +590,7 @@ export const archiveProjects = [
   },
   {
     title: "Ghost Commit",
+    motion: "commit",
     category: "Developer tools",
     year: "2026",
     role: "Product & engineering",

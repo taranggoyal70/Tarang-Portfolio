@@ -168,6 +168,38 @@ const projectHighlights = {
   ],
 };
 
+const archiveMotionLabels: Record<string, [string, string]> = {
+  forecast: ["Forecast window", "Signal resolved"],
+  sound: ["Crowd input", "Session synced"],
+  shield: ["Threat surface", "Request blocked"],
+  analytics: ["Decision model", "Pattern found"],
+  policy: ["Agent action", "Policy enforced"],
+  knowledge: ["Source graph", "Answer grounded"],
+  access: ["Scoped identity", "Receipt signed"],
+  learning: ["Guidance level", "Autonomy rising"],
+  retention: ["Account cohort", "Risk surfaced"],
+  spatial: ["Private space", "Boundary clear"],
+  evolve: ["Variant trial", "Evidence selected"],
+  commit: ["Dormant repo", "Next move found"],
+};
+
+const ArchiveMotion = ({ motion }: { motion: string }) => {
+  const [label, result] = archiveMotionLabels[motion];
+
+  return (
+    <div className={`archive-motion is-${motion}`} aria-hidden="true">
+      <span>{label}</span>
+      <div className="archive-motion-stage">
+        {Array.from({ length: 7 }, (_, index) => (
+          <i key={index} />
+        ))}
+        <b />
+      </div>
+      <strong>{result}</strong>
+    </div>
+  );
+};
+
 const MainContainer = () => {
   useEffect(() => {
     const scrollToHash = () => {
@@ -578,6 +610,8 @@ const MainContainer = () => {
                   {project.status}
                 </span>
               </div>
+
+              <ArchiveMotion motion={project.motion} />
 
               <div className="archive-card-copy">
                 <p>{project.category}</p>
