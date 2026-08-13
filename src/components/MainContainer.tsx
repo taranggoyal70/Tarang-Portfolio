@@ -130,15 +130,15 @@ const projectHighlights = {
   ],
   morphic: [
     { icon: MdPersonOutline, text: "Product strategy, design & engineering" },
-    { icon: MdCheckCircleOutline, text: "Live product prototype" },
+    { icon: MdEmojiEvents, text: "Beta Fund × GMI Cloud winner" },
     { icon: MdCode, text: "26-test approval & PR boundary" },
     { icon: MdArrowForward, text: "Approval → branch → pull request" },
   ],
   locus: [
     { icon: MdPersonOutline, text: "Product strategy & engineering" },
+    { icon: MdEmojiEvents, text: "Stanford University AI Hackathon winner" },
     { icon: MdTrendingUp, text: "65% median context reduction" },
     { icon: MdCheckCircleOutline, text: "100% focused fix-file recall" },
-    { icon: MdCode, text: "15 historical fixes benchmarked" },
   ],
 };
 
@@ -225,7 +225,7 @@ const MainContainer = () => {
       <div className="hero-copy">
         <div className="hero-status">
           <i aria-hidden="true" />
-          Available for AI product and FDE roles
+          7× Hackathon &amp; Competition Winner
         </div>
         <p className="eyebrow">
           AI Product Engineer · Forward-Deployed Builder
@@ -320,15 +320,17 @@ const MainContainer = () => {
       </aside>
     </section>
 
-    <section className="capability-ribbon" aria-label="Core capabilities">
+    <section className="capability-ribbon" aria-label="Hackathon and competition wins">
       <div className="capability-track">
         {[0, 1].map((copy) => (
           <div aria-hidden={copy === 1} key={copy}>
-            <span>Product judgment</span><i />
-            <span>AI systems</span><i />
-            <span>Forward-deployed execution</span><i />
-            <span>User evidence</span><i />
-            <span>Shipped software</span><i />
+            <span>Stanford University AI Hackathon · Locus</span><i />
+            <span>AWS × INRIX · Studentlytics</span><i />
+            <span>Beta Fund × GMI Cloud · Morphic</span><i />
+            <span>YC Stack Auth · Crowd Symphony</span><i />
+            <span>AgentForge · Gatekit</span><i />
+            <span>SCU Analytical Showdown · Nazava</span><i />
+            <span>A10 AI Product Manager Hackathon</span><i />
           </div>
         ))}
       </div>

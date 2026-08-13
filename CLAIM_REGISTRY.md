@@ -22,7 +22,7 @@ Statuses:
 | BOX-003 | Dashboard work supported a 15% increase in feature adoption | Résumé | Cross-functional outcome | Verified |
 | HASH-001 | Eliminated 20+ weekly reporting hours through Tableau automation | Résumé | Role contribution | Verified |
 | HASH-002 | Upsell analysis informed the roadmap and grew revenue by 10% | Résumé | Business outcome | Verified |
-| AWARD-001 | Four winning projects in 2025 | Résumé names A10, Studentlytics, SCU Analytical Showdown, and Crowd Symphony | Team awards | Verified |
+| AWARD-001 | Seven hackathon and competition-winning projects across 2025-2026 | Updated résumé names Stanford University AI Hackathon (Locus), AWS × INRIX (Studentlytics), YC Stack Auth (Crowd Symphony), AgentForge (Gatekit), and Beta Fund × GMI Cloud (Morphic); prior résumé and user confirmation identify SCU Analytical Showdown (Nazava) and A10 AI Product Manager Hackathon | Team awards | Verified |
 | CHRONOS-001 | Co-authored “Multivariate Forecasting with Foundation Models: Using Chronos-2 for Economic and Financial Forecasts” | arXiv; résumé | Co-author | Verified |
 
 ## Placement rules

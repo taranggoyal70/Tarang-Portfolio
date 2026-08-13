@@ -10,12 +10,11 @@ The résumé PDF is the canonical employment and education artifact. The portfol
 | Box | Data Science Intern, Jan-Jun 2025 | Same title and dates | Use 100K+ records, 10K+ accounts, and 40% only with Box context |
 | Hashroot | Hashroot Limited, Business Data Analyst, Jul 2023-Jun 2024 | Same company, title, and dates | Use the full company name |
 | Studentlytics | First-place AWS × INRIX product; 24-hour delivery; led to Highview | Flagship case study | Keep the hackathon prototype distinct from later Highview work |
-| Morphic | Not listed | Flagship live prototype | Portfolio is the canonical product record; consider adding to next résumé |
-| Locus | Not listed | Flagship live developer tool | Portfolio is the canonical product record; consider adding to next résumé |
+| Morphic | Beta Fund × GMI Cloud Hackathon Winner | Flagship winning live prototype | Name the event alongside the product evidence |
+| Locus | Stanford University AI Hackathon Winner | Flagship winning live developer tool | Name the event alongside the reproducible benchmark |
 | Chronos-2 | Full publication title and co-author status | Supporting research project | Use exact paper title on detailed references |
-| Four wins | Four named 2025 wins | Credibility / archive | Use only when the four wins remain identifiable nearby |
+| Seven wins | Seven named 2025-2026 wins | Credibility ribbon and archive | Keep every event paired with its winning project nearby |
 
 ## Resume artifact issue
 
 The current downloadable PDF includes a large Checkr identity-verification banner. The next résumé export should remove that banner from the primary download and offer verification separately.
-
