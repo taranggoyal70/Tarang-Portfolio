@@ -512,45 +512,63 @@ const MainContainer = () => {
     </section>
 
     <section className="section archive-section" aria-labelledby="archive-title">
-      <div className="section-heading compact-heading">
+      <div className="section-heading archive-heading">
         <div>
-          <p className="eyebrow">Supporting work</p>
-          <h2 id="archive-title">Range after depth.</h2>
+          <p className="eyebrow">More shipped work</p>
+          <h2 id="archive-title">
+            8 builds. 4 wins. <em>One published paper.</em>
+          </h2>
         </div>
         <p>
-          Research, award-winning product strategy, real-time systems, and AI
-          infrastructure.
+          The flagship work shows depth. This wall shows the range: product
+          strategy, real-time systems, agent infrastructure, and research.
         </p>
       </div>
-      <div className="archive-table">
-        <div className="archive-header" aria-hidden="true">
-          <span>Project</span>
-          <span>Role / status</span>
-          <span>Contribution</span>
-          <span>Year</span>
-        </div>
-        {archiveProjects.map((project) => (
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noreferrer"
-            key={project.title}
-          >
-            <div>
-              <strong>{project.title}</strong>
-              <span>{project.category}</span>
-            </div>
-            <div>
-              <strong>{project.role}</strong>
-              <span>{project.status}</span>
-            </div>
-            <p>{project.contribution}</p>
-            <div className="archive-year">
-              <span>{project.year}</span>
-              <MdArrowOutward aria-hidden="true" />
-            </div>
-          </a>
-        ))}
+      <div className="archive-showcase">
+        {archiveProjects.map((project, index) => {
+          const isWinner = project.status.includes("Winner");
+          const isResearch = project.category === "Research";
+          const StatusIcon = isWinner
+            ? MdEmojiEvents
+            : isResearch
+              ? MdDescription
+              : MdCode;
+
+          return (
+            <a
+              className={`archive-card${isWinner ? " is-winner" : ""}${isResearch ? " is-research" : ""}`}
+              href={project.link}
+              target="_blank"
+              rel="noreferrer"
+              key={project.title}
+              aria-label={`View ${project.title}: ${project.status}`}
+            >
+              <div className="archive-card-top">
+                <span className="archive-index">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span className="archive-proof">
+                  <StatusIcon aria-hidden="true" />
+                  {project.status}
+                </span>
+              </div>
+
+              <div className="archive-card-copy">
+                <p>{project.category}</p>
+                <h3>{project.title}</h3>
+                <p>{project.contribution}</p>
+              </div>
+
+              <div className="archive-card-meta">
+                <span>{project.role}</span>
+                <span>{project.year}</span>
+                <strong>
+                  View project <MdArrowOutward aria-hidden="true" />
+                </strong>
+              </div>
+            </a>
+          );
+        })}
       </div>
     </section>
 
