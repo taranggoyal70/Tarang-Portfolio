@@ -14,6 +14,7 @@ import {
   MdTrendingUp,
 } from "react-icons/md";
 import {
+  awardWinningProjects,
   archiveProjects,
   experience,
   flagshipProjects,
@@ -516,14 +517,39 @@ const MainContainer = () => {
         <div>
           <p className="eyebrow">More shipped work</p>
           <h2 id="archive-title">
-            8 builds. 7 wins. <em>One published paper.</em>
+            More products I’ve <em>shipped.</em>
           </h2>
         </div>
         <p>
-          The flagship work shows depth. This wall shows the range: product
-          strategy, real-time systems, agent infrastructure, and research.
+          A curated selection from 31 public repositories. Award labels appear
+          only on projects that won.
         </p>
       </div>
+
+      <div className="award-ledger" aria-label="Seven award-winning projects">
+        <div className="award-ledger-intro">
+          <MdEmojiEvents aria-hidden="true" />
+          <div>
+            <strong>7× winner</strong>
+            <span>Across the full portfolio</span>
+          </div>
+        </div>
+        <div className="award-ledger-list">
+          {awardWinningProjects.map((project) => (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noreferrer"
+              key={project.title}
+            >
+              <span>{project.award}</span>
+              <strong>{project.title}</strong>
+              <MdArrowOutward aria-hidden="true" />
+            </a>
+          ))}
+        </div>
+      </div>
+
       <div className="archive-showcase">
         {archiveProjects.map((project, index) => {
           const isWinner = project.status.includes("Winner");
@@ -570,6 +596,19 @@ const MainContainer = () => {
           );
         })}
       </div>
+
+      <a
+        className="archive-github"
+        href="https://github.com/taranggoyal70?tab=repositories"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <span>Want the full build history?</span>
+        <strong>
+          Explore all 31 public repositories
+          <MdArrowOutward aria-hidden="true" />
+        </strong>
+      </a>
     </section>
 
     <footer className="site-footer" id="contact">

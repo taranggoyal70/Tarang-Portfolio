@@ -934,6 +934,106 @@ body {
   font-style: normal;
 }
 
+.award-ledger {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.58fr) minmax(0, 2.42fr);
+  max-width: 1280px;
+  margin: 0 auto 14px;
+  overflow: hidden;
+  border: 1px solid var(--ink);
+  border-radius: 18px;
+  background: var(--ink);
+  color: var(--white);
+}
+
+.award-ledger-intro {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.award-ledger-intro > svg {
+  flex: 0 0 auto;
+  color: var(--block-lime);
+  font-size: 36px;
+}
+
+.award-ledger-intro div {
+  display: flex;
+  flex-direction: column;
+}
+
+.award-ledger-intro strong {
+  font-size: clamp(30px, 3vw, 48px);
+  font-weight: 480;
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+}
+
+.award-ledger-intro span {
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.65);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 7px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.award-ledger-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.award-ledger-list a {
+  position: relative;
+  display: flex;
+  min-height: 88px;
+  padding: 17px 34px 17px 17px;
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+  transition:
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.award-ledger-list a:nth-child(4n) {
+  border-right: 0;
+}
+
+.award-ledger-list a:nth-child(n + 5) {
+  border-bottom: 0;
+}
+
+.award-ledger-list a:hover {
+  background: var(--accent-magenta);
+}
+
+.award-ledger-list span {
+  color: rgba(255, 255, 255, 0.62);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 7px;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.award-ledger-list strong {
+  margin-top: 5px;
+  font-size: 11px;
+  line-height: 1.25;
+}
+
+.award-ledger-list svg {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 13px;
+}
+
 .archive-showcase {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -961,7 +1061,8 @@ body {
 }
 
 .archive-card:nth-child(1),
-.archive-card:nth-child(6) {
+.archive-card:nth-child(6),
+.archive-card:nth-child(12) {
   grid-column: span 8;
 }
 
@@ -994,6 +1095,22 @@ body {
 .archive-card:nth-child(8) {
   background: var(--ink);
   color: var(--white);
+}
+
+.archive-card:nth-child(9) {
+  background: var(--block-pink);
+}
+
+.archive-card:nth-child(10) {
+  background: var(--block-lime);
+}
+
+.archive-card:nth-child(11) {
+  background: var(--block-cream);
+}
+
+.archive-card:nth-child(12) {
+  background: var(--block-lilac);
 }
 
 .archive-card:hover {
@@ -1069,7 +1186,8 @@ body {
 }
 
 .archive-card:nth-child(1) .archive-card-copy h3,
-.archive-card:nth-child(6) .archive-card-copy h3 {
+.archive-card:nth-child(6) .archive-card-copy h3,
+.archive-card:nth-child(12) .archive-card-copy h3 {
   font-size: clamp(54px, 6.5vw, 92px);
 }
 
@@ -1106,6 +1224,45 @@ body {
 
 .archive-card:hover .archive-card-meta strong svg {
   transform: translate(3px, -3px);
+}
+
+.archive-github {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1280px;
+  margin: 14px auto 0;
+  padding: clamp(24px, 3vw, 38px);
+  border: 1px solid var(--ink);
+  border-radius: 18px;
+  background: var(--accent-magenta);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.archive-github > span {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.archive-github > strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: clamp(22px, 2.4vw, 36px);
+  font-weight: 480;
+  letter-spacing: -0.045em;
+}
+
+.archive-github svg {
+  transition: transform 180ms ease;
+}
+
+.archive-github:hover svg {
+  transform: translate(4px, -4px);
 }
 
 .site-footer {
@@ -2112,20 +2269,51 @@ body {
     flex-direction: column;
   }
 
+  .award-ledger {
+    grid-template-columns: 1fr;
+  }
+
+  .award-ledger-intro {
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  }
+
+  .award-ledger-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .award-ledger-list a:nth-child(4n) {
+    border-right: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .award-ledger-list a:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .award-ledger-list a:nth-child(n + 5) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .award-ledger-list a:nth-child(n + 7) {
+    border-bottom: 0;
+  }
+
   .archive-showcase {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .archive-card,
   .archive-card:nth-child(1),
-  .archive-card:nth-child(6) {
+  .archive-card:nth-child(6),
+  .archive-card:nth-child(12) {
     grid-column: span 1;
     min-height: 330px;
   }
 
   .archive-card-copy h3,
   .archive-card:nth-child(1) .archive-card-copy h3,
-  .archive-card:nth-child(6) .archive-card-copy h3 {
+  .archive-card:nth-child(6) .archive-card-copy h3,
+  .archive-card:nth-child(12) .archive-card-copy h3 {
     font-size: clamp(38px, 7vw, 58px);
   }
 
@@ -2335,6 +2523,10 @@ body {
     display: inline;
   }
 
+  .award-ledger-list a {
+    min-height: 82px;
+  }
+
   .archive-showcase {
     grid-template-columns: 1fr;
     gap: 12px;
@@ -2342,7 +2534,8 @@ body {
 
   .archive-card,
   .archive-card:nth-child(1),
-  .archive-card:nth-child(6) {
+  .archive-card:nth-child(6),
+  .archive-card:nth-child(12) {
     grid-column: 1;
     min-height: 320px;
     padding: 18px;
@@ -2360,18 +2553,25 @@ body {
 
   .archive-card-copy h3,
   .archive-card:nth-child(1) .archive-card-copy h3,
-  .archive-card:nth-child(6) .archive-card-copy h3 {
+  .archive-card:nth-child(6) .archive-card-copy h3,
+  .archive-card:nth-child(12) .archive-card-copy h3 {
     font-size: clamp(44px, 15vw, 68px);
   }
 
   .archive-card-meta {
     font-size: 7px;
   }
+
+  .archive-github {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .archive-card,
-  .archive-card-meta strong svg {
+  .archive-card-meta strong svg,
+  .archive-github svg {
     animation: none;
     transition: none;
   }

@@ -428,6 +428,44 @@ export const projectBySlug = Object.fromEntries(
   flagshipProjects.map((project) => [project.slug, project]),
 ) as Record<ProjectSlug, CaseStudyProject>;
 
+export const awardWinningProjects = [
+  {
+    title: "Locus",
+    award: "Stanford AI Hackathon",
+    link: "https://locus-five-iota.vercel.app",
+  },
+  {
+    title: "Studentlytics",
+    award: "AWS × INRIX",
+    link: "https://devpost.com/software/studentlytics",
+  },
+  {
+    title: "Morphic",
+    award: "Beta Fund × GMI Cloud",
+    link: "https://morphic-murex.vercel.app/",
+  },
+  {
+    title: "Crowd Symphony",
+    award: "YC Stack Auth",
+    link: "https://crowd-symphony.vercel.app",
+  },
+  {
+    title: "Gatekit",
+    award: "AgentForge",
+    link: "https://gatekit.vercel.app",
+  },
+  {
+    title: "A10 AI Firewall",
+    award: "A10 Networks AI PM",
+    link: "https://a10-taupe.vercel.app",
+  },
+  {
+    title: "Nazava Analytics",
+    award: "SCU Analytical Showdown",
+    link: "https://scu-analytical-showdown.vercel.app",
+  },
+];
+
 export const archiveProjects = [
   {
     title: "Chronos-2",
@@ -508,6 +546,46 @@ export const archiveProjects = [
     contribution:
       "Designed an apprenticeship agent that deliberately teaches itself out of a job.",
     link: "https://ghost-hand-virid.vercel.app",
+  },
+  {
+    title: "Box Retention",
+    category: "Data product",
+    year: "2025",
+    role: "Data science & product",
+    status: "Internship case study",
+    contribution:
+      "Turned retention analysis into an interactive operations workspace for exploring account risk and adoption signals.",
+    link: "https://tarang-box-retention.vercel.app",
+  },
+  {
+    title: "SceneGuard",
+    category: "Spatial AI",
+    year: "2026",
+    role: "Product & engineering",
+    status: "Open-source prototype",
+    contribution:
+      "Built privacy-first spatial memory and explainable safety boundaries for vision-enabled agents.",
+    link: "https://github.com/taranggoyal70/sceneguard",
+  },
+  {
+    title: "Project EVOLVE",
+    category: "AI evaluation",
+    year: "2026",
+    role: "Product & engineering",
+    status: "Schole AI Challenge",
+    contribution:
+      "Designed an inspectable landing-page evolution system using seeded simulations, Bayesian selection, and holdout validation.",
+    link: "https://github.com/taranggoyal70/Schole-AI-challenge",
+  },
+  {
+    title: "Ghost Commit",
+    category: "Developer tools",
+    year: "2026",
+    role: "Product & engineering",
+    status: "YC Stack Auth build",
+    contribution:
+      "Built a workflow for diagnosing abandoned repositories and turning the next useful change into an actionable recovery plan.",
+    link: "https://ghost-commit-roan.vercel.app",
   },
 ];
 
