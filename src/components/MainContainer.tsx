@@ -102,19 +102,44 @@ const ProductArtifact = ({ project, compact = false }: ProductArtifactProps) => 
           <span>Engineering task</span>
           <strong>Fix the dashboard chart loading state</strong>
         </div>
-        <div className="context-map" aria-label="Focused code dependency map">
-          <div className="context-file context-source"><span>Task match</span><strong>DashboardChart.tsx</strong></div>
-          <div className="context-connector" aria-hidden="true"><i /><i /><i /></div>
-          <div className="context-files">
-            <div><span>Dependency</span><strong>useMetrics.ts</strong></div>
-            <div><span>Test</span><strong>DashboardChart.test.tsx</strong></div>
-            <div><span>Integration</span><strong>AnalyticsPanel.tsx</strong></div>
+        <div className="locus-flow" aria-label="Locus narrows a repository graph into focused task context">
+          <div className="repository-cloud">
+            <span className="flow-label">Repository graph</span>
+            <svg className="repository-graph" viewBox="0 0 260 220" aria-hidden="true">
+              <path d="M36 42 94 71 145 34 212 66 225 130 174 184 101 174 42 137Z" />
+              <path d="m94 71 7 103m44-140 29 150M42 137 212 66M36 42l189 88M94 71l118-5M42 137l132 47" />
+              <circle cx="36" cy="42" r="8" />
+              <circle cx="94" cy="71" r="7" />
+              <circle className="graph-node-focus" cx="145" cy="34" r="10" />
+              <circle cx="212" cy="66" r="7" />
+              <circle cx="225" cy="130" r="8" />
+              <circle cx="174" cy="184" r="7" />
+              <circle className="graph-node-focus" cx="101" cy="174" r="10" />
+              <circle cx="42" cy="137" r="7" />
+              <circle className="graph-node-focus" cx="134" cy="112" r="11" />
+            </svg>
+            <span className="graph-file graph-file-primary">DashboardChart.tsx</span>
+            <span className="graph-file graph-file-secondary">useMetrics.ts</span>
+          </div>
+
+          <div className="context-lens" aria-hidden="true">
+            <div className="lens-orbit"><i /><i /><i /></div>
+            <span>Task signal</span>
+            <strong>65%</strong>
+            <small>less context</small>
+          </div>
+
+          <div className="focus-pack">
+            <span className="flow-label">Focused context</span>
+            <div className="focus-file is-match"><span>Task match</span><strong>DashboardChart.tsx</strong></div>
+            <div className="focus-file"><span>Dependency</span><strong>useMetrics.ts</strong></div>
+            <div className="focus-file"><span>Test</span><strong>DashboardChart.test.tsx</strong></div>
           </div>
         </div>
         <div className="context-result">
-          <div><span>Context sent</span><strong>35%</strong></div>
-          <div><span>Fix-file recall</span><strong>100%</strong></div>
-          <div className="context-saving"><span>Estimated reduction</span><strong>65%</strong></div>
+          <div><span>Task localization</span><strong>87%</strong></div>
+          <div className="context-saving"><span>Fix-file recall</span><strong>100%</strong></div>
+          <div><span>Historical fixes</span><strong>15</strong></div>
         </div>
       </div>
     </div>
