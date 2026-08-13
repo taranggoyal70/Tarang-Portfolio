@@ -516,7 +516,7 @@ const MainContainer = () => {
         <div>
           <p className="eyebrow">More shipped work</p>
           <h2 id="archive-title">
-            8 builds. 4 wins. <em>One published paper.</em>
+            8 builds. 7 wins. <em>One published paper.</em>
           </h2>
         </div>
         <p>
