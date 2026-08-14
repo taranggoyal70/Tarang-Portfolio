@@ -168,34 +168,21 @@ const projectHighlights = {
   ],
 };
 
-const archiveMotionLabels: Record<string, [string, string]> = {
-  forecast: ["Forecast window", "Signal resolved"],
-  sound: ["Crowd input", "Session synced"],
-  shield: ["Threat surface", "Request blocked"],
-  analytics: ["Decision model", "Pattern found"],
-  policy: ["Agent action", "Policy enforced"],
-  knowledge: ["Source graph", "Answer grounded"],
-  access: ["Scoped identity", "Receipt signed"],
-  learning: ["Guidance level", "Autonomy rising"],
-  retention: ["Account cohort", "Risk surfaced"],
-  spatial: ["Private space", "Boundary clear"],
-  evolve: ["Variant trial", "Evidence selected"],
-  commit: ["Dormant repo", "Next move found"],
-};
-
-const ArchiveMotion = ({ motion }: { motion: string }) => {
-  const [label, result] = archiveMotionLabels[motion];
-
+const ProjectTransition = ({ input, output }: { input: string; output: string }) => {
   return (
-    <div className={`archive-motion is-${motion}`} aria-hidden="true">
-      <span>{label}</span>
-      <div className="archive-motion-stage">
-        {Array.from({ length: 7 }, (_, index) => (
-          <i key={index} />
-        ))}
-        <b />
+    <div className="project-transition" aria-hidden="true">
+      <div className="project-transition-labels">
+        <span>Input</span>
+        <span>Shipped outcome</span>
       </div>
-      <strong>{result}</strong>
+      <div className="project-transition-track">
+        <i />
+        <MdArrowForward />
+      </div>
+      <div className="project-transition-copy">
+        <span>{input}</span>
+        <strong>{output}</strong>
+      </div>
     </div>
   );
 };
@@ -611,7 +598,7 @@ const MainContainer = () => {
                 </span>
               </div>
 
-              <ArchiveMotion motion={project.motion} />
+              <ProjectTransition input={project.input} output={project.output} />
 
               <div className="archive-card-copy">
                 <p>{project.category}</p>

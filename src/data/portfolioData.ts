@@ -469,7 +469,8 @@ export const awardWinningProjects = [
 export const archiveProjects = [
   {
     title: "Chronos-2",
-    motion: "forecast",
+    input: "7 equities + Treasury rates",
+    output: "Comparative forecast",
     category: "Research",
     year: "2026",
     role: "Co-author",
@@ -480,7 +481,8 @@ export const archiveProjects = [
   },
   {
     title: "Crowd Symphony",
-    motion: "sound",
+    input: "Phone + hand gestures",
+    output: "Synchronized crowd audio",
     category: "Real-time product",
     year: "2025",
     role: "Product & engineering",
@@ -491,7 +493,8 @@ export const archiveProjects = [
   },
   {
     title: "A10 AI Firewall",
-    motion: "shield",
+    input: "Untrusted AI request",
+    output: "Blocked with reason",
     category: "AI security",
     year: "2025",
     role: "AI Product Manager",
@@ -502,7 +505,8 @@ export const archiveProjects = [
   },
   {
     title: "Nazava Analytics",
-    motion: "analytics",
+    input: "Customer + sales data",
+    output: "Segment and ROI decision",
     category: "Analytics",
     year: "2025",
     role: "Analytics & product strategy",
@@ -513,7 +517,8 @@ export const archiveProjects = [
   },
   {
     title: "Gatekit",
-    motion: "policy",
+    input: "Proposed agent action",
+    output: "Allow, deny, or review",
     category: "Agent governance",
     year: "2026",
     role: "Product & engineering",
@@ -524,7 +529,8 @@ export const archiveProjects = [
   },
   {
     title: "Cortex",
-    motion: "knowledge",
+    input: "Scattered company docs",
+    output: "Cited executable knowledge",
     category: "Knowledge systems",
     year: "2026",
     role: "Product & engineering",
@@ -535,7 +541,8 @@ export const archiveProjects = [
   },
   {
     title: "Agent Access",
-    motion: "access",
+    input: "Agent asks for access",
+    output: "Scoped signed receipt",
     category: "Agent infrastructure",
     year: "2026",
     role: "Product & engineering",
@@ -546,7 +553,8 @@ export const archiveProjects = [
   },
   {
     title: "Ghost Hand",
-    motion: "learning",
+    input: "Expert demonstrates task",
+    output: "Agent learns to step back",
     category: "Learning agents",
     year: "2026",
     role: "Product & engineering",
@@ -557,7 +565,8 @@ export const archiveProjects = [
   },
   {
     title: "Box Retention",
-    motion: "retention",
+    input: "44K+ account signals",
+    output: "Retention risk playbook",
     category: "Data product",
     year: "2025",
     role: "Data science & product",
@@ -568,7 +577,8 @@ export const archiveProjects = [
   },
   {
     title: "SceneGuard",
-    motion: "spatial",
+    input: "Camera-space context",
+    output: "Private safety boundary",
     category: "Spatial AI",
     year: "2026",
     role: "Product & engineering",
@@ -579,7 +589,8 @@ export const archiveProjects = [
   },
   {
     title: "Project EVOLVE",
-    motion: "evolve",
+    input: "Competing page variants",
+    output: "Holdout-validated winner",
     category: "AI evaluation",
     year: "2026",
     role: "Product & engineering",
@@ -590,7 +601,8 @@ export const archiveProjects = [
   },
   {
     title: "Ghost Commit",
-    motion: "commit",
+    input: "Dormant repository",
+    output: "Actionable recovery plan",
     category: "Developer tools",
     year: "2026",
     role: "Product & engineering",
