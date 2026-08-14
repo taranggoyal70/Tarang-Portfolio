@@ -15,14 +15,14 @@ Statuses:
 | STUD-004 | Face-match accuracy percentage | Test set, threshold, sample size, and evaluation note still required | Team/system metric | Pending |
 | MORPHIC-001 | Live prototype with GitHub sync, durable workspace state, approval gates, isolated Codex runs, and pull-request creation | Public repository and live deployment | Independent build | Verified |
 | MORPHIC-002 | Productivity, adoption, faster review, or trust outcome | No user evaluation published | Independent build | Rejected |
-| LOCUS-001 | Reproducible benchmark across nine historical fixes: 100% fix-file recall and 53% median estimated context reduction | Public benchmark README and runnable benchmark | Independent build | Verified |
+| LOCUS-001 | Reproducible benchmark across 15 historical fixes: 87% task localization, 100% focused fix-file recall, and 65% median estimated context reduction | Public benchmark README and runnable benchmark | Independent build | Verified |
 | LOCUS-002 | 67% fewer input tokens | Superseded by the published benchmark result | Independent build | Rejected |
 | BOX-001 | Reduced manual processing by 40% | Résumé | Internship contribution | Verified |
 | BOX-002 | Built churn workflows across 100K+ records and 10K+ accounts | Résumé | Internship contribution | Verified |
 | BOX-003 | Dashboard work supported a 15% increase in feature adoption | Résumé | Cross-functional outcome | Verified |
 | HASH-001 | Eliminated 20+ weekly reporting hours through Tableau automation | Résumé | Role contribution | Verified |
 | HASH-002 | Upsell analysis informed the roadmap and grew revenue by 10% | Résumé | Business outcome | Verified |
-| AWARD-001 | Four winning projects in 2025 | Résumé names A10, Studentlytics, SCU Analytical Showdown, and Crowd Symphony | Team awards | Verified |
+| AWARD-001 | Seven hackathon and competition-winning projects across 2025-2026 | Updated résumé names Stanford University AI Hackathon (Locus), AWS × INRIX (Studentlytics), YC Stack Auth (Crowd Symphony), AgentForge (Gatekit), and Beta Fund × GMI Cloud (Morphic); prior résumé and user confirmation identify SCU Analytical Showdown (Nazava) and A10 AI Product Manager Hackathon | Team awards | Verified |
 | CHRONOS-001 | Co-authored “Multivariate Forecasting with Foundation Models: Using Chronos-2 for Economic and Financial Forecasts” | arXiv; résumé | Co-author | Verified |
 
 ## Placement rules
@@ -32,4 +32,3 @@ Statuses:
 - A pending claim is excluded from the deployed site.
 - Award language links to the award or project artifact when available.
 - “Production,” “prototype,” “research,” and “live” are status labels, not interchangeable marketing language.
-

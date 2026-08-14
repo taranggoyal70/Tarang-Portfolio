@@ -48,8 +48,8 @@ export type CaseStudyProject = {
   tools: string[];
 };
 
-export const flagshipProjects: CaseStudyProject[] = [
-  {
+const flagshipProjectCatalog: Record<ProjectSlug, CaseStudyProject> = {
+  studentlytics: {
     slug: "studentlytics",
     title: "Studentlytics",
     descriptor: "AI-powered classroom engagement prototype",
@@ -170,12 +170,12 @@ export const flagshipProjects: CaseStudyProject[] = [
       "AWS",
     ],
   },
-  {
+  morphic: {
     slug: "morphic",
     title: "Morphic",
     descriptor: "Adaptive AI software workspace",
-    category: "Live product prototype",
-    status: "Live prototype",
+    category: "Beta Fund × GMI Cloud · Hackathon winner",
+    status: "Winning live prototype",
     role: "Product strategy, design & engineering",
     team: "Independent build",
     timeline: "2026",
@@ -293,12 +293,12 @@ export const flagshipProjects: CaseStudyProject[] = [
       "Vercel Sandbox",
     ],
   },
-  {
+  locus: {
     slug: "locus",
     title: "Locus",
     descriptor: "Task-sized context for coding agents",
-    category: "Live developer tool",
-    status: "Live product",
+    category: "Stanford University AI Hackathon · Winner",
+    status: "Winning live product",
     role: "Product strategy & engineering",
     team: "Independent build",
     timeline: "2026",
@@ -325,11 +325,11 @@ export const flagshipProjects: CaseStudyProject[] = [
       },
       {
         label: "Proof",
-        body: "Fifteen historical fixes across three repositories: 100% fix-file recall, 54% median estimated context reduction, and two conservative fallbacks.",
+        body: "Fifteen historical fixes across three repositories: 87% task localization, 100% focused fix-file recall, 65% median estimated context reduction, and two conservative fallbacks.",
       },
     ],
     proof:
-      "Reproducible benchmark across 15 historical fixes in three repositories: 100% fix-file recall and 54% median estimated context reduction.",
+      "Reproducible benchmark across 15 historical fixes in three repositories: 87% task localization, 100% focused fix-file recall, and 65% median estimated context reduction.",
     proofUrl: "https://github.com/taranggoyal70/locus/tree/main/benchmarks",
     proofLabel: "Read benchmark method",
     overview:
@@ -391,15 +391,15 @@ export const flagshipProjects: CaseStudyProject[] = [
     evidence: [
       {
         title: "Fix-file recall",
-        body: "15 of 15 historical fixes localized across three repositories.",
+        body: "19 of 19 fix files found across 13 localized cases; two weak-signal tasks widened conservatively.",
       },
       {
         title: "Context reduction",
-        body: "54% median estimated reduction across the same benchmark.",
+        body: "65% median estimated reduction across the same benchmark.",
       },
       {
         title: "Runtime and safety",
-        body: "41 automated tests cover the core locator plus real CLI and MCP processes; two weak-signal cases widened to the whole repository.",
+        body: "52 automated tests cover the core locator plus real CLI and MCP processes; two weak-signal cases widened to the whole repository.",
       },
     ],
     reflection:
@@ -416,15 +416,61 @@ export const flagshipProjects: CaseStudyProject[] = [
       "Vitest",
     ],
   },
+};
+
+export const flagshipProjects: CaseStudyProject[] = [
+  flagshipProjectCatalog.studentlytics,
+  flagshipProjectCatalog.locus,
+  flagshipProjectCatalog.morphic,
 ];
 
 export const projectBySlug = Object.fromEntries(
   flagshipProjects.map((project) => [project.slug, project]),
 ) as Record<ProjectSlug, CaseStudyProject>;
 
+export const awardWinningProjects = [
+  {
+    title: "Locus",
+    award: "Stanford AI Hackathon",
+    link: "https://locus-five-iota.vercel.app",
+  },
+  {
+    title: "Studentlytics",
+    award: "AWS × INRIX",
+    link: "https://devpost.com/software/studentlytics",
+  },
+  {
+    title: "Morphic",
+    award: "Beta Fund × GMI Cloud",
+    link: "https://morphic-murex.vercel.app/",
+  },
+  {
+    title: "Crowd Symphony",
+    award: "YC Stack Auth",
+    link: "https://crowd-symphony.vercel.app",
+  },
+  {
+    title: "Gatekit",
+    award: "AgentForge",
+    link: "https://gatekit.vercel.app",
+  },
+  {
+    title: "A10 AI Firewall",
+    award: "A10 Networks AI PM",
+    link: "https://a10-taupe.vercel.app",
+  },
+  {
+    title: "Nazava Analytics",
+    award: "SCU Analytical Showdown",
+    link: "https://scu-analytical-showdown.vercel.app",
+  },
+];
+
 export const archiveProjects = [
   {
     title: "Chronos-2",
+    input: "7 equities + Treasury rates",
+    output: "Comparative forecast",
     category: "Research",
     year: "2026",
     role: "Co-author",
@@ -435,36 +481,56 @@ export const archiveProjects = [
   },
   {
     title: "Crowd Symphony",
+    input: "Phone + hand gestures",
+    output: "Synchronized crowd audio",
     category: "Real-time product",
     year: "2025",
     role: "Product & engineering",
-    status: "Hackathon winner",
+    status: "YC Stack Auth Hackathon Winner",
     contribution:
       "Shipped QR onboarding, synchronized sessions, MediaPipe hand tracking, and Web Audio controls.",
     link: "https://crowd-symphony.vercel.app",
   },
   {
     title: "A10 AI Firewall",
+    input: "Untrusted AI request",
+    output: "Blocked with reason",
     category: "AI security",
     year: "2025",
     role: "AI Product Manager",
-    status: "First place",
+    status: "A10 AI Product Manager Hackathon Winner",
     contribution:
       "Defined the vision, PRD, OKRs, backlog, GTM strategy, and ARR model.",
     link: "https://a10-taupe.vercel.app",
   },
   {
     title: "Nazava Analytics",
+    input: "Customer + sales data",
+    output: "Segment and ROI decision",
     category: "Analytics",
     year: "2025",
     role: "Analytics & product strategy",
-    status: "SCU winner",
+    status: "SCU Analytical Showdown Winner",
     contribution:
       "Delivered segmentation, predictive modeling, ROI forecasting, and executive decisions.",
     link: "https://scu-analytical-showdown.vercel.app",
   },
   {
+    title: "Gatekit",
+    input: "Proposed agent action",
+    output: "Allow, deny, or review",
+    category: "Agent governance",
+    year: "2026",
+    role: "Product & engineering",
+    status: "AgentForge Hackathon Winner",
+    contribution:
+      "Built a policy engine that allows, denies, or routes agent actions to human approval with immutable audit records.",
+    link: "https://gatekit.vercel.app",
+  },
+  {
     title: "Cortex",
+    input: "Scattered company docs",
+    output: "Cited executable knowledge",
     category: "Knowledge systems",
     year: "2026",
     role: "Product & engineering",
@@ -475,6 +541,8 @@ export const archiveProjects = [
   },
   {
     title: "Agent Access",
+    input: "Agent asks for access",
+    output: "Scoped signed receipt",
     category: "Agent infrastructure",
     year: "2026",
     role: "Product & engineering",
@@ -485,6 +553,8 @@ export const archiveProjects = [
   },
   {
     title: "Ghost Hand",
+    input: "Expert demonstrates task",
+    output: "Agent learns to step back",
     category: "Learning agents",
     year: "2026",
     role: "Product & engineering",
@@ -492,6 +562,54 @@ export const archiveProjects = [
     contribution:
       "Designed an apprenticeship agent that deliberately teaches itself out of a job.",
     link: "https://ghost-hand-virid.vercel.app",
+  },
+  {
+    title: "Box Retention",
+    input: "44K+ account signals",
+    output: "Retention risk playbook",
+    category: "Data product",
+    year: "2025",
+    role: "Data science & product",
+    status: "Internship case study",
+    contribution:
+      "Turned retention analysis into an interactive operations workspace for exploring account risk and adoption signals.",
+    link: "https://tarang-box-retention.vercel.app",
+  },
+  {
+    title: "SceneGuard",
+    input: "Camera-space context",
+    output: "Private safety boundary",
+    category: "Spatial AI",
+    year: "2026",
+    role: "Product & engineering",
+    status: "Open-source prototype",
+    contribution:
+      "Built privacy-first spatial memory and explainable safety boundaries for vision-enabled agents.",
+    link: "https://github.com/taranggoyal70/sceneguard",
+  },
+  {
+    title: "Project EVOLVE",
+    input: "Competing page variants",
+    output: "Holdout-validated winner",
+    category: "AI evaluation",
+    year: "2026",
+    role: "Product & engineering",
+    status: "Schole AI Challenge",
+    contribution:
+      "Designed an inspectable landing-page evolution system using seeded simulations, Bayesian selection, and holdout validation.",
+    link: "https://github.com/taranggoyal70/Schole-AI-challenge",
+  },
+  {
+    title: "Ghost Commit",
+    input: "Dormant repository",
+    output: "Actionable recovery plan",
+    category: "Developer tools",
+    year: "2026",
+    role: "Product & engineering",
+    status: "YC Stack Auth build",
+    contribution:
+      "Built a workflow for diagnosing abandoned repositories and turning the next useful change into an actionable recovery plan.",
+    link: "https://ghost-commit-roan.vercel.app",
   },
 ];
 
