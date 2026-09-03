@@ -135,8 +135,8 @@ const MainContainer = () => {
         </p>
         <div className="hero-lower">
           <p className="hero-now">
-            Currently AI Product Manager & Product Engineer at Highview · San
-            Francisco Bay Area · M.S. Business Analytics, Santa Clara
+            Currently AI Product Engineer at Highview · San Francisco Bay
+            Area · M.S. Business Analytics, Santa Clara
             University, Dec 2025
           </p>
           <div className="hero-actions">

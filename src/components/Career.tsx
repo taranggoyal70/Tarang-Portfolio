@@ -2,7 +2,7 @@ import "./styles/Career.css";
 
 const experience = [
   {
-    role: "AI Product Manager & Product Engineer Intern",
+    role: "AI Product Engineer",
     company: "Highview",
     period: "2026 - present",
     summary:

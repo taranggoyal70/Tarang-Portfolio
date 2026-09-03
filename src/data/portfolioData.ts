@@ -499,7 +499,7 @@ export const experience = [
   {
     period: "Jan 2026—Present",
     company: "Highview",
-    role: "AI Product Manager & Product Engineer Intern",
+    role: "AI Product Engineer",
     result:
       "Define product vision, roadmap, PRDs, user stories, and releases while building scheduling, course analytics, and an AI analytics assistant.",
     proof: "Studentlytics continuation",
