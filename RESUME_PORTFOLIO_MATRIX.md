@@ -6,7 +6,7 @@ The résumé PDF is the canonical employment and education artifact. The portfol
 | --- | --- | --- | --- |
 | Primary identity | Product Manager & AI Product Engineer | AI Product Engineer / FDE | Portfolio positioning is primary; product management is the differentiator |
 | Santa Clara University | M.S. Business Analytics, Sep 2024-Dec 2025, GPA 3.7 | M.S. Business Analytics, graduated Dec 2025 | Use the exact graduation date; GPA remains résumé-only |
-| Highview | AI Product Manager & Product Engineer Intern, Jan 2026-Present | Same title and dates | Do not shorten to “2026-Now” |
+| Highview | AI Product Engineer (full-time), Jan 2026-Present | Same title and dates | Do not shorten to “2026-Now” |
 | Box | Data Science Intern, Jan-Jun 2025 | Same title and dates | Use 100K+ records, 10K+ accounts, and 40% only with Box context |
 | Hashroot | Hashroot Limited, Business Data Analyst, Jul 2023-Jun 2024 | Same company, title, and dates | Use the full company name |
 | Studentlytics | First-place AWS × INRIX product; 24-hour delivery; led to Highview | Flagship case study | Keep the hackathon prototype distinct from later Highview work |

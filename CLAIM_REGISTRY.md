@@ -11,7 +11,7 @@ Statuses:
 | --- | --- | --- | --- | --- |
 | STUD-001 | First place at the AWS × INRIX Hackathon 2025 | Devpost; résumé | Team result; Tarang product and build contribution documented | Verified |
 | STUD-002 | Delivered a deployed full-stack prototype in 24 hours | Résumé; Devpost | Team delivery | Verified |
-| STUD-003 | The project led to a Highview internship to continue developing the platform | Résumé | Tarang career outcome | Verified |
+| STUD-003 | The project led to a full-time role at Highview developing the platform | Résumé | Tarang career outcome | Verified |
 | STUD-004 | Face-match accuracy percentage | Test set, threshold, sample size, and evaluation note still required | Team/system metric | Pending |
 | MORPHIC-001 | Live prototype with GitHub sync, durable workspace state, approval gates, isolated Codex runs, and pull-request creation | Public repository and live deployment | Independent build | Verified |
 | MORPHIC-002 | Productivity, adoption, faster review, or trust outcome | No user evaluation published | Independent build | Rejected |

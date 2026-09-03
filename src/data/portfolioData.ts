@@ -81,7 +81,7 @@ export const flagshipProjects: CaseStudyProject[] = [
       },
       {
         label: "Proof",
-        body: "First place at the AWS × INRIX Hackathon; the project led to a Highview internship to continue the platform.",
+        body: "First place at the AWS × INRIX Hackathon; the project led to a full-time role at Highview continuing the platform.",
       },
     ],
     proof:
@@ -141,7 +141,7 @@ export const flagshipProjects: CaseStudyProject[] = [
       {
         phase: "04",
         title: "Continue the product",
-        body: "The project led to a Highview internship and continued roadmap, analytics, and product-engineering work.",
+        body: "The project led to a full-time role at Highview and continued roadmap, analytics, and product-engineering work.",
       },
     ],
     evidence: [
@@ -155,7 +155,7 @@ export const flagshipProjects: CaseStudyProject[] = [
       },
       {
         title: "Continuation",
-        body: "The project led directly to a Highview internship to continue developing the platform.",
+        body: "The project led directly to a full-time role at Highview developing the platform.",
       },
     ],
     reflection:
