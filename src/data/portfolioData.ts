@@ -424,6 +424,16 @@ export const projectBySlug = Object.fromEntries(
 
 export const archiveProjects = [
   {
+    title: "Tickmark",
+    category: "AI finance agent",
+    year: "2026",
+    role: "Solo product & engineering",
+    status: "Track 2 AI Grant winner",
+    contribution:
+      "Built a month-end close agent that reconciles accounts, codes invoices, and turns human corrections into reusable rules.",
+    link: "https://github.com/taranggoyal70/tickmark",
+  },
+  {
     title: "Chronos-2",
     category: "Research",
     year: "2026",

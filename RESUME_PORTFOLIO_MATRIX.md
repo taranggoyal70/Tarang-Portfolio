@@ -14,8 +14,8 @@ The résumé PDF is the canonical employment and education artifact. The portfol
 | Locus | Not listed | Flagship live developer tool | Portfolio is the canonical product record; consider adding to next résumé |
 | Chronos-2 | Full publication title and co-author status | Supporting research project | Use exact paper title on detailed references |
 | Four wins | Four named 2025 wins | Credibility / archive | Use only when the four wins remain identifiable nearby |
+| Eight wins | Eight named wins through September 2026 | Homepage credibility | The four 2026 additions are Stanford AI, AgentForge, Beta Fund × GMI Cloud, and Syndicate by Maximor; label Tickmark's result as a Track 2 AI Grant |
 
 ## Resume artifact issue
 
 The current downloadable PDF includes a large Checkr identity-verification banner. The next résumé export should remove that banner from the primary download and offer verification separately.
-

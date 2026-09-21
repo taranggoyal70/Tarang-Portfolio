@@ -34,8 +34,8 @@ const Landing = ({ children }: PropsWithChildren) => {
               <span>face-match accuracy</span>
             </div>
             <div>
-              <strong>4</strong>
-              <span>award-winning builds</span>
+              <strong>8×</strong>
+              <span>hackathon winner</span>
             </div>
             <div>
               <strong>100K+</strong>

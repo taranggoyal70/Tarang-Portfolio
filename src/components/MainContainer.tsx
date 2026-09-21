@@ -135,7 +135,7 @@ const MainContainer = () => {
         </p>
         <div className="hero-lower">
           <p className="hero-now">
-            Currently AI Product Engineer at Highview · San Francisco Bay
+            Currently AI Product Engineer at Highview · 8× hackathon winner · San Francisco Bay
             Area · M.S. Business Analytics, Santa Clara
             University, Dec 2025
           </p>
@@ -181,15 +181,11 @@ const MainContainer = () => {
         <strong>Locus</strong>
         <p>54% median context reduction</p>
       </a>
-      <a
-        href="https://github.com/taranggoyal70/locus/tree/main/benchmarks"
-        target="_blank"
-        rel="noreferrer"
-      >
+      <div>
         <span>Evidence</span>
-        <strong>Locus</strong>
-        <p>100% fix-file recall across 15 historical fixes</p>
-      </a>
+        <strong>8× winner</strong>
+        <p>Hackathons across AI, product, and analytics</p>
+      </div>
     </section>
 
     <section className="section work-section" id="work">
