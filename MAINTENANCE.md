@@ -37,7 +37,7 @@ Update `CLAIM_REGISTRY.md` before updating page copy.
 
 ## Performance and accessibility
 
-- Keep the initial JavaScript bundle free of Three.js/WebGL unless a later experience explicitly earns the cost.
+- Keep the restored 3D hero lazy-loaded, preserve its loading feedback, and provide a usable page when motion is reduced.
 - Optimize screenshots before adding them.
 - Maintain keyboard navigation and visible focus states.
 - Verify desktop and mobile layouts with no horizontal scrolling.
@@ -48,9 +48,8 @@ Update `CLAIM_REGISTRY.md` before updating page copy.
 
 1. Run `npm run build`.
 2. Run ESLint on changed TypeScript files.
-3. Test homepage navigation, all three case-study routes, external evidence links, résumé, and email.
+3. Test homepage navigation, preserved case-study routes, external evidence links, résumé, and email.
 4. Capture desktop and mobile screenshots.
 5. Complete `design-qa.md`.
 6. Push through a reviewed pull request.
 7. Verify the production Vercel deployment.
-

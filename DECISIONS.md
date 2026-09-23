@@ -2,7 +2,7 @@
 
 ## Decision 001: Primary positioning
 
-**Status:** Accepted  
+**Status:** Accepted
 **Date:** 2026-07-26
 
 Tarang is positioned primarily as an **AI Product Engineer / Forward-Deployed Engineer**.
@@ -65,3 +65,16 @@ Rejected:
 
 The primary conversion is an AI Product Engineer/FDE hiring conversation. The final CTA asks whether a team is hiring someone to turn an unclear AI workflow into a working product.
 
+## Decision 007: Restore the original visual identity
+
+**Status:** Accepted
+**Date:** 2026-09-22
+
+Restore the original dark portfolio homepage, including its 3D character,
+section flow, and project-card layout. This supersedes the homepage and visual
+direction in Decisions 003 and 005 because the portfolio owner explicitly
+prefers the original design.
+
+Keep the newer project data and dedicated case-study routes available. New
+achievements should be added within the restored visual system rather than
+triggering another redesign.

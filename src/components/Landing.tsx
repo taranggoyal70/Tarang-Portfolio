@@ -29,18 +29,23 @@ const Landing = ({ children }: PropsWithChildren) => {
             </a>
           </div>
           <div className="landing-proof" aria-label="Selected impact">
-            <div>
+            <a href="/work/studentlytics" aria-label="View evidence for 91% face-match accuracy">
               <strong>91%</strong>
               <span>face-match accuracy</span>
-            </div>
-            <div>
+            </a>
+            <a href="#work" aria-label="View Tarang's award-winning projects">
               <strong>8×</strong>
               <span>hackathon winner</span>
-            </div>
-            <div>
+            </a>
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View resume evidence for 100,000-plus records analyzed"
+            >
               <strong>100K+</strong>
               <span>records analyzed</span>
-            </div>
+            </a>
           </div>
         </div>
 

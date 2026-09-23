@@ -41,8 +41,8 @@ An intentional route for a Portfolio Visitor to reach Tarang through a published
 _Avoid_: Secret credential, analytics identifier
 
 **Visual Showcase**:
-The evidence-editorial layer that uses real product interfaces, annotated decisions, and proof artifacts to communicate craft.
-_Avoid_: Decorative WebGL in the critical path, unsupported metrics, navigation state
+The original dark, interactive portfolio identity, supported by project cards, proof artifacts, and an optional 3D character experience.
+_Avoid_: Replacing the established visual identity when updating content, unsupported metrics, broken navigation state
 
 **Decision Trace**:
 A repeatable case-study structure: observed problem, product decision, shipped system, and contextual proof.
