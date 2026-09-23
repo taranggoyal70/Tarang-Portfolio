@@ -77,17 +77,6 @@ const projects = [
     linkLabel: "Open live app",
   },
   {
-    title: "Tickmark",
-    category: "Syndicate by Maximor · Track 2 AI Grant winner",
-    description:
-      "A month-end close agent that reconciles accounts, codes invoices, and turns human corrections into reusable rules so the close gets faster and cheaper over time.",
-    tools: ["Agent orchestration", "Fintech", "Reconciliation", "Rule learning"],
-    stat: "Winner",
-    statLabel: "Track 2 AI Grant",
-    link: "https://github.com/taranggoyal70/tickmark",
-    linkLabel: "View on GitHub",
-  },
-  {
     title: "Cortex",
     category: "Live AI product",
     description:

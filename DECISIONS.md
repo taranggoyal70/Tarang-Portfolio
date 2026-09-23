@@ -11,14 +11,14 @@ Product management and analytics are supporting differentiators. The portfolio i
 
 ## Decision 002: Evidence threshold
 
-**Status:** Accepted  
+**Status:** Accepted
 **Date:** 2026-07-26
 
 Publish quantified claims only when a source, baseline, population, method, timeframe, and ownership can be stated or linked. Replace unsupported metrics with an artifact or an honest qualitative statement.
 
 ## Decision 003: Portfolio depth
 
-**Status:** Accepted  
+**Status:** Accepted
 **Date:** 2026-07-26
 
 Use three flagship case studies:
@@ -31,7 +31,7 @@ All other work appears in a compact archive after professional experience.
 
 ## Decision 004: Case-study format
 
-**Status:** Accepted  
+**Status:** Accepted
 **Date:** 2026-07-26
 
 Each flagship has a dedicated route with:
@@ -46,7 +46,7 @@ Each flagship has a dedicated route with:
 
 ## Decision 005: Visual direction
 
-**Status:** Accepted  
+**Status:** Accepted
 **Date:** 2026-07-26
 
 Use the spacious **Evidence Editorial** direction with the structured decision-trace logic from the denser concept.
@@ -60,21 +60,7 @@ Rejected:
 
 ## Decision 006: Conversion
 
-**Status:** Accepted  
+**Status:** Accepted
 **Date:** 2026-07-26
 
 The primary conversion is an AI Product Engineer/FDE hiring conversation. The final CTA asks whether a team is hiring someone to turn an unclear AI workflow into a working product.
-
-## Decision 007: Restore the original visual identity
-
-**Status:** Accepted
-**Date:** 2026-09-22
-
-Restore the original dark portfolio homepage, including its 3D character,
-section flow, and project-card layout. This supersedes the homepage and visual
-direction in Decisions 003 and 005 because the portfolio owner explicitly
-prefers the original design.
-
-Keep the newer project data and dedicated case-study routes available. New
-achievements should be added within the restored visual system rather than
-triggering another redesign.

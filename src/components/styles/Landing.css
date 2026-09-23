@@ -113,18 +113,10 @@
   border-top: 1px solid var(--lineColor);
 }
 
-.landing-proof a {
+.landing-proof div {
   display: flex;
   flex-direction: column;
   gap: 3px;
-  border-radius: 4px;
-  transition: color 180ms ease, transform 180ms ease;
-}
-
-.landing-proof a:hover,
-.landing-proof a:focus-visible {
-  color: var(--accentColor);
-  transform: translateY(-2px);
 }
 
 .landing-proof strong {

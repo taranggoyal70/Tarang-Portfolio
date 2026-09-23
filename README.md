@@ -1,15 +1,14 @@
 # Tarang Goyal — Portfolio
 
-Interactive portfolio for an AI Product Engineer / Forward-Deployed Engineer.
+Evidence-first portfolio for an AI Product Engineer / Forward-Deployed Engineer.
 
 **Live site:** https://tarang-portfolio-pink.vercel.app
 
 ## What is included
 
-- The original dark, interactive homepage and 3D character experience
-- Current work, experience, skills, and contact sections
-- Preserved case studies for Studentlytics, Morphic, and Locus
-- Current achievements, including eight hackathon wins and Tickmark
+- A focused homepage organized around product decisions and evidence
+- Dedicated case studies for Studentlytics, Morphic, and Locus
+- A compact archive of additional products, research, and hackathon work
 - Responsive layouts, reduced-motion support, and keyboard focus states
 - Vercel rewrites for direct case-study URLs
 
