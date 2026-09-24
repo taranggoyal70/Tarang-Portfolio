@@ -535,14 +535,14 @@ const MainContainer = () => {
     <section className="section archive-section" aria-labelledby="archive-title">
       <div className="section-heading archive-heading">
         <div>
-          <p className="eyebrow">More shipped work</p>
+          <p className="eyebrow">Ranked portfolio</p>
           <h2 id="archive-title">
-            More products I’ve <em>shipped.</em>
+            My strongest work, <em>ranked.</em>
           </h2>
         </div>
         <p>
-          A curated selection from 31 public repositories. Award labels appear
-          only on projects that won.
+          A ranked view of my strongest work, followed by more shipped
+          projects. Award labels appear only on projects that won.
         </p>
       </div>
 

@@ -419,8 +419,8 @@ const flagshipProjectCatalog: Record<ProjectSlug, CaseStudyProject> = {
 };
 
 export const flagshipProjects: CaseStudyProject[] = [
-  flagshipProjectCatalog.studentlytics,
   flagshipProjectCatalog.locus,
+  flagshipProjectCatalog.studentlytics,
   flagshipProjectCatalog.morphic,
 ];
 
@@ -429,11 +429,6 @@ export const projectBySlug = Object.fromEntries(
 ) as Record<ProjectSlug, CaseStudyProject>;
 
 export const awardWinningProjects = [
-  {
-    title: "Tickmark",
-    award: "Syndicate by Maximor · Track 2 AI Grant",
-    link: "https://github.com/taranggoyal70/tickmark",
-  },
   {
     title: "Locus",
     award: "Stanford AI Hackathon",
@@ -445,14 +440,14 @@ export const awardWinningProjects = [
     link: "https://devpost.com/software/studentlytics",
   },
   {
-    title: "Morphic",
-    award: "Beta Fund × GMI Cloud",
-    link: "https://morphic-murex.vercel.app/",
-  },
-  {
     title: "Crowd Symphony",
     award: "YC Stack Auth",
     link: "https://crowd-symphony.vercel.app",
+  },
+  {
+    title: "Morphic",
+    award: "Beta Fund × GMI Cloud",
+    link: "https://morphic-murex.vercel.app/",
   },
   {
     title: "Gatekit",
@@ -465,25 +460,59 @@ export const awardWinningProjects = [
     link: "https://a10-taupe.vercel.app",
   },
   {
+    title: "Tickmark",
+    award: "Syndicate by Maximor · Track 2 AI Grant",
+    link: "https://github.com/taranggoyal70/tickmark",
+  },
+  {
     title: "Nazava Analytics",
     award: "SCU Analytical Showdown",
     link: "https://scu-analytical-showdown.vercel.app",
   },
 ];
 
+type RankedProjectDetails = {
+  input: string;
+  output: string;
+  category: string;
+  year: string;
+  status: string;
+  contribution: string;
+};
+
+const rankedFlagshipProject = (
+  slug: ProjectSlug,
+  details: RankedProjectDetails,
+) => {
+  const project = flagshipProjectCatalog[slug];
+
+  return {
+    title: project.title,
+    role: project.role,
+    link: project.externalUrl,
+    ...details,
+  };
+};
+
 export const archiveProjects = [
-  {
-    title: "Tickmark",
-    input: "Ledger + bank activity",
-    output: "Reconciled month-end close",
-    category: "AI finance agent",
+  rankedFlagshipProject("locus", {
+    input: "Natural-language coding task",
+    output: "Focused repository context",
+    category: "AI developer tool",
     year: "2026",
-    role: "Solo product & engineering",
-    status: "Track 2 AI Grant Winner",
+    status: "Stanford AI Hackathon Winner",
     contribution:
-      "Built a month-end close agent that reconciles accounts, codes invoices, and turns human corrections into reusable rules.",
-    link: "https://github.com/taranggoyal70/tickmark",
-  },
+      "Built a codebase context engine with dependency mapping, CLI, API, and MCP surfaces for coding agents.",
+  }),
+  rankedFlagshipProject("studentlytics", {
+    input: "Classroom video and audio",
+    output: "Attendance and engagement evidence",
+    category: "AI education platform",
+    year: "2025",
+    status: "AWS × INRIX First Place Winner",
+    contribution:
+      "Built the end-to-end classroom analytics prototype in 24 hours and continued developing the platform at Highview.",
+  }),
   {
     title: "Chronos-2",
     input: "7 equities + Treasury rates",
@@ -508,6 +537,39 @@ export const archiveProjects = [
       "Shipped QR onboarding, synchronized sessions, MediaPipe hand tracking, and Web Audio controls.",
     link: "https://crowd-symphony.vercel.app",
   },
+  rankedFlagshipProject("morphic", {
+    input: "Product objective + repository",
+    output: "Approved branch and pull request",
+    category: "AI software workspace",
+    year: "2026",
+    status: "Beta Fund × GMI Cloud Hackathon Winner",
+    contribution:
+      "Built an objective-centered workspace that grounds agent execution in repository evidence and explicit approval boundaries.",
+  }),
+  {
+    title: "Gatekit",
+    input: "Proposed agent action",
+    output: "Allow, deny, or review",
+    category: "Agent governance",
+    year: "2026",
+    role: "Product & engineering",
+    status: "AgentForge Hackathon Winner",
+    contribution:
+      "Built a policy engine that allows, denies, or routes agent actions to human approval with immutable audit records.",
+    link: "https://gatekit.vercel.app",
+  },
+  {
+    title: "Tickmark",
+    input: "Ledger + bank activity",
+    output: "Reconciled month-end close",
+    category: "AI finance agent",
+    year: "2026",
+    role: "Solo product & engineering",
+    status: "Track 2 AI Grant Winner",
+    contribution:
+      "Built a month-end close agent that reconciles accounts, codes invoices, and turns human corrections into reusable rules.",
+    link: "https://github.com/taranggoyal70/tickmark",
+  },
   {
     title: "A10 AI Firewall",
     input: "Untrusted AI request",
@@ -531,18 +593,6 @@ export const archiveProjects = [
     contribution:
       "Delivered segmentation, predictive modeling, ROI forecasting, and executive decisions.",
     link: "https://scu-analytical-showdown.vercel.app",
-  },
-  {
-    title: "Gatekit",
-    input: "Proposed agent action",
-    output: "Allow, deny, or review",
-    category: "Agent governance",
-    year: "2026",
-    role: "Product & engineering",
-    status: "AgentForge Hackathon Winner",
-    contribution:
-      "Built a policy engine that allows, denies, or routes agent actions to human approval with immutable audit records.",
-    link: "https://gatekit.vercel.app",
   },
   {
     title: "Cortex",
