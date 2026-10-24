@@ -14,6 +14,7 @@ import {
   portfolioSuggestions,
   type PortfolioAnswer,
 } from "../data/voiceKnowledge";
+import { requestMicrophonePermission } from "../utils/voicePermissions";
 import "./styles/PortfolioVoice.css";
 
 type VoicePhase =
@@ -78,8 +79,10 @@ const PortfolioVoice = () => {
   const [turns, setTurns] = useState<Turn[]>([]);
   const [muted, setMuted] = useState(false);
   const [error, setError] = useState("");
+  const [permissionPending, setPermissionPending] = useState(false);
   const dialogRef = useRef<HTMLElement>(null);
   const recognitionRef = useRef<SpeechRecognition | null>(null);
+  const microphonePermissionGrantedRef = useRef(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const answerTimerRef = useRef<number | null>(null);
 
@@ -149,7 +152,7 @@ const PortfolioVoice = () => {
     [speak, stopSpeaking],
   );
 
-  const startListening = useCallback(() => {
+  const startListening = useCallback(async () => {
     if (!recognitionConstructor) {
       setMode("text");
       setPhase("error");
@@ -160,6 +163,34 @@ const PortfolioVoice = () => {
 
     stopSpeaking();
     recognitionRef.current?.abort();
+
+    if (!microphonePermissionGrantedRef.current) {
+      setError("");
+      setPermissionPending(true);
+      const permission = await requestMicrophonePermission(
+        navigator.mediaDevices,
+      );
+      setPermissionPending(false);
+
+      if (permission.status !== "granted") {
+        const messages = {
+          blocked:
+            "Microphone permission is blocked. Use the site controls beside the address to set Microphone to Allow, then try again. If it stays blocked, enable this browser in macOS Settings → Privacy & Security → Microphone.",
+          unavailable:
+            "No microphone was found. Connect one or type your question instead.",
+          unsupported:
+            "This browser cannot request microphone access. Try Chrome or Safari, or type instead.",
+          error:
+            "The browser could not open the microphone. Check that another app is not using it, then try again.",
+        } as const;
+        setError(messages[permission.status]);
+        setPhase("error");
+        return;
+      }
+
+      microphonePermissionGrantedRef.current = true;
+    }
+
     const recognition = new recognitionConstructor();
     recognition.continuous = false;
     recognition.interimResults = true;
@@ -185,8 +216,12 @@ const PortfolioVoice = () => {
       }
     };
     recognition.onerror = (event) => {
+      if (event.error === "not-allowed") {
+        microphonePermissionGrantedRef.current = false;
+      }
       const messages: Record<string, string> = {
-        "not-allowed": "Microphone access is blocked. Allow it in your browser or type instead.",
+        "not-allowed":
+          "Microphone permission is blocked. Use the site controls beside the address to set Microphone to Allow, then try again.",
         "audio-capture": "No microphone was found. Connect one or type instead.",
         network: "Speech recognition could not reach the browser service. Type instead.",
         "no-speech": "I did not hear a question. Try again or type it.",
@@ -281,8 +316,8 @@ const PortfolioVoice = () => {
                   site does not record or store your microphone audio.
                 </p>
                 <div className="voice-permission-actions">
-                  <button className="voice-primary" type="button" onClick={startListening} disabled={!micSupported}>
-                    <MdMic aria-hidden="true" /> {micSupported ? "Enable microphone" : "Microphone unavailable"}
+                  <button className="voice-primary" type="button" onClick={startListening} disabled={!micSupported || permissionPending}>
+                    <MdMic aria-hidden="true" /> {permissionPending ? "Waiting for permission…" : micSupported ? "Enable microphone" : "Microphone unavailable"}
                   </button>
                   <button
                     className="voice-secondary"
@@ -357,8 +392,8 @@ const PortfolioVoice = () => {
                     <MdStop aria-hidden="true" /> Stop answer
                   </button>
                 ) : (
-                  <button className="voice-primary" type="button" onClick={startListening}>
-                    <MdMic aria-hidden="true" /> Ask by voice
+                  <button className="voice-primary" type="button" onClick={startListening} disabled={permissionPending}>
+                    <MdMic aria-hidden="true" /> {permissionPending ? "Waiting for permission…" : "Ask by voice"}
                   </button>
                 )}
                 <button
