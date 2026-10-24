@@ -1,0 +1,512 @@
+.voice-launcher,
+.voice-console,
+.voice-console * {
+  box-sizing: border-box;
+}
+
+.voice-launcher {
+  position: fixed;
+  z-index: 90;
+  right: 22px;
+  bottom: 22px;
+  display: grid;
+  grid-template-columns: auto 58px 52px;
+  gap: 14px;
+  align-items: center;
+  min-width: 320px;
+  min-height: 72px;
+  padding: 9px 9px 9px 18px;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  background: var(--ink);
+  color: var(--white);
+  box-shadow: 10px 10px 0 rgba(47, 86, 211, 0.2);
+  cursor: pointer;
+  text-align: left;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.voice-launcher:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 13px 13px 0 rgba(47, 86, 211, 0.25);
+}
+
+.voice-launcher:focus-visible,
+.voice-console button:focus-visible,
+.voice-console input:focus-visible,
+.voice-console a:focus-visible {
+  outline: 3px solid var(--signal);
+  outline-offset: 3px;
+}
+
+.voice-launcher-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.voice-launcher-copy small,
+.voice-console-header p,
+.voice-permission > span,
+.voice-answer-card > span,
+.voice-live-transcript > span {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.voice-launcher-copy small {
+  color: #aebcf4;
+}
+
+.voice-launcher-copy strong {
+  font-size: 13px;
+  letter-spacing: -0.01em;
+}
+
+.voice-launcher-meter {
+  display: flex;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.voice-launcher-meter i {
+  display: block;
+  width: 3px;
+  background: var(--signal);
+  transform-origin: center;
+  animation: voiceMeter 1.4s ease-in-out infinite alternate;
+}
+
+.voice-launcher-meter i:nth-child(2n) {
+  animation-delay: -600ms;
+}
+
+.voice-launcher-meter i:nth-child(3n) {
+  animation-delay: -950ms;
+}
+
+.voice-launcher-mic {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  background: var(--blue);
+  color: var(--white);
+  font-size: 23px;
+  place-items: center;
+}
+
+.voice-console {
+  position: fixed;
+  z-index: 100;
+  right: 22px;
+  bottom: 22px;
+  display: flex;
+  width: min(450px, calc(100vw - 44px));
+  height: min(680px, calc(100dvh - 44px));
+  overflow: hidden;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  box-shadow: 16px 16px 0 rgba(18, 20, 23, 0.18);
+  flex-direction: column;
+  animation: voiceConsoleIn 240ms cubic-bezier(0.2, 0.75, 0.1, 1) both;
+}
+
+.voice-console-header {
+  display: flex;
+  min-height: 78px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 14px 14px 18px;
+  border-bottom: 1px solid var(--ink);
+  background: var(--white);
+}
+
+.voice-console-header > div {
+  display: grid;
+  grid-template-columns: 10px auto;
+  column-gap: 10px;
+  align-items: center;
+}
+
+.voice-console-header p,
+.voice-console-header strong {
+  margin: 0;
+}
+
+.voice-console-header p {
+  color: var(--blue);
+}
+
+.voice-console-header strong {
+  grid-column: 2;
+  margin-top: 4px;
+  font-size: 13px;
+}
+
+.voice-state-dot {
+  grid-row: 1 / span 2;
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--muted);
+}
+
+.voice-state-dot.is-listening,
+.voice-state-dot.is-speaking {
+  background: var(--success);
+  box-shadow: 0 0 0 5px rgba(45, 124, 75, 0.12);
+  animation: voicePulse 1s ease-in-out infinite;
+}
+
+.voice-state-dot.is-thinking {
+  background: var(--signal);
+}
+
+.voice-state-dot.is-error {
+  background: #b43b31;
+}
+
+.voice-console-header button,
+.voice-icon-button {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 22px;
+  place-items: center;
+}
+
+.voice-console-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 24px;
+  scrollbar-color: var(--ink) transparent;
+  scrollbar-width: thin;
+}
+
+.voice-permission > span,
+.voice-answer-card > span,
+.voice-live-transcript > span {
+  color: var(--blue);
+}
+
+.voice-permission h2,
+.voice-answer-card h2 {
+  margin: 12px 0 0;
+  color: var(--blue-black);
+  font-size: 30px;
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.voice-permission p,
+.voice-answer-card > p,
+.voice-live-transcript p {
+  color: #35383d;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.voice-permission p {
+  margin: 18px 0 0;
+}
+
+.voice-permission-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.voice-primary,
+.voice-secondary,
+.voice-mode-switch,
+.voice-suggestions button,
+.voice-text-form button {
+  min-height: 44px;
+  border: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.voice-primary,
+.voice-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 14px;
+}
+
+.voice-primary {
+  background: var(--blue);
+  color: var(--white);
+  border-color: var(--blue);
+}
+
+.voice-primary:hover,
+.voice-text-form button[type="submit"]:hover:not(:disabled) {
+  background: var(--blue-dark);
+}
+
+.voice-primary:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+
+.voice-primary.is-stop {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.voice-secondary:hover,
+.voice-mode-switch:hover,
+.voice-suggestions button:hover {
+  background: var(--blue-soft);
+  color: var(--blue-dark);
+}
+
+.voice-question {
+  margin: 0 0 22px !important;
+  padding: 14px 16px;
+  border-left: 3px solid var(--signal);
+  background: var(--white);
+  color: var(--muted) !important;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px !important;
+}
+
+.voice-answer-card > p:not(.voice-question) {
+  margin: 16px 0 0;
+}
+
+.voice-answer-card ul {
+  display: grid;
+  margin: 24px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--ink);
+  list-style: none;
+}
+
+.voice-answer-card li {
+  min-height: 42px;
+  border-bottom: 1px solid var(--line);
+}
+
+.voice-answer-card li a,
+.voice-answer-card li span {
+  display: flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--ink);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.voice-answer-card li a:hover {
+  color: var(--blue);
+}
+
+.voice-live-transcript {
+  margin-top: 20px;
+  padding: 16px;
+  border: 1px solid var(--blue);
+  background: var(--blue-soft);
+}
+
+.voice-live-transcript p {
+  margin: 8px 0 0;
+}
+
+.voice-error {
+  margin: 18px 0 0;
+  padding: 12px 14px;
+  border: 1px solid #b43b31;
+  color: #7d211a;
+  background: #fff1ef;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.voice-suggestions {
+  display: grid;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.voice-suggestions button {
+  min-height: 46px;
+  padding: 10px 13px;
+  text-align: left;
+}
+
+.voice-console-footer {
+  display: flex;
+  gap: 8px;
+  min-height: 76px;
+  align-items: center;
+  padding: 12px;
+  border-top: 1px solid var(--ink);
+  background: var(--white);
+}
+
+.voice-console-footer .voice-primary {
+  min-width: 148px;
+}
+
+.voice-mode-switch {
+  padding: 0 11px;
+  border-color: transparent;
+  color: var(--muted);
+}
+
+.voice-text-form {
+  display: grid;
+  width: 100%;
+  grid-template-columns: minmax(0, 1fr) 44px auto;
+  gap: 8px;
+}
+
+.voice-text-form input {
+  min-width: 0;
+  height: 46px;
+  padding: 0 13px;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+}
+
+.voice-text-form input::placeholder {
+  color: #777b82;
+}
+
+.voice-text-form button[type="submit"] {
+  display: grid;
+  min-height: 46px;
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
+  font-size: 18px;
+  place-items: center;
+}
+
+.voice-text-form button:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.voice-evidence-focus {
+  position: relative;
+  z-index: 1;
+  animation: evidenceFocus 2.1s ease-out 2;
+}
+
+@keyframes voiceMeter {
+  from { transform: scaleY(0.58); opacity: 0.64; }
+  to { transform: scaleY(1); opacity: 1; }
+}
+
+@keyframes voicePulse {
+  50% { transform: scale(0.72); opacity: 0.7; }
+}
+
+@keyframes voiceConsoleIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes evidenceFocus {
+  0%, 100% { box-shadow: inset 0 0 0 0 transparent; }
+  30% { box-shadow: inset 0 0 0 5px var(--signal); }
+}
+
+@media (max-width: 700px) {
+  .voice-launcher {
+    right: 12px;
+    bottom: 12px;
+    grid-template-columns: auto 46px;
+    min-width: 0;
+    width: calc(100vw - 24px);
+    min-height: 64px;
+  }
+
+  .voice-launcher-meter {
+    display: none;
+  }
+
+  .voice-launcher-mic {
+    width: 46px;
+    height: 46px;
+  }
+
+  .voice-console {
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: min(760px, 92dvh);
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+    box-shadow: 0 -12px 42px rgba(18, 20, 23, 0.2);
+  }
+
+  .voice-console-body {
+    padding: 20px;
+  }
+
+  .voice-permission-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .voice-console-footer {
+    min-height: 82px;
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+  }
+
+  .voice-text-form {
+    grid-template-columns: minmax(0, 1fr) 46px;
+  }
+
+  .voice-text-form .voice-mode-switch {
+    grid-column: 1 / -1;
+    min-height: 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .voice-launcher,
+  .voice-launcher-meter i,
+  .voice-console,
+  .voice-state-dot,
+  .voice-evidence-focus {
+    animation: none !important;
+    transition: none !important;
+  }
+}

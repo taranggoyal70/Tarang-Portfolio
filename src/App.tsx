@@ -7,6 +7,7 @@ import {
 
 const MainContainer = lazy(() => import("./components/MainContainer"));
 const CaseStudyPage = lazy(() => import("./components/CaseStudyPage"));
+const PortfolioVoice = lazy(() => import("./components/PortfolioVoice"));
 
 const App = () => {
   const route = window.location.pathname.replace(/\/+$/, "");
@@ -17,6 +18,7 @@ const App = () => {
   return (
     <Suspense fallback={<div className="route-loading">Loading portfolio…</div>}>
       {project ? <CaseStudyPage project={project} /> : <MainContainer />}
+      <PortfolioVoice />
     </Suspense>
   );
 };
