@@ -105,11 +105,6 @@ export const portfolioSuggestions = [
 export const answerPortfolioQuestion = (question: string): PortfolioAnswer => {
   const normalized = clean(question);
 
-  const exactProject = archiveProjects.find((project) =>
-    normalized.includes(clean(project.title)),
-  );
-  if (exactProject) return projectAnswer(exactProject.title)!;
-
   if (/\b(locus|context engine|coding agent context)\b/.test(normalized)) {
     return {
       title: "Locus",
@@ -126,6 +121,11 @@ export const answerPortfolioQuestion = (question: string): PortfolioAnswer => {
       ],
     };
   }
+
+  const exactProject = archiveProjects.find((project) =>
+    normalized.includes(clean(project.title)),
+  );
+  if (exactProject) return projectAnswer(exactProject.title)!;
 
   if (/\b(hackathon|award|winner|wins|competition)\b/.test(normalized)) {
     return {
