@@ -532,7 +532,7 @@ const MainContainer = () => {
       </div>
     </section>
 
-    <section className="section archive-section" id="archive" aria-labelledby="archive-title">
+    <section className="section archive-section" aria-labelledby="archive-title">
       <div className="section-heading archive-heading">
         <div>
           <p className="eyebrow">Ranked portfolio</p>
@@ -583,7 +583,6 @@ const MainContainer = () => {
           return (
             <a
               className={`archive-card${isWinner ? " is-winner" : ""}${isResearch ? " is-research" : ""}`}
-              data-voice-project={project.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}
               href={project.link}
               target="_blank"
               rel="noreferrer"
