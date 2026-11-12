@@ -430,6 +430,11 @@ export const projectBySlug = Object.fromEntries(
 
 export const awardWinningProjects = [
   {
+    title: "SecondVoice",
+    award: "AssemblyAI Hack into Speech Hackathon",
+    link: "https://secondvoice-green.vercel.app",
+  },
+  {
     title: "Locus",
     award: "Stanford AI Hackathon",
     link: "https://locus-five-iota.vercel.app",
@@ -504,6 +509,18 @@ export const archiveProjects = [
     contribution:
       "Built a codebase context engine with dependency mapping, CLI, API, and MCP surfaces for coding agents.",
   }),
+  {
+    title: "SecondVoice",
+    input: "Approved typed message",
+    output: "Interruptible streaming speech",
+    category: "Assistive communication",
+    year: "2026",
+    role: "Solo product & engineering",
+    status: "AssemblyAI Hack into Speech Hackathon Winner",
+    contribution:
+      "Built an assistive speech product with live synthesis, real cancellation, revision, timed words, saved phrases, and optional conversation support.",
+    link: "https://secondvoice-green.vercel.app",
+  },
   rankedFlagshipProject("studentlytics", {
     input: "Classroom video and audio",
     output: "Attendance and engagement evidence",

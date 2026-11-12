@@ -270,7 +270,7 @@ const MainContainer = () => {
       <div className="hero-copy">
         <div className="hero-status">
           <i aria-hidden="true" />
-          8× Hackathon &amp; Competition Winner
+          9× Hackathon &amp; Competition Winner
         </div>
         <p className="eyebrow">
           AI Product Engineer · Forward-Deployed Builder
@@ -370,6 +370,7 @@ const MainContainer = () => {
         {[0, 1].map((copy) => (
           <div aria-hidden={copy === 1} key={copy}>
             <span>Stanford University AI Hackathon · Locus</span><i />
+            <span>AssemblyAI Hack into Speech · SecondVoice</span><i />
             <span>AWS × INRIX · Studentlytics</span><i />
             <span>Beta Fund × GMI Cloud · Morphic</span><i />
             <span>YC Stack Auth · Crowd Symphony</span><i />
@@ -546,11 +547,11 @@ const MainContainer = () => {
         </p>
       </div>
 
-      <div className="award-ledger" aria-label="Eight award-winning projects">
+      <div className="award-ledger" aria-label="Nine award-winning projects">
         <div className="award-ledger-intro">
           <MdEmojiEvents aria-hidden="true" />
           <div>
-            <strong>8× winner</strong>
+            <strong>9× winner</strong>
             <span>Across the full portfolio</span>
           </div>
         </div>
