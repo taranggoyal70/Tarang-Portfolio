@@ -14,7 +14,7 @@ The résumé PDF is the canonical employment and education artifact. The portfol
 | Locus | Not listed | Flagship live developer tool | Portfolio is the canonical product record; consider adding to next résumé |
 | Chronos-2 | Full publication title and co-author status | Supporting research project | Use exact paper title on detailed references |
 | Four wins | Four named 2025 wins | Credibility / archive | Use only when the four wins remain identifiable nearby |
-| Nine wins | Nine named wins through November 2026 | Homepage credibility | The five 2026 additions include Stanford AI, AgentForge, Beta Fund × GMI Cloud, Syndicate by Maximor, and AssemblyAI; label Tickmark's result as Track 2: Autonomous Office of the CFO |
+| Nine wins | Nine named wins through November 2026 | Homepage credibility | The five 2026 additions include Stanford AI, AgentRogue, Beta Fund × GMI Cloud, Syndicate by Maximor, and AssemblyAI; label Tickmark's result as Track 2: Autonomous Office of the CFO |
 
 ## Resume artifact issue
 

@@ -374,7 +374,7 @@ const MainContainer = () => {
             <span>AWS × INRIX · Studentlytics</span><i />
             <span>Beta Fund × GMI Cloud · Morphic</span><i />
             <span>YC Stack Auth · Crowd Symphony</span><i />
-            <span>AgentForge · Gatekit</span><i />
+            <span>AgentRogue · Gatekit</span><i />
             <span>SCU Analytical Showdown · Nazava</span><i />
             <span>A10 AI Product Manager Hackathon</span><i />
             <span>Syndicate by Maximor · CFO Track · Tickmark</span><i />

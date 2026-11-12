@@ -456,7 +456,7 @@ export const awardWinningProjects = [
   },
   {
     title: "Gatekit",
-    award: "AgentForge",
+    award: "AgentRogue",
     link: "https://gatekit.vercel.app",
   },
   {
@@ -570,7 +570,7 @@ export const archiveProjects = [
     category: "Agent governance",
     year: "2026",
     role: "Product & engineering",
-    status: "AgentForge Hackathon Winner",
+    status: "AgentRogue Hackathon Winner",
     contribution:
       "Built a policy engine that allows, denies, or routes agent actions to human approval with immutable audit records.",
     link: "https://gatekit.vercel.app",
