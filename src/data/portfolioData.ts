@@ -466,7 +466,7 @@ export const awardWinningProjects = [
   },
   {
     title: "Tickmark",
-    award: "Syndicate by Maximor · Track 2 AI Grant",
+    award: "Syndicate by Maximor · Autonomous Office of the CFO",
     link: "https://github.com/taranggoyal70/tickmark",
   },
   {
@@ -582,7 +582,7 @@ export const archiveProjects = [
     category: "AI finance agent",
     year: "2026",
     role: "Solo product & engineering",
-    status: "Track 2 AI Grant Winner",
+    status: "Track 2 Winner — Autonomous Office of the CFO",
     contribution:
       "Built a month-end close agent that reconciles accounts, codes invoices, and turns human corrections into reusable rules.",
     link: "https://github.com/taranggoyal70/tickmark",

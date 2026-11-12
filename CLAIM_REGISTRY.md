@@ -23,8 +23,8 @@ Statuses:
 | HASH-001 | Eliminated 20+ weekly reporting hours through Tableau automation | Résumé | Role contribution | Verified |
 | HASH-002 | Upsell analysis informed the roadmap and grew revenue by 10% | Résumé | Business outcome | Verified |
 | AWARD-001 | Four winning projects in 2025 | Résumé names A10, Studentlytics, SCU Analytical Showdown, and Crowd Symphony | Team awards | Verified |
-| AWARD-002 | Eight hackathon wins through September 2026 | Four 2025 wins above; Stanford AI, AgentForge, Beta Fund × GMI Cloud, and Syndicate by Maximor in 2026 | Mix of solo and team awards; do not imply every project won first place | Verified |
-| TICK-001 | Tickmark won a Track 2 AI Grant at Syndicate by Maximor | Devpost winner badge and Track 2 award; public Tickmark repository | Solo build; AI Grant, not a first- or second-place cash award | Verified |
+| AWARD-002 | Nine hackathon wins through November 2026 | Four 2025 wins above; Stanford AI, AgentForge, Beta Fund × GMI Cloud, Syndicate by Maximor, and AssemblyAI in 2026 | Mix of solo and team awards; do not imply every project won first place | Verified |
+| TICK-001 | Tickmark won Track 2: Autonomous Office of the CFO at Syndicate by Maximor | Devpost winner email naming the exact Track 2 prize; public Tickmark repository | Solo build; category winner, not a first- or second-place overall ranking | Verified |
 | CHRONOS-001 | Co-authored “Multivariate Forecasting with Foundation Models: Using Chronos-2 for Economic and Financial Forecasts” | arXiv; résumé | Co-author | Verified |
 
 ## Placement rules

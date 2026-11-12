@@ -377,7 +377,7 @@ const MainContainer = () => {
             <span>AgentForge · Gatekit</span><i />
             <span>SCU Analytical Showdown · Nazava</span><i />
             <span>A10 AI Product Manager Hackathon</span><i />
-            <span>Syndicate by Maximor · Tickmark</span><i />
+            <span>Syndicate by Maximor · CFO Track · Tickmark</span><i />
           </div>
         ))}
       </div>
